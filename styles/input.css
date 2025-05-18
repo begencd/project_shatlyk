@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: #3f51b5;
+  --color-text: "#333333";
+  --color-custom-gray: #b4aeae;
+  --color-outline-button-border: #9fa8da;
+}
