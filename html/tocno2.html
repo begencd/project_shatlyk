@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+
+    <script src="../js/menu.js" defer></script>
+    <script src="../public/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+  </head>
+  <body class="size-full">
+    <div class="size-full relative">
+      <header class="h-[6.25rem] bg-primary w-full">
+        <div
+          class="flex items-center xl:container px-12 xl:px-0 mx-0 xl:mx-auto justify-between h-full"
+        >
+          <div class="flex items-center gap-x-12 h-10">
+            <div>
+              <a href="#">
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
+              </a>
+            </div>
+            <div class="hidden items-center gap-x-8 lg:flex">
+              <a href="#" class="text-white text-lg">Оставить отзыв</a>
+              <a href="#" class="text-white text-lg">Пользователям</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
+            <div class="lg:hidden flex">
+              <div
+                class="container cursor-pointer flex"
+                id="menu-toggle"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 200 200"
+                >
+                  <g stroke-width="6.5" stroke-linecap="round">
+                    <path
+                      d="M72 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M72 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
+              <span class="text-lg">Ваш город:</span>
+              <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select>
+            </div>
+            <div>
+              <button
+                class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg"
+              >
+                <i class="mdi mdi-login pr-1"></i>
+                Войти
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="my-6 xl:container px-12 xl:px-0 mx-0 xl:mx-auto">
+        <span class="text-xs tracking-widest cursor-pointer">Главная</span>
+        <span class="px-2">|</span>
+        <span class="text-xs tracking-widest cursor-pointer">Застройщики</span>
+        <span class="px-2">|</span>
+        <span class="text-xs tracking-widest text-primary"> Точно</span>
+      </div>
+
+      <div class="my-20 xl:container px-12 xl:px-0 mx-0 xl:mx-auto">
+        <div class="flex items-start justify-between gap-x-8 lg:gap-x-12">
+          <div
+            class="h-[12.5rem] max-w-[15.625rem] lg:max-w-[19.375rem] size-full border rounded-xl border-custom-gray flex items-center justify-center"
+          >
+            <img
+              src="../public/tocno.png"
+              class="rounded-xl w-[80%] mx-auto max-h-[9.375rem] h-auto"
+              alt=""
+            />
+          </div>
+          <div
+            class="w-[calc(100%-17.625rem)] lg:w-[calc(100%-22.375rem)] flex flex-col gap-2 lg:gap-4"
+          >
+            <h1
+              class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+            >
+              Строительная компания «Точно»
+            </h1>
+            <div
+              class="flex items-center gap-x-3 lg:gap-x-6 w-full xl:w-[80%] mr-0 xl:mr-auto"
+            >
+              <h4 class="text-sm lg:text-base font-semibold tracking-wider">
+                Год основания: 2013 г.
+              </h4>
+              <div>|</div>
+              <div class="text-sm lg:text-base font-semibold">
+                Количество объектов: 11
+              </div>
+            </div>
+            <p
+              class="text-xs lg:text-sm tracking-wide w-full xl:w-[80%] mr-0 xl:mr-auto"
+            >
+              Компания «ТОЧНО» занимает лидирующие позиции в Краснодаре среди
+              застройщиков полного цикла. Компания берет на себя весь комплекс
+              девелоперских услуг от создания идеи проекта до управления готовым
+              строительным объектом.
+            </p>
+          </div>
+        </div>
+        <div
+          class="mt-8 w-full xl:w-[80%] mr-0 xl:mr-auto flex items-center justify-between"
+        >
+          <div class="text-xs 2xl:text-sm tracking-wide">
+            Ваша компания? <a href="#" class="text-primary">Оставьте заявку</a>
+          </div>
+          <div class="text-xl lg:text-3xl flex items-center">
+            <span class="pr-1">4.79</span>
+            <div
+              class="flex items-center space-x-1"
+              aria-label="3 out of 5 stars"
+              role="img"
+            >
+              <i class="mdi mdi-star text-yellow-400 text-xl xl:text-3xl"></i>
+              <i class="mdi mdi-star text-yellow-400 text-xl xl:text-3xl"></i>
+              <i class="mdi mdi-star text-yellow-400 text-xl xl:text-3xl"></i>
+              <i
+                class="mdi mdi-star-outline text-gray-300 text-xl xl:text-3xl"
+              ></i>
+              <i
+                class="mdi mdi-star-outline text-gray-300 text-xl xl:text-3xl"
+              ></i>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-2">
+            <span class="bg-primary text-white p-1 px-2 rounded-lg text-sm">
+              115</span
+            >
+            <span class="text-sm tracking-wide">Отзывов</span>
+          </div>
+          <div>
+            <button
+              class="border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+            >
+              <i class="mdi mdi-plus"></i>
+              Оставить отзыв
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <section class="xl:container px-12 xl:px-0 mx-0 xl:mx-auto w-full my-25">
+        <div class="flex items-center justify-between">
+          <h1 class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wide">
+            Все отзывы строительная компания “ТОЧНО”
+          </h1>
+        </div>
+        <div class="my-10 flex items-center justify-between">
+          <div class="flex items-center gap-x-8">
+            <div class="flex items-center gap-x-2">
+              <span class="bg-primary text-white p-1 px-2 rounded-lg text-sm">
+                100</span
+              >
+              <span class="text-sm tracking-wide">Положительных отзывов</span>
+            </div>
+            <div class="flex items-center gap-x-2">
+              <span class="bg-red-500 text-white p-1 px-2 rounded-lg text-sm">
+                15</span
+              >
+              <span class="text-sm tracking-wide">Отрицателных отзывов</span>
+            </div>
+          </div>
+          <div>
+            <button
+              class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer"
+            >
+              <span>По умолчанию</span>
+              <i class="mdi mdi-filter"></i>
+            </button>
+          </div>
+        </div>
+        <div class="flex gap-8 flex-wrap">
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <img src="../public/user 7.png" class="size-7" alt="" />
+                  <span>User001</span>
+                </div>
+                <span
+                  class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                  >17 Дополнений</span
+                >
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <div
+                  class="flex items-center space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                </div>
+                <span class="text-sm">2020/01/16</span>
+              </div>
+              <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+              <p class="text-sm line-clamp-4">
+                Купили квартиру на стадии строительства у застройщика
+                ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
+                понятное дело, на старте обычно дешевле
+              </p>
+              <div class="my-8">
+                <button
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  Читать отзыв
+                </button>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/like.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/comment.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <a href="" class="text-sm"> На модерации </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <img src="../public/user 7.png" class="size-7" alt="" />
+                  <span>User001</span>
+                </div>
+                <span
+                  class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                  >17 Дополнений</span
+                >
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <div
+                  class="flex items-center space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                </div>
+                <span class="text-sm">2020/01/16</span>
+              </div>
+              <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+              <p class="text-sm line-clamp-4">
+                Купили квартиру на стадии строительства у застройщика
+                ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
+                понятное дело, на старте обычно дешевле
+              </p>
+              <div class="my-8">
+                <button
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  Читать отзыв
+                </button>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/like.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/comment.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <a href="" class="text-sm"> На модерации </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <img src="../public/user 7.png" class="size-7" alt="" />
+                  <span>User001</span>
+                </div>
+                <span
+                  class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                  >17 Дополнений</span
+                >
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <div
+                  class="flex items-center space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                </div>
+                <span class="text-sm">2020/01/16</span>
+              </div>
+              <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+              <p class="text-sm line-clamp-4">
+                Купили квартиру на стадии строительства у застройщика
+                ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
+                понятное дело, на старте обычно дешевле
+              </p>
+              <div class="my-8">
+                <button
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  Читать отзыв
+                </button>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/like.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/comment.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <a href="" class="text-sm"> На модерации </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <img src="../public/user 7.png" class="size-7" alt="" />
+                  <span>User001</span>
+                </div>
+                <span
+                  class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                  >17 Дополнений</span
+                >
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <div
+                  class="flex items-center space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                </div>
+                <span class="text-sm">2020/01/16</span>
+              </div>
+              <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+              <p class="text-sm line-clamp-4">
+                Купили квартиру на стадии строительства у застройщика
+                ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
+                понятное дело, на старте обычно дешевле
+              </p>
+              <div class="my-8">
+                <button
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  Читать отзыв
+                </button>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/like.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/comment.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <a href="" class="text-sm"> На модерации </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <img src="../public/user 7.png" class="size-7" alt="" />
+                  <span>User001</span>
+                </div>
+                <span
+                  class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                  >17 Дополнений</span
+                >
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <div
+                  class="flex items-center space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                </div>
+                <span class="text-sm">2020/01/16</span>
+              </div>
+              <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+              <p class="text-sm line-clamp-4">
+                Купили квартиру на стадии строительства у застройщика
+                ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
+                понятное дело, на старте обычно дешевле
+              </p>
+              <div class="my-8">
+                <button
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  Читать отзыв
+                </button>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/like.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/comment.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <a href="" class="text-sm"> На модерации </a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+          >
+            <div class="flex flex-col gap-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-1">
+                  <img src="../public/user 7.png" class="size-7" alt="" />
+                  <span>User001</span>
+                </div>
+                <span
+                  class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                  >17 Дополнений</span
+                >
+              </div>
+              <div class="flex items-center justify-between mt-4">
+                <div
+                  class="flex items-center space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                  ></i>
+                </div>
+                <span class="text-sm">2020/01/16</span>
+              </div>
+              <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+              <p class="text-sm line-clamp-4">
+                Купили квартиру на стадии строительства у застройщика
+                ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
+                понятное дело, на старте обычно дешевле
+              </p>
+              <div class="my-8">
+                <button
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  Читать отзыв
+                </button>
+              </div>
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/like.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                  <span>1</span>
+                </div>
+                <div class="flex items-center gap-x-1">
+                  <img src="../public/comment.png" alt="" class="size-5" />
+                  <span>1</span>
+                </div>
+                <a href="" class="text-sm"> На модерации </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-primary py-15">
+        <div class="xl:container px-12 xl:px-0 mx-0 xl:mx-auto w-full">
+          <div
+            class="flex items-center flex-col lg:flex-row justify-between gap-16 xl:gap-24 text-white"
+          >
+            <a href="#" class="w-full max-w-[15rem] xl:max-w-[18.125rem]">
+              <img
+                src="../public/footer_logo.png"
+                class="w-full h-auto"
+                alt=""
+              />
+            </a>
+            <div
+              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] flex flex-wrap gap-x-18"
+            >
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Полезная информация
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">О проекте</a>
+                  <a href="#" class="text-sm">Застройщики</a>
+                  <a href="#" class="text-sm">Жилые комплексы</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Условия пользования
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Пользовательское соглашение</a>
+                  <a href="#" class="text-sm">Обработка персональных данных</a>
+                  <a href="#" class="text-sm">Публикация</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Компаниям
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Получение доступа</a>
+                  <a href="#" class="text-sm">Реклама на сайте</a>
+                  <a href="#" class="text-sm">Обратная связь</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Sidebar -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-20"
+      ></div>
+      <div
+        id="sidebar"
+        class="fixed top-0 h-full w-64 bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block lg:hidden"
+        role="navigation"
+      >
+        <div class="flex justify-end p-4">
+          <button
+            id="close-sidebar"
+            class="text-white text-2xl hover:rotate-90 hover:bg-white/10 p-2 rounded-full transition-all duration-200"
+            aria-label="Close menu"
+          >
+            <i class="mdi mdi-close"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 p-4">
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Оставить отзыв</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Пользователям</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Главная</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Контакты</a
+          >
+          <div class="flex flex-col gap-2">
+            <span class="text-lg">Ваш город:</span>
+            <select class="border-b border-white/50 outline-none border-solid">
+              <option value="moscow" class="text-primary bg-white py-1">
+                Moscow
+              </option>
+              <option value="petersburg" class="text-primary bg-white py-1">
+                Saint Petersburg
+              </option>
+              <option value="novosibirsk" class="text-primary bg-white py-1">
+                Novosibirsk
+              </option>
+            </select>
+          </div>
+        </nav>
+      </div>
+      <!-- Sidebar -->
+    </div>
+  </body>
+</html>
