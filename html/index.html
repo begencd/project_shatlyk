@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
-    <link href="/styles/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/menu.css" />
-    <link rel="stylesheet" href="/styles/sidebar.css" />
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
     <link
       rel="stylesheet"
       href="/node_modules/@mdi/font/css/materialdesignicons.min.css"
     />
 
-    <script src="/js/menu.js" defer></script>
+    <script src="../js/menu.js" defer></script>
   </head>
   <body class="size-full">
     <div class="size-full relative">
@@ -25,7 +25,7 @@
           <div class="flex items-center gap-x-12 h-10">
             <div>
               <a href="#">
-                <img class="w-[8.125rem]" src="/public/logo.png" alt="" />
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
               </a>
             </div>
             <div class="hidden items-center gap-x-8 lg:flex">
@@ -88,7 +88,7 @@
             <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
               <span class="text-lg">Ваш город:</span>
               <select
-                class="border border-white/20 outline-none p-2 hover:bg-white/10 focus:bg-white/10 rounded-lg bg-primary text-white transition-colors cursor-pointer"
+                class="border-b border-white/50 outline-none border-solid"
               >
                 <option value="moscow" class="text-primary bg-white py-1">
                   Moscow
@@ -112,72 +112,79 @@
           </div>
         </div>
       </header>
-      <section class="flex flex-row">
-        <div class="w-[55%] bg-primary relative">
-          <div class="absolute top-[40%] leading-0 w-full z-10">
-            <div
-              class="w-full px-12 xl:px-0 xl:w-[70%] mx-auto text-white mb-[5rem]"
-            >
-              <h1 class="text-5xl xl:text-6xl font-bold tracking-wide mb-4">
-                Отзывы без иллюзий
-              </h1>
-              <p class="text-lg xl:text-xl font-medium">
-                Забудьте о сказках, выбирайте с уверенностью
-              </p>
-            </div>
-            <div
-              class="w-full px-12 xl:px-0 xl:w-[70%] mx-auto text-text flex flex-nowrap gap-4 xl:gap-8 items-center"
-            >
-              <div
-                class="bg-white basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem] p-4 rounded-lg flex flex-col gap-4"
-              >
-                <img
-                  class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
-                  src="/public/1.png"
-                  alt=""
-                />
-                <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
-                  Жилые комплексы
-                </h2>
-                <p class="text-sm xl:text-base text-custom-gray">300</p>
-              </div>
-              <div
-                class="bg-white basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem] p-4 rounded-lg flex flex-col gap-4"
-              >
-                <img
-                  class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
-                  src="/public/2.png"
-                  alt=""
-                />
-                <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
-                  Застройщики
-                </h2>
-                <p class="text-sm xl:text-base text-custom-gray">250</p>
-              </div>
-              <div
-                class="bg-white basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem] p-4 rounded-lg flex flex-col gap-4"
-              >
-                <img
-                  class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
-                  src="/public/1.png"
-                  alt=""
-                />
-                <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
-                  Застройщики
-                </h2>
-                <p class="text-sm xl:text-base text-custom-gray">250</p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <section class="flex flex-row relative w-full">
+        <div class="w-[55%] bg-primary relative"></div>
         <div class="w-[45%] relative">
-          <img src="/public/Rectangle 3.png" class="w-full h-[48rem]" alt="" />
-          <div class="absolute left-0 bottom-0 z-10 w-full">
-            <img
-              src="/public/project.png"
-              alt=""
-              class="w-[55%] mx-auto h-auto"
-            />
+          <img
+            src="../public/Rectangle 3.png"
+            class="w-full h-[48rem]"
+            alt=""
+          />
+          <!--  -->
+        </div>
+        <div class="absolute top-[40%] left-0 leading-0 w-full z-10">
+          <div
+            class="xl:container px-12 xl:px-0 mx-0 xl:mx-auto flex justify-between relative"
+          >
+            <!-- basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem]
+basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem]
+basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem] -->
+            <div class="w-[calc(65%-2rem)] mr-8">
+              <div class="text-white mb-[5rem]">
+                <h1 class="text-5xl xl:text-6xl font-bold tracking-wide mb-4">
+                  Отзывы без иллюзий
+                </h1>
+                <p class="text-lg xl:text-xl font-medium">
+                  Забудьте о сказках, выбирайте с уверенностью
+                </p>
+              </div>
+              <div
+                class="w-full text-text flex flex-nowrap gap-4 xl:gap-8 items-center"
+              >
+                <div class="bg-white w-full p-4 rounded-lg flex flex-col gap-4">
+                  <img
+                    class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
+                    src="../public/1.png"
+                    alt=""
+                  />
+                  <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
+                    Жилые комплексы
+                  </h2>
+                  <p class="text-sm xl:text-base text-custom-gray">300</p>
+                </div>
+                <div class="bg-white w-full p-4 rounded-lg flex flex-col gap-4">
+                  <img
+                    class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
+                    src="../public/2.png"
+                    alt=""
+                  />
+                  <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
+                    Застройщики
+                  </h2>
+                  <p class="text-sm xl:text-base text-custom-gray">250</p>
+                </div>
+                <div class="bg-white w-full p-4 rounded-lg flex flex-col gap-4">
+                  <img
+                    class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
+                    src="../public/1.png"
+                    alt=""
+                  />
+                  <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
+                    Застройщики
+                  </h2>
+                  <p class="text-sm xl:text-base text-custom-gray">250</p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-[35%] absolute right-0 -bottom-[6.7rem] xl:-bottom-[6.2rem]"
+            >
+              <img
+                src="../public/project.png"
+                alt=""
+                class="w-full max-[90.625]:w-[80%] mx-auto h-auto lg:min-h-[25rem] xl:min-h-[27.75rem]"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -193,7 +200,7 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="/public/image.png" class="w-full h-auto" alt="" />
+              <img src="../public/image.png" class="w-full h-auto" alt="" />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -248,7 +255,7 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group shadow-md"
           >
             <div>
-              <img src="/public/image.png" class="w-full h-auto" alt="" />
+              <img src="../public/image.png" class="w-full h-auto" alt="" />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -308,7 +315,7 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="/public/image.png" class="w-full h-auto" alt="" />
+              <img src="../public/image.png" class="w-full h-auto" alt="" />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -361,7 +368,7 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="/public/image.png" class="w-full h-auto" alt="" />
+              <img src="../public/image.png" class="w-full h-auto" alt="" />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -414,7 +421,7 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="/public/image.png" class="w-full h-auto" alt="" />
+              <img src="../public/image.png" class="w-full h-auto" alt="" />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -467,7 +474,7 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="/public/image.png" class="w-full h-auto" alt="" />
+              <img src="../public/image.png" class="w-full h-auto" alt="" />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -533,7 +540,7 @@
               class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
             >
               <img
-                src="/public/image 3.png"
+                src="../public/image 3.png"
                 class="w-[75%] mx-auto h-auto"
                 alt=""
               />
@@ -592,7 +599,7 @@
               class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
             >
               <img
-                src="/public/image 3.png"
+                src="../public/image 3.png"
                 class="w-[75%] mx-auto h-auto"
                 alt=""
               />
@@ -651,7 +658,7 @@
               class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
             >
               <img
-                src="/public/image 3.png"
+                src="../public/image 3.png"
                 class="w-[75%] mx-auto h-auto"
                 alt=""
               />
@@ -710,7 +717,7 @@
               class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
             >
               <img
-                src="/public/image 3.png"
+                src="../public/image 3.png"
                 class="w-[75%] mx-auto h-auto"
                 alt=""
               />
@@ -769,7 +776,7 @@
               class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
             >
               <img
-                src="/public/image 3.png"
+                src="../public/image 3.png"
                 class="w-[75%] mx-auto h-auto"
                 alt=""
               />
@@ -828,7 +835,7 @@
               class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
             >
               <img
-                src="/public/image 3.png"
+                src="../public/image 3.png"
                 class="w-[75%] mx-auto h-auto"
                 alt=""
               />
@@ -896,7 +903,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
-                  <img src="/public/user 7.png" class="size-7" alt="" />
+                  <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
                 <span
@@ -943,15 +950,15 @@
               </div>
               <div class="flex items-center justify-between gap-x-2">
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/like.png" alt="" class="size-5" />
+                  <img src="../public/like.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/dislike.png" alt="" class="h-5 w-6" />
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/comment.png" alt="" class="size-5" />
+                  <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <a href="" class="text-sm"> На модерации </a>
@@ -964,7 +971,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
-                  <img src="/public/user 7.png" class="size-7" alt="" />
+                  <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
                 <span
@@ -1011,15 +1018,15 @@
               </div>
               <div class="flex items-center justify-between gap-x-2">
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/like.png" alt="" class="size-5" />
+                  <img src="../public/like.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/dislike.png" alt="" class="h-5 w-6" />
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/comment.png" alt="" class="size-5" />
+                  <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <a href="" class="text-sm"> На модерации </a>
@@ -1032,7 +1039,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
-                  <img src="/public/user 7.png" class="size-7" alt="" />
+                  <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
                 <span
@@ -1079,15 +1086,15 @@
               </div>
               <div class="flex items-center justify-between gap-x-2">
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/like.png" alt="" class="size-5" />
+                  <img src="../public/like.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/dislike.png" alt="" class="h-5 w-6" />
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/comment.png" alt="" class="size-5" />
+                  <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <a href="" class="text-sm"> На модерации </a>
@@ -1100,7 +1107,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
-                  <img src="/public/user 7.png" class="size-7" alt="" />
+                  <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
                 <span
@@ -1147,15 +1154,15 @@
               </div>
               <div class="flex items-center justify-between gap-x-2">
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/like.png" alt="" class="size-5" />
+                  <img src="../public/like.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/dislike.png" alt="" class="h-5 w-6" />
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/comment.png" alt="" class="size-5" />
+                  <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <a href="" class="text-sm"> На модерации </a>
@@ -1168,7 +1175,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
-                  <img src="/public/user 7.png" class="size-7" alt="" />
+                  <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
                 <span
@@ -1215,15 +1222,15 @@
               </div>
               <div class="flex items-center justify-between gap-x-2">
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/like.png" alt="" class="size-5" />
+                  <img src="../public/like.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/dislike.png" alt="" class="h-5 w-6" />
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/comment.png" alt="" class="size-5" />
+                  <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <a href="" class="text-sm"> На модерации </a>
@@ -1236,7 +1243,7 @@
             <div class="flex flex-col gap-4">
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-1">
-                  <img src="/public/user 7.png" class="size-7" alt="" />
+                  <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
                 <span
@@ -1283,15 +1290,15 @@
               </div>
               <div class="flex items-center justify-between gap-x-2">
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/like.png" alt="" class="size-5" />
+                  <img src="../public/like.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/dislike.png" alt="" class="h-5 w-6" />
+                  <img src="../public/dislike.png" alt="" class="h-5 w-6" />
                   <span>1</span>
                 </div>
                 <div class="flex items-center gap-x-1">
-                  <img src="/public/comment.png" alt="" class="size-5" />
+                  <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
                 <a href="" class="text-sm"> На модерации </a>
@@ -1300,6 +1307,56 @@
           </div>
         </div>
       </section>
+
+      <footer class="bg-primary py-15">
+        <div class="xl:container px-12 xl:px-0 mx-0 xl:mx-auto w-full">
+          <div
+            class="flex items-center flex-col lg:flex-row justify-between gap-16 xl:gap-24 text-white"
+          >
+            <a href="#" class="w-full max-w-[15rem] xl:max-w-[18.125rem]">
+              <img
+                src="../public/footer_logo.png"
+                class="w-full h-auto"
+                alt=""
+              />
+            </a>
+            <div
+              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] flex flex-wrap gap-x-18"
+            >
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Полезная информация
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">О проекте</a>
+                  <a href="#" class="text-sm">Застройщики</a>
+                  <a href="#" class="text-sm">Жилые комплексы</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Условия пользования
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Пользовательское соглашение</a>
+                  <a href="#" class="text-sm">Обработка персональных данных</a>
+                  <a href="#" class="text-sm">Публикация</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Компаниям
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Получение доступа</a>
+                  <a href="#" class="text-sm">Реклама на сайте</a>
+                  <a href="#" class="text-sm">Обратная связь</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       <!-- Sidebar -->
       <div
@@ -1343,9 +1400,7 @@
           >
           <div class="flex flex-col gap-2">
             <span class="text-lg">Ваш город:</span>
-            <select
-              class="border border-white/20 outline-none p-2 hover:bg-white/10 focus:bg-white/10 rounded-lg bg-primary text-white transition-colors cursor-pointer"
-            >
+            <select class="border-b border-white/50 outline-none border-solid">
               <option value="moscow" class="text-primary bg-white py-1">
                 Moscow
               </option>

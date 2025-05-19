@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "watch": "npx @tailwindcss/cli -i ./styles/input.css -o ./styles/output.css --watch"
+    "watch": "npx @tailwindcss/cli -i ./styles/input.css -o ./styles/output.css --watch",
+    "build": "npx @tailwindcss/cli -i ./styles/input.css -o ./styles/output.css "
   },
   "keywords": [],
   "author": "",

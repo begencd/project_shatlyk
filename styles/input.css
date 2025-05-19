@@ -5,4 +5,16 @@
   --color-text: "#333333";
   --color-custom-gray: #b4aeae;
   --color-outline-button-border: #9fa8da;
+  --color-custom-gray-2: #c4c4c4;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
 }
