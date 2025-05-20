@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/collapse.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+
+    <script src="../js/component.js" defer></script>
+    <script src="../public/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+  </head>
+  <body class="size-full">
+    <div class="size-full relative">
+      <header class="h-[6.25rem] bg-primary w-full">
+        <div
+          class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
+        >
+          <div class="flex items-center gap-x-12 h-10">
+            <div>
+              <a href="#">
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
+              </a>
+            </div>
+            <div class="hidden items-center gap-x-8 lg:flex">
+              <a href="#" class="text-white text-lg">Оставить отзыв</a>
+              <a href="#" class="text-white text-lg">Пользователям</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
+            <div class="lg:hidden flex">
+              <div
+                class="container cursor-pointer flex"
+                id="menu-toggle"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 200 200"
+                >
+                  <g stroke-width="6.5" stroke-linecap="round">
+                    <path
+                      d="M72 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M72 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
+              <span class="text-lg">Ваш город:</span>
+              <!-- <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select> -->
+              <div
+                class="flex items-center justify-between gap-x-2 border-b border-white/50 cursor-pointer"
+              >
+                <span>Краснодар</span>
+                <img src="../public/icons/down-arrow 1.svg" alt="" />
+              </div>
+            </div>
+            <div>
+              <button
+                class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
+              >
+                <img src="../public/icons/add 1.svg" alt="" />
+                Войти
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+        <span class="text-xs tracking-widest cursor-pointer">Главная</span>
+        <span class="px-2">|</span>
+        <span class="text-xs tracking-widest text-primary">
+          Жилые комплексы, Краснодар</span
+        >
+      </div>
+
+      <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+        <div class="flex flex-col gap-y-8">
+          <h1
+            class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-text"
+          >
+            Жилые комплексы, Краснодар
+          </h1>
+          <div class="flex items-center justify-between gap-x-4">
+            <div
+              class="px-8 rounded-3xl h-12 flex items-center gap-x-2 w-[70%] border border-input-border-color"
+              style="
+                background: linear-gradient(to right, #fcfdff 10%, #f0f0f0 90%);
+              "
+            >
+              <img src="../public/icons/search 1.svg" alt="" />
+              <input type="text" class="h-12 border-none outline-none w-full" />
+            </div>
+            <div>
+              <button
+                class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer"
+              >
+                <span>По умолчанию</span>
+                <img src="../public/icons/Group 334.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-8">
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+            >
+              <div
+                class="min-h-[8.125rem] flex items-center justify-center px-10 py-8 border border-input-border-color rounded-md"
+              >
+                <img
+                  src="../public/imagecard.png"
+                  class="w-full h-auto min-h-6.125rem]"
+                  alt=""
+                />
+              </div>
+              <div class="flex flex-col gap-2 w-full">
+                <h2 class="text-lg font-bold text-text2 tracking-wide">
+                  ЖК “Cказка Град”
+                </h2>
+                <p class="font-semibold text-sm tracking-wide text-text2">
+                  г. Краснодар, ул.Западный обход,33
+                </p>
+                <div
+                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
+                >
+                  <div class="flex items-center gap-x-2">
+                    <span class="text-lg font-semibold">4.7</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-x-2">
+                    <span
+                      class="bg-primary text-white p-1 px-2 rounded-lg text-sm"
+                    >
+                      115</span
+                    >
+                    <span class="text-sm tracking-wide">Комментариев</span>
+                  </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="bg-primary py-15">
+        <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full">
+          <div
+            class="flex items-center flex-col lg:flex-row justify-between gap-16 xl:gap-24 text-white"
+          >
+            <a href="#" class="w-full max-w-[15rem] xl:max-w-[18.125rem]">
+              <img
+                src="../public/footer_logo.png"
+                class="w-full h-auto"
+                alt=""
+              />
+            </a>
+            <div
+              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] flex flex-wrap gap-x-18"
+            >
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Полезная информация
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">О проекте</a>
+                  <a href="#" class="text-sm">Застройщики</a>
+                  <a href="#" class="text-sm">Жилые комплексы</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Условия пользования
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Пользовательское соглашение</a>
+                  <a href="#" class="text-sm">Обработка персональных данных</a>
+                  <a href="#" class="text-sm">Публикация</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Компаниям
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Получение доступа</a>
+                  <a href="#" class="text-sm">Реклама на сайте</a>
+                  <a href="#" class="text-sm">Обратная связь</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Sidebar -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-20"
+      ></div>
+      <div
+        id="sidebar"
+        class="fixed top-0 h-full w-64 bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block lg:hidden"
+        role="navigation"
+      >
+        <div class="flex justify-end p-4">
+          <button
+            id="close-sidebar"
+            class="text-white text-2xl hover:rotate-90 hover:bg-white/10 p-2 rounded-full transition-all duration-200"
+            aria-label="Close menu"
+          >
+            <i class="mdi mdi-close"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 p-4">
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Оставить отзыв</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Пользователям</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Главная</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Контакты</a
+          >
+          <div class="flex flex-col gap-2">
+            <span class="text-lg">Ваш город:</span>
+            <!-- <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select> -->
+            <div
+              class="flex items-center justify-between gap-x-2 border-b border-white/50 cursor-pointer"
+            >
+              <span>Краснодар</span>
+              <img src="../public/icons/down-arrow 1.svg" alt="" />
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Sidebar -->
+    </div>
+  </body>
+</html>
