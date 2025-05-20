@@ -1,0 +1,14 @@
+.card-container {
+  overflow: hidden; /* Ensure content doesn't overflow during animation */
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out; /* Smooth transition for height */
+  display: block; /* Ensure the collapsible content behaves like a block */
+}
+
+.visible-content {
+  display: block; /* Ensure the visible content is always shown */
+}

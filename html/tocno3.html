@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/collapse.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="/node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+
+    <script src="../js/component.js" defer></script>
+    <script src="../public/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+  </head>
+  <body class="size-full">
+    <div class="size-full relative">
+      <header class="h-[6.25rem] bg-primary w-full">
+        <div
+          class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
+        >
+          <div class="flex items-center gap-x-12 h-10">
+            <div>
+              <a href="#">
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
+              </a>
+            </div>
+            <div class="hidden items-center gap-x-8 lg:flex">
+              <a href="#" class="text-white text-lg">Оставить отзыв</a>
+              <a href="#" class="text-white text-lg">Пользователям</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
+            <div class="lg:hidden flex">
+              <div
+                class="container cursor-pointer flex"
+                id="menu-toggle"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 200 200"
+                >
+                  <g stroke-width="6.5" stroke-linecap="round">
+                    <path
+                      d="M72 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M72 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
+              <span class="text-lg">Ваш город:</span>
+              <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select>
+            </div>
+            <div>
+              <button
+                class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg"
+              >
+                <i class="mdi mdi-login pr-1"></i>
+                Войти
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+        <span class="text-xs tracking-widest cursor-pointer">Главная</span>
+        <span class="px-2">|</span>
+        <span class="text-xs tracking-widest cursor-pointer">Застройщики</span>
+        <span class="px-2">|</span>
+        <span class="text-xs tracking-widest text-primary"> Точно</span>
+      </div>
+
+      <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+        <div class="flex items-start justify-between gap-x-8 lg:gap-x-12">
+          <div
+            class="h-[12.5rem] max-w-[15.625rem] lg:max-w-[19.375rem] size-full border rounded-xl border-custom-gray flex items-center justify-center"
+          >
+            <img
+              src="../public/tocno.png"
+              class="rounded-xl w-[80%] mx-auto max-h-[9.375rem] h-auto"
+              alt=""
+            />
+          </div>
+          <div
+            class="w-[calc(100%-17.625rem)] lg:w-[calc(100%-22.375rem)] flex flex-col gap-2 lg:gap-4"
+          >
+            <h1
+              class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+            >
+              Строительная компания «Точно»
+            </h1>
+            <div
+              class="flex items-center gap-x-3 lg:gap-x-6 w-full xl:w-[80%] mr-0 xl:mr-auto"
+            >
+              <h4 class="text-sm lg:text-base font-semibold tracking-wider">
+                Год основания: 2013 г.
+              </h4>
+              <div>|</div>
+              <div class="text-sm lg:text-base font-semibold">
+                Количество объектов: 11
+              </div>
+            </div>
+            <p
+              class="text-xs lg:text-sm tracking-wide w-full xl:w-[80%] mr-0 xl:mr-auto"
+            >
+              Компания «ТОЧНО» занимает лидирующие позиции в Краснодаре среди
+              застройщиков полного цикла. Компания берет на себя весь комплекс
+              девелоперских услуг от создания идеи проекта до управления готовым
+              строительным объектом.
+            </p>
+          </div>
+        </div>
+        <div
+          class="mt-8 w-full xl:w-[80%] mr-0 xl:mr-auto flex items-center justify-between"
+        >
+          <div class="text-xs 2xl:text-sm tracking-wide">
+            Ваша компания? <a href="#" class="text-primary">Оставьте заявку</a>
+          </div>
+          <div class="text-xl lg:text-3xl flex items-center">
+            <span class="pr-1">4.79</span>
+            <div
+              class="flex items-center space-x-1"
+              aria-label="3 out of 5 stars"
+              role="img"
+            >
+              <i class="mdi mdi-star text-yellow-400 text-xl xl:text-3xl"></i>
+              <i class="mdi mdi-star text-yellow-400 text-xl xl:text-3xl"></i>
+              <i class="mdi mdi-star text-yellow-400 text-xl xl:text-3xl"></i>
+              <i
+                class="mdi mdi-star-outline text-gray-300 text-xl xl:text-3xl"
+              ></i>
+              <i
+                class="mdi mdi-star-outline text-gray-300 text-xl xl:text-3xl"
+              ></i>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-2">
+            <span class="bg-primary text-white p-1 px-2 rounded-lg text-sm">
+              115</span
+            >
+            <span class="text-sm tracking-wide">Отзывов</span>
+          </div>
+          <div>
+            <button
+              class="border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+            >
+              <i class="mdi mdi-plus"></i>
+              Оставить отзыв
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex flex-col gap-y-4"
+      >
+        <div
+          class="flex flex-col gap-8 p-8 w-full border border-custom-gray rounded-3xl"
+        >
+          <div class="flex items-center justify-between gap-x-6">
+            <div class="flex items-center gap-x-6">
+              <div class="text-xl lg:text-3xl flex items-center">
+                <span class="pr-1">1</span>
+                <div
+                  class="flex items-center space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <i
+                    class="mdi mdi-star text-yellow-400 text-xl xl:text-3xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-xl text-gray-300 xl:text-3xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-xl text-gray-300 xl:text-3xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-xl xl:text-3xl"
+                  ></i>
+                  <i
+                    class="mdi mdi-star-outline text-gray-300 text-xl xl:text-3xl"
+                  ></i>
+                </div>
+              </div>
+              <div
+                class="bg-red-500 text-white rounded-4xl px-7 py-3 text-xs tracking-wide font-bold"
+              >
+                Негативный отзыв
+              </div>
+            </div>
+            <div class="flex items-center gap-x-6">
+              <div class="flex items-center gap-x-1">
+                <img src="../public/like.png" alt="" class="size-5" />
+                <span>1</span>
+              </div>
+              <div class="flex items-center gap-x-1">
+                <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                <span>1</span>
+              </div>
+              <div class="flex items-center gap-x-1">
+                <img src="../public/comment.png" alt="" class="size-5" />
+                <span>1</span>
+              </div>
+              <span class="bg-primary text-white py-1 px-3 rounded-2xl text-sm"
+                >17 Дополнений</span
+              ><span class="text-sm text-text">2020/01/16</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-6">
+            <img src="../public/user2.png" alt="" />
+            <span class="text-base font-bold text-text2">User001</span>
+          </div>
+
+          <h1 class="text-2xl font-bold tracking-widest text-text2">
+            Отзыв: Строительная компания "ТОЧНО" — МЫ РАЗОЧАРОВАНЫ В
+            ЗАСТРОЙЩИКЕ!
+          </h1>
+
+          <p class="text-sm font-normal text-text2">
+            Я хочу оставить свой отзыв о работе строительной компании "Точно",
+            поскольку мой опыт сотрудничества с ними оказался очень
+            положительным и заслуживающим доверия. В течение всего проекта я
+            ощущал высокий уровень профессионализма, ответственности и
+            внимательности к деталям со стороны команды. Плюсы работы с
+            компанией "Точно": Высокий уровень профессионализма Специалисты
+            компании обладают богатым опытом и глубокими знаниями в области
+            строительства. Они четко понимают все этапы работы, грамотно
+            планируют процесс и своевременно решают возникающие вопросы.
+            Ответственный подход и соблюдение сроков Все работы были выполнены в
+            оговоренные сроки, что для меня было очень важно. Компания строго
+            придерживается графика, что говорит о ее организованности и
+            надежности. Качество материалов и исполнения Используемые материалы
+            были высокого качества, а сама работа выполнена аккуратно и
+            тщательно. В процессе строительства не возникло никаких недочетов
+            или дефектов — всё было сделано на совесть. Коммуникация и
+            прозрачность Менеджеры компании постоянно держали меня в курсе всех
+            этапов работ, оперативно отвечали на мои вопросы и предлагали
+            профессиональные рекомендации. Это создавало ощущение доверия и
+            уверенности в результате. Индивидуальный подход Компания внимательно
+            выслушала мои пожелания и предложила оптимальные решения, учитывая
+            мои бюджетные ограничения и требования к проекту. Гибкость и
+            готовность к изменениям В процессе работы возникли некоторые идеи по
+            улучшению проекта — команда "Точно" быстро адаптировалась, внесла
+            необходимые коррективы без задержек. Общий опыт сотрудничества с
+            компанией "Точно" оставил у меня только положительные впечатления. Я
+            благодарен за качественную работу, профессиональный подход и
+            внимательное отношение к клиенту. Рекомендую эту компанию всем, кто
+            ищет надежного партнера для строительства или ремонта — они
+            действительно делают свою работу точно! Если нужно, могу
+            дополнительно адаптировать отзыв под конкретный тип проекта или ваши
+            пожелания!
+          </p>
+
+          <div class="flex items-center gap-x-4">
+            <button
+              class="my-tocno-swiper-button-prev bg-custom-gray-2 p-1 px-2.5 rounded-full text-lg cursor-pointer"
+            >
+              <i class="mdi mdi-chevron-left"></i>
+            </button>
+            <div class="swiper myTocnoSwiper relative">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    src="../public/image6.png"
+                    class="rounded-xl w-full max-h-[18.75rem] h-auto"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="../public/image6.png"
+                    class="rounded-xl w-full max-h-[18.75rem] h-auto"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="../public/image6.png"
+                    class="rounded-xl w-full max-h-[18.75rem] h-auto"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="../public/image6.png"
+                    class="rounded-xl w-full max-h-[18.75rem] h-auto"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    src="../public/image6.png"
+                    class="rounded-xl w-full max-h-[18.75rem] h-auto"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="my-tocno-swiper-button-next bg-custom-gray-2 p-1 px-2.5 rounded-full text-lg cursor-pointer"
+            >
+              <i class="mdi mdi-chevron-right"></i>
+            </button>
+          </div>
+          <div
+            class="text-xs font-normal tracking-wider text-text xl:text-sm text-right"
+          >
+            На модерации
+          </div>
+        </div>
+
+        <div
+          class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
+        >
+          <div class="flex items-center justify-between gap-x-4">
+            <div class="flex items-center gap-x-4">
+              <div
+                class="w-15 h-9 border border-custom-gray flex items-center justify-center"
+              >
+                <img
+                  src="../public/tocnomini.png"
+                  class="w-[70%] mx-auto h-auto"
+                  alt=""
+                />
+              </div>
+              <div class="text-xs font-medium tracking-wider text-text2">
+                <span>Официальный ответ</span>
+                <span class="px-2">|</span>
+                <span
+                  >Застройщик: <a href="#" class="text-primary">ТОЧНО</a></span
+                >
+              </div>
+            </div>
+            <div class="flex items-center gap-x-4 text-sm tracking-wide">
+              <span class="text-text">2020/01/16</span>
+              <div class="flex items-center gap-x-1">
+                <img src="../public/like.png" alt="" class="size-5" />
+                <span>1</span>
+              </div>
+              <div class="flex items-center gap-x-1">
+                <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                <span>1</span>
+              </div>
+            </div>
+          </div>
+          <p
+            class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem]"
+            id="collapse-content-1"
+          >
+            Общий опыт сотрудничества с компанией "Точно" оставил у меня только
+            положительные впечатления. Я благодарен за качественную работу,
+            профессиональный подход и внимательное отношение к клиенту.
+            Рекомендую эту компанию всем, кто ищет надежного партнера для
+            строительства или ремонта — они действительно делают свою работу
+            точно! Если нужно, могу дополнительно адаптировать отзыв под
+            конкретный тип проекта или ваши пожелания!
+          </p>
+          <button
+            class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-1 cursor-pointer"
+            id="collapse-button-1"
+            onclick="toggleCollapse('#collapse-content-1', '#collapse-button-1')"
+          >
+            <span>Развернуть</span>
+            <i class="mdi mdi-arrow-down-thin text-[16px]"></i>
+          </button>
+        </div>
+      </div>
+      <!-- Комментарии к отзыву -->
+      <div class=""></div>
+
+      <footer class="bg-primary py-15">
+        <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full">
+          <div
+            class="flex items-center flex-col lg:flex-row justify-between gap-16 xl:gap-24 text-white"
+          >
+            <a href="#" class="w-full max-w-[15rem] xl:max-w-[18.125rem]">
+              <img
+                src="../public/footer_logo.png"
+                class="w-full h-auto"
+                alt=""
+              />
+            </a>
+            <div
+              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] flex flex-wrap gap-x-18"
+            >
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Полезная информация
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">О проекте</a>
+                  <a href="#" class="text-sm">Застройщики</a>
+                  <a href="#" class="text-sm">Жилые комплексы</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Условия пользования
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Пользовательское соглашение</a>
+                  <a href="#" class="text-sm">Обработка персональных данных</a>
+                  <a href="#" class="text-sm">Публикация</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Компаниям
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Получение доступа</a>
+                  <a href="#" class="text-sm">Реклама на сайте</a>
+                  <a href="#" class="text-sm">Обратная связь</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Sidebar -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-20"
+      ></div>
+      <div
+        id="sidebar"
+        class="fixed top-0 h-full w-64 bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block lg:hidden"
+        role="navigation"
+      >
+        <div class="flex justify-end p-4">
+          <button
+            id="close-sidebar"
+            class="text-white text-2xl hover:rotate-90 hover:bg-white/10 p-2 rounded-full transition-all duration-200"
+            aria-label="Close menu"
+          >
+            <i class="mdi mdi-close"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 p-4">
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Оставить отзыв</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Пользователям</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Главная</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Контакты</a
+          >
+          <div class="flex flex-col gap-2">
+            <span class="text-lg">Ваш город:</span>
+            <select class="border-b border-white/50 outline-none border-solid">
+              <option value="moscow" class="text-primary bg-white py-1">
+                Moscow
+              </option>
+              <option value="petersburg" class="text-primary bg-white py-1">
+                Saint Petersburg
+              </option>
+              <option value="novosibirsk" class="text-primary bg-white py-1">
+                Novosibirsk
+              </option>
+            </select>
+          </div>
+        </nav>
+      </div>
+      <!-- Sidebar -->
+    </div>
+  </body>
+</html>
