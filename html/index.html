@@ -87,7 +87,7 @@
             </div>
             <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
               <span class="text-lg">Ваш город:</span>
-              <select
+              <!-- <select
                 class="border-b border-white/50 outline-none border-solid"
               >
                 <option value="moscow" class="text-primary bg-white py-1">
@@ -99,7 +99,13 @@
                 <option value="novosibirsk" class="text-primary bg-white py-1">
                   Novosibirsk
                 </option>
-              </select>
+              </select> -->
+              <div
+                class="flex items-center justify-between gap-x-2 border-b border-white/50 cursor-pointer"
+              >
+                <span>Краснодар</span>
+                <i class="mdi mdi-chevron-down"></i>
+              </div>
             </div>
             <div>
               <button
@@ -126,9 +132,6 @@
           <div
             class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex justify-between relative"
           >
-            <!-- basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem]
-basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem]
-basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:min-[90rem]:max-w-[15.625rem] xl:min-w-[13rem] min-[90rem]:min-w-[15.625rem] -->
             <div class="w-[calc(65%-2rem)] mr-8">
               <div class="text-white mb-[5rem]">
                 <h1 class="text-5xl xl:text-6xl font-bold tracking-wide mb-4">
@@ -237,7 +240,7 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                 </div>
                 <div>
                   <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
                   >
                     <i class="mdi mdi-plus"></i>
                     Оставить отзыв
@@ -250,9 +253,14 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                 115 Отзывов
               </span>
             </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
+            </div>
           </div>
           <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group shadow-md"
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
               <img src="../public/image.png" class="w-full h-auto" alt="" />
@@ -306,7 +314,7 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
               </span>
             </div>
             <div
-              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white"
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
             >
               Узнать подробнее
             </div>
@@ -346,7 +354,9 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                       class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
                     ></i>
                   </div>
-                  <div class="text-primary text-sm h-5"></div>
+                  <div class="text-primary text-sm h-5">
+                    <!-- 115/<span class="text-red-500">15</span> -->
+                  </div>
                 </div>
                 <div>
                   <button
@@ -362,6 +372,11 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
               <span class="bg-primary text-white py-2 px-3 rounded-lg">
                 115 Отзывов
               </span>
+            </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
             </div>
           </div>
           <div
@@ -399,7 +414,9 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                       class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
                     ></i>
                   </div>
-                  <div class="text-primary text-sm h-5"></div>
+                  <div class="text-primary text-sm h-5">
+                    <!-- 115/<span class="text-red-500">15</span> -->
+                  </div>
                 </div>
                 <div>
                   <button
@@ -415,6 +432,11 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
               <span class="bg-primary text-white py-2 px-3 rounded-lg">
                 115 Отзывов
               </span>
+            </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
             </div>
           </div>
           <div
@@ -452,7 +474,9 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                       class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
                     ></i>
                   </div>
-                  <div class="text-primary text-sm h-5"></div>
+                  <div class="text-primary text-sm h-5">
+                    <!-- 115/<span class="text-red-500">15</span> -->
+                  </div>
                 </div>
                 <div>
                   <button
@@ -468,6 +492,11 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
               <span class="bg-primary text-white py-2 px-3 rounded-lg">
                 115 Отзывов
               </span>
+            </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
             </div>
           </div>
           <div
@@ -505,7 +534,9 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                       class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
                     ></i>
                   </div>
-                  <div class="text-primary text-sm h-5"></div>
+                  <div class="text-primary text-sm h-5">
+                    <!-- 115/<span class="text-red-500">15</span> -->
+                  </div>
                 </div>
                 <div>
                   <button
@@ -521,6 +552,11 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
               <span class="bg-primary text-white py-2 px-3 rounded-lg">
                 115 Отзывов
               </span>
+            </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
             </div>
           </div>
         </div>
@@ -591,123 +627,10 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                 115 Отзывов
               </span>
             </div>
-          </div>
-          <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
-          >
             <div
-              class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
             >
-              <img
-                src="../public/image 3.png"
-                class="w-[75%] mx-auto h-auto"
-                alt=""
-              />
-            </div>
-            <div class="p-4 flex flex-col gap-2">
-              <h2 class="font-semibold text-lg">DOGMA</h2>
-              <p>Год основания: 2013 г.</p>
-              <p class="mt-8">Количество объектов: 11</p>
-              <div class="flex items-center justify-between gap-x-2">
-                <div>
-                  <div
-                    class="flex items-center space-x-1"
-                    aria-label="3 out of 5 stars"
-                    role="img"
-                  >
-                    <i
-                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
-                    ></i>
-                  </div>
-                  <div class="text-primary text-sm">
-                    115/<span class="text-red-500">15</span>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
-                  >
-                    <i class="mdi mdi-plus"></i>
-                    Оставить отзыв
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="absolute top-4 right-4 z-10">
-              <span class="bg-primary text-white py-2 px-3 rounded-lg">
-                115 Отзывов
-              </span>
-            </div>
-          </div>
-          <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
-          >
-            <div
-              class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
-            >
-              <img
-                src="../public/image 3.png"
-                class="w-[75%] mx-auto h-auto"
-                alt=""
-              />
-            </div>
-            <div class="p-4 flex flex-col gap-2">
-              <h2 class="font-semibold text-lg">DOGMA</h2>
-              <p>Год основания: 2013 г.</p>
-              <p class="mt-8">Количество объектов: 11</p>
-              <div class="flex items-center justify-between gap-x-2">
-                <div>
-                  <div
-                    class="flex items-center space-x-1"
-                    aria-label="3 out of 5 stars"
-                    role="img"
-                  >
-                    <i
-                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
-                    ></i>
-                    <i
-                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
-                    ></i>
-                  </div>
-                  <div class="text-primary text-sm">
-                    115/<span class="text-red-500">15</span>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
-                  >
-                    <i class="mdi mdi-plus"></i>
-                    Оставить отзыв
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="absolute top-4 right-4 z-10">
-              <span class="bg-primary text-white py-2 px-3 rounded-lg">
-                115 Отзывов
-              </span>
+              Узнать подробнее
             </div>
           </div>
           <div
@@ -768,6 +691,11 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                 115 Отзывов
               </span>
             </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
+            </div>
           </div>
           <div
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
@@ -827,6 +755,11 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
                 115 Отзывов
               </span>
             </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
+            </div>
           </div>
           <div
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
@@ -885,6 +818,139 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
               <span class="bg-primary text-white py-2 px-3 rounded-lg">
                 115 Отзывов
               </span>
+            </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
+            </div>
+          </div>
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
+          >
+            <div
+              class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+            >
+              <img
+                src="../public/image 3.png"
+                class="w-[75%] mx-auto h-auto"
+                alt=""
+              />
+            </div>
+            <div class="p-4 flex flex-col gap-2">
+              <h2 class="font-semibold text-lg">DOGMA</h2>
+              <p>Год основания: 2013 г.</p>
+              <p class="mt-8">Количество объектов: 11</p>
+              <div class="flex items-center justify-between gap-x-2">
+                <div>
+                  <div
+                    class="flex items-center space-x-1"
+                    aria-label="3 out of 5 stars"
+                    role="img"
+                  >
+                    <i
+                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                    ></i>
+                  </div>
+                  <div class="text-primary text-sm">
+                    115/<span class="text-red-500">15</span>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  >
+                    <i class="mdi mdi-plus"></i>
+                    Оставить отзыв
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 z-10">
+              <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                115 Отзывов
+              </span>
+            </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
+            </div>
+          </div>
+          <div
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
+          >
+            <div
+              class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+            >
+              <img
+                src="../public/image 3.png"
+                class="w-[75%] mx-auto h-auto"
+                alt=""
+              />
+            </div>
+            <div class="p-4 flex flex-col gap-2">
+              <h2 class="font-semibold text-lg">DOGMA</h2>
+              <p>Год основания: 2013 г.</p>
+              <p class="mt-8">Количество объектов: 11</p>
+              <div class="flex items-center justify-between gap-x-2">
+                <div>
+                  <div
+                    class="flex items-center space-x-1"
+                    aria-label="3 out of 5 stars"
+                    role="img"
+                  >
+                    <i
+                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star text-yellow-400 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                    ></i>
+                    <i
+                      class="mdi mdi-star-outline text-gray-300 text-lg xl:text-2xl"
+                    ></i>
+                  </div>
+                  <div class="text-primary text-sm">
+                    115/<span class="text-red-500">15</span>
+                  </div>
+                </div>
+                <div>
+                  <button
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  >
+                    <i class="mdi mdi-plus"></i>
+                    Оставить отзыв
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="absolute top-4 right-4 z-10">
+              <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                115 Отзывов
+              </span>
+            </div>
+            <div
+              class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+            >
+              Узнать подробнее
             </div>
           </div>
         </div>
@@ -1400,17 +1466,25 @@ basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] xl:max-w-[13rem] xl:m
           >
           <div class="flex flex-col gap-2">
             <span class="text-lg">Ваш город:</span>
-            <select class="border-b border-white/50 outline-none border-solid">
-              <option value="moscow" class="text-primary bg-white py-1">
-                Moscow
-              </option>
-              <option value="petersburg" class="text-primary bg-white py-1">
-                Saint Petersburg
-              </option>
-              <option value="novosibirsk" class="text-primary bg-white py-1">
-                Novosibirsk
-              </option>
-            </select>
+            <!-- <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select> -->
+            <div
+              class="flex items-center justify-between gap-x-2 border-b border-white/50 cursor-pointer"
+            >
+              <span>Краснодар</span>
+              <i class="mdi mdi-chevron-down"></i>
+            </div>
           </div>
         </nav>
       </div>
