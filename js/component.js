@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const toggleCollapse = (contentSelector, buttonSelector) => {
   const content = document.querySelector(contentSelector);
   const toggleButton = document.querySelector(buttonSelector);
-  const icon = toggleButton.querySelector("i");
+  const icon = toggleButton.querySelector("img");
   console.log(content, toggleButton, icon, "collapse");
 
   if (!content || !toggleButton || !icon) {
@@ -45,13 +45,11 @@ const toggleCollapse = (contentSelector, buttonSelector) => {
     content.classList.remove("max-h-[2.5rem]", "overflow-hidden");
     content.classList.add("max-h-full");
     toggleButton.querySelector("span").textContent = "Свернуть";
-    icon.classList.remove("mdi-arrow-down-thin");
-    icon.classList.add("mdi-arrow-up-thin");
+    icon.src = "../public/icons/up.svg";
   } else {
     content.classList.add("max-h-[2.5rem]", "overflow-hidden");
     content.classList.remove("max-h-full");
     toggleButton.querySelector("span").textContent = "Развернуть";
-    icon.classList.remove("mdi-arrow-up-thin");
-    icon.classList.add("mdi-arrow-down-thin");
+    icon.src = "../public/icons/down.svg";
   }
 };
