@@ -391,7 +391,7 @@
             </div>
           </div>
           <p
-            class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem]"
+            class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem] overflow-hidden overflow-hidden"
             id="collapse-content-1"
           >
             Общий опыт сотрудничества с компанией "Точно" оставил у меня только
@@ -412,8 +412,215 @@
           </button>
         </div>
       </div>
-      <!-- Комментарии к отзыву -->
-      <div class=""></div>
+
+      <div
+        class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex flex-col gap-y-8"
+      >
+        <div class="flex flex-col gap-y-6">
+          <div class="flex items-center gap-x-2">
+            <h1
+              class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider"
+            >
+              Комментарии к отзыву
+            </h1>
+            <span class="bg-primary text-white p-1 px-2 rounded-lg text-sm">
+              115</span
+            >
+            <span class="text-sm tracking-wide">Комментариев</span>
+          </div>
+          <div class="flex flex-col gap-4">
+            <div
+              class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
+            >
+              <div class="flex items-center justify-between gap-x-4">
+                <div class="flex items-center gap-x-4">
+                  <div
+                    class="w-15 h-9 border border-custom-gray flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/tocnomini.png"
+                      class="w-[70%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text-xs font-medium tracking-wider text-text2">
+                    <span>Официальный ответ</span>
+                    <span class="px-2">|</span>
+                    <span
+                      >Застройщик:
+                      <a href="#" class="text-primary">ТОЧНО</a></span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-x-4 text-sm tracking-wide">
+                  <span class="text-text">2020/01/16</span>
+                  <div class="flex items-center gap-x-1">
+                    <img src="../public/like.png" alt="" class="size-5" />
+                    <span>1</span>
+                  </div>
+                  <div class="flex items-center gap-x-1">
+                    <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                    <span>1</span>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem] overflow-hidden overflow-hidden"
+                id="collapse-content-2"
+              >
+                Общий опыт сотрудничества с компанией "Точно" оставил у меня
+                только положительные впечатления. Я благодарен за качественную
+                работу, профессиональный подход и внимательное отношение к
+                клиенту. Рекомендую эту компанию всем, кто ищет надежного
+                партнера для строительства или ремонта — они действительно
+                делают свою работу точно! Если нужно, могу дополнительно
+                адаптировать отзыв под конкретный тип проекта или ваши
+                пожелания!
+              </p>
+              <button
+                class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-2 cursor-pointer"
+                id="collapse-button-2"
+                onclick="toggleCollapse('#collapse-content-2', '#collapse-button-2')"
+              >
+                <span>Развернуть</span>
+                <img src="../public/icons/down.svg" alt="" />
+              </button>
+            </div>
+            <div
+              class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
+            >
+              <div class="flex items-center justify-between gap-x-4">
+                <div class="flex items-center gap-x-4">
+                  <div
+                    class="w-15 h-9 border border-custom-gray flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/tocnomini.png"
+                      class="w-[70%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text-xs font-medium tracking-wider text-text2">
+                    <span>Официальный ответ</span>
+                    <span class="px-2">|</span>
+                    <span
+                      >Застройщик:
+                      <a href="#" class="text-primary">ТОЧНО</a></span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-x-4 text-sm tracking-wide">
+                  <span class="text-text">2020/01/16</span>
+                  <div class="flex items-center gap-x-1">
+                    <img src="../public/like.png" alt="" class="size-5" />
+                    <span>1</span>
+                  </div>
+                  <div class="flex items-center gap-x-1">
+                    <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                    <span>1</span>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem] overflow-hidden"
+                id="collapse-content-3"
+              >
+                Общий опыт сотрудничества с компанией "Точно" оставил у меня
+                только положительные впечатления. Я благодарен за качественную
+                работу, профессиональный подход и внимательное отношение к
+                клиенту. Рекомендую эту компанию всем, кто ищет надежного
+                партнера для строительства или ремонта — они действительно
+                делают свою работу точно! Если нужно, могу дополнительно
+                адаптировать отзыв под конкретный тип проекта или ваши
+                пожелания!
+              </p>
+              <button
+                class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-2 cursor-pointer"
+                id="collapse-button-3"
+                onclick="toggleCollapse('#collapse-content-3', '#collapse-button-3')"
+              >
+                <span>Развернуть</span>
+                <img src="../public/icons/down.svg" alt="" />
+              </button>
+            </div>
+            <div
+              class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
+            >
+              <div class="flex items-center justify-between gap-x-4">
+                <div class="flex items-center gap-x-4">
+                  <div
+                    class="w-15 h-9 border border-custom-gray flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/tocnomini.png"
+                      class="w-[70%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="text-xs font-medium tracking-wider text-text2">
+                    <span>Официальный ответ</span>
+                    <span class="px-2">|</span>
+                    <span
+                      >Застройщик:
+                      <a href="#" class="text-primary">ТОЧНО</a></span
+                    >
+                  </div>
+                </div>
+                <div class="flex items-center gap-x-4 text-sm tracking-wide">
+                  <span class="text-text">2020/01/16</span>
+                  <div class="flex items-center gap-x-1">
+                    <img src="../public/like.png" alt="" class="size-5" />
+                    <span>1</span>
+                  </div>
+                  <div class="flex items-center gap-x-1">
+                    <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                    <span>1</span>
+                  </div>
+                </div>
+              </div>
+              <p
+                class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem] overflow-hidden"
+                id="collapse-content-4"
+              >
+                Общий опыт сотрудничества с компанией "Точно" оставил у меня
+                только положительные впечатления. Я благодарен за качественную
+                работу, профессиональный подход и внимательное отношение к
+                клиенту. Рекомендую эту компанию всем, кто ищет надежного
+                партнера для строительства или ремонта — они действительно
+                делают свою работу точно! Если нужно, могу дополнительно
+                адаптировать отзыв под конкретный тип проекта или ваши
+                пожелания!
+              </p>
+              <button
+                class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-2 cursor-pointer"
+                id="collapse-button-4"
+                onclick="toggleCollapse('#collapse-content-4', '#collapse-button-4')"
+              >
+                <span>Развернуть</span>
+                <img src="../public/icons/down.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div class="flex items-center justify-end">
+            <button
+              class="flex items-center gap-x-2 px-10 group py-3.5 rounded-3xl border border-primary text-primary w-max text-sm hover:bg-primary hover:text-white transition-all duration-300 ease-in-out cursor-pointer hover:shadow-lg"
+            >
+              <img
+                src="../public/icons/comment_blue.svg "
+                class="group-hover:hidden block"
+                alt=""
+              />
+              <img
+                src="../public/icons/comment_white.svg"
+                class="hidden group-hover:block"
+                alt=""
+              />
+
+              <span>Оставить свой комментарий</span>
+            </button>
+          </div>
+        </div>
+      </div>
 
       <footer class="bg-primary py-15">
         <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full">
