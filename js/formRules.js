@@ -24,3 +24,13 @@ const registerFormValidationRules = {
     errorMessage: "Неверное имя пользователя:",
   },
 };
+
+const recoveryPasswordFormValidationRules = {
+  email: {
+    validate: (value) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(value);
+    },
+    errorMessage: "Неверная почта:",
+  },
+};
