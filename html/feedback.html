@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/collapse.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+
+    <script src="../js/component.js" defer></script>
+    <script src="../public/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+  </head>
+  <body class="size-full">
+    <div class="size-full relative">
+      <header class="h-[6.25rem] bg-primary w-full">
+        <div
+          class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
+        >
+          <div class="flex items-center gap-x-12 h-10">
+            <div>
+              <a href="#">
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
+              </a>
+            </div>
+            <div class="hidden items-center gap-x-8 lg:flex">
+              <a href="#" class="text-white text-lg">Оставить отзыв</a>
+              <a href="#" class="text-white text-lg">Пользователям</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
+            <div class="lg:hidden flex">
+              <div
+                class="container cursor-pointer flex"
+                id="menu-toggle"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 200 200"
+                >
+                  <g stroke-width="6.5" stroke-linecap="round">
+                    <path
+                      d="M72 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M72 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
+              <span class="text-lg">Ваш город:</span>
+              <!-- <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select> -->
+              <div
+                class="flex items-center justify-between gap-x-2 border-b border-white/50 cursor-pointer"
+              >
+                <span>Краснодар</span>
+                <img src="../public/icons/down-arrow 1.svg" alt="" />
+              </div>
+            </div>
+            <div>
+              <button
+                class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
+              >
+                <img src="../public/icons/add 1.svg" alt="" />
+                Войти
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+        <span class="text-sm xl:text-sm tracking-widest cursor-pointer"
+          >Главная</span
+        >
+        <span class="px-2">|</span>
+        <span class="text-sm xl:text-sm tracking-widest text-primary">
+          Оставить отзыв</span
+        >
+      </div>
+
+      <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto h-full">
+        <div class="flex flex-col gap-y-8">
+          <h1
+            class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-text"
+          >
+            Оставить отзыв
+          </h1>
+          <h4 class="xl:text-base text-sm text-black tracking-wide font-normal">
+            Отзыв могут оставить только зарегистрированные пользователи
+          </h4>
+          <div class="flex items-center gap-x-6">
+            <button
+              class="border border-primary rounded-3xl text-primary text-sm font-bold tracking-wide px-8 py-3 hover:bg-primary hover:text-white transition-colors cursor-pointer"
+            >
+              Войти
+            </button>
+            <button
+              class="border border-primary rounded-3xl text-primary text-sm font-bold tracking-wide px-8 py-3 hover:bg-primary hover:text-white transition-colors cursor-pointer"
+            >
+              Зарегистрироваться
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="bg-primary py-15">
+        <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full">
+          <div
+            class="flex items-center flex-col lg:flex-row justify-between gap-16 xl:gap-24 text-white"
+          >
+            <a href="#" class="w-full max-w-[15rem] xl:max-w-[18.125rem]">
+              <img
+                src="../public/footer_logo.png"
+                class="w-full h-auto"
+                alt=""
+              />
+            </a>
+            <div
+              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] flex flex-wrap gap-x-18"
+            >
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Полезная информация
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">О проекте</a>
+                  <a href="#" class="text-sm">Застройщики</a>
+                  <a href="#" class="text-sm">Жилые комплексы</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Условия пользования
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Пользовательское соглашение</a>
+                  <a href="#" class="text-sm">Обработка персональных данных</a>
+                  <a href="#" class="text-sm">Публикация</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Компаниям
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Получение доступа</a>
+                  <a href="#" class="text-sm">Реклама на сайте</a>
+                  <a href="#" class="text-sm">Обратная связь</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <!-- Sidebar -->
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-20"
+      ></div>
+      <div
+        id="sidebar"
+        class="fixed top-0 h-full w-64 bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block lg:hidden"
+        role="navigation"
+      >
+        <div class="flex justify-end p-4">
+          <button
+            id="close-sidebar"
+            class="text-white text-2xl hover:rotate-90 hover:bg-white/10 p-2 rounded-full transition-all duration-200"
+            aria-label="Close menu"
+          >
+            <i class="mdi mdi-close"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-4 p-4">
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Оставить отзыв</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Пользователям</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Главная</a
+          >
+          <a
+            href="#"
+            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+            >Контакты</a
+          >
+          <div class="flex flex-col gap-2">
+            <span class="text-lg">Ваш город:</span>
+            <!-- <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select> -->
+            <div
+              class="flex items-center justify-between gap-x-2 border-b border-white/50 cursor-pointer"
+            >
+              <span>Краснодар</span>
+              <img src="../public/icons/down-arrow 1.svg" alt="" />
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Sidebar -->
+    </div>
+  </body>
+</html>
