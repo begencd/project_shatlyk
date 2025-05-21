@@ -15,7 +15,7 @@
     <script src="../js/formRules.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        new FormValidator("loginForm", loginEmailValidationRules);
+        new FormValidator("registerForm", registerFormValidationRules);
       });
     </script>
   </head>
@@ -33,7 +33,7 @@
             <div class="flex flex-col w-full gap-6 mt-6">
               <form
                 class="flex flex-col gap-y-3 form"
-                id="loginForm"
+                id="registerForm"
                 novalidate
               >
                 <div class="form-item">
@@ -70,7 +70,7 @@
                   <div
                     class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
                   >
-                    <img src="../public/icons/lock.svg" alt="" />
+                    <i class="mdi mdi-lock"></i>
                     <div class="h-6 w-px bg-input-divider mx-2"></div>
                     <input
                       type="password"
@@ -81,21 +81,70 @@
                     <i
                       class="mdi mdi-eye pl-2 cursor-pointer password-toggle"
                       data-input-id="password"
-                      id="passwordIcon"
+                      id="registerPassword"
                     ></i>
+                  </div>
+                </div>
+                <div class="form-item">
+                  <label
+                    for="confirmPassword"
+                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                    >Повторите пароль:</label
+                  >
+                  <div
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
+                  >
+                    <i class="mdi mdi-lock"></i>
+                    <div class="h-6 w-px bg-input-divider mx-2"></div>
+                    <input
+                      type="password"
+                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                      placeholder="Password"
+                      id="confirmPassword"
+                    />
+                    <i
+                      class="mdi mdi-eye pl-2 cursor-pointer password-toggle"
+                      data-input-id="confirmPassword"
+                      id="registerConfirmPassword"
+                    ></i>
+                  </div>
+                </div>
+                <div class="form-item">
+                  <label
+                    for="registerUser"
+                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                    >Имя пользователя::</label
+                  >
+                  <div
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
+                  >
+                    <i
+                      class="mdi mdi-account"
+                      data-input-id="registerUserIcon"
+                    ></i>
+                    <div
+                      class="h-6 w-px bg-input-divider mx-2 input-divider"
+                    ></div>
+                    <input
+                      type="text"
+                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                      placeholder="info@skazoknet.ru"
+                      id="registerUser"
+                      name="user"
+                    />
                   </div>
                 </div>
                 <button
                   type="submit"
                   class="text-center h-12.5 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer mt-4"
                 >
-                  Войти
+                  Зарегистрировать
                 </button>
 
-                <div class="mt-4 text-center text-xs tracking-wide">
+                <!-- <div class="mt-4 text-center text-xs tracking-wide">
                   Забыли пароль?
                   <a href="#" class="text-primary">Восстановление пароля</a>
-                </div>
+                </div> -->
               </form>
               <!--  -->
             </div>
