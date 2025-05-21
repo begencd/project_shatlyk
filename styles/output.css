@@ -336,6 +336,21 @@
   .mt-8 {
     margin-top: calc(var(--spacing) * 8);
   }
+  .mt-\[1\%\] {
+    margin-top: 1%;
+  }
+  .mt-\[10\%\] {
+    margin-top: 10%;
+  }
+  .mt-\[40\%\] {
+    margin-top: 40%;
+  }
+  .mt-\[50\%\] {
+    margin-top: 50%;
+  }
+  .mt-auto {
+    margin-top: auto;
+  }
   .mr-0 {
     margin-right: calc(var(--spacing) * 0);
   }
