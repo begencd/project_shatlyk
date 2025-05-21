@@ -1,0 +1,13 @@
+.error-border {
+  border-color: #e83845 !important;
+}
+.error-label {
+  color: #e83845 !important;
+}
+.error-divider {
+  background-color: #e83845 !important;
+}
+.error-placeholder::placeholder {
+  color: #e83845 !important;
+  opacity: 0.6;
+}

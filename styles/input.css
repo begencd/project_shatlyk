@@ -2,12 +2,14 @@
 
 @theme inline {
   --color-primary: #3f51b5;
-  --color-text: "#333333";
-  --color-text2: "#222222";
+  --color-text: #333333;
+  --color-text2: #222222;
   --color-custom-gray: #b4aeae;
   --color-outline-button-border: #9fa8da;
   --color-custom-gray-2: #c4c4c4;
   --color-input-border-color: #b5b5b5;
+  --color-auth-input-border-color: #d0d0d0;
+  --color-input-divider: #383838;
 }
 
 @font-face {

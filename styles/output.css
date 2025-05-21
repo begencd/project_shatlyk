@@ -291,6 +291,9 @@
   .mx-0 {
     margin-inline: calc(var(--spacing) * 0);
   }
+  .mx-2 {
+    margin-inline: calc(var(--spacing) * 2);
+  }
   .mx-auto {
     margin-inline: auto;
   }
@@ -318,6 +321,12 @@
   .my-auto {
     margin-block: auto;
   }
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
+  }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -341,9 +350,6 @@
   }
   .mb-\[5rem\] {
     margin-bottom: 5rem;
-  }
-  .ml-6 {
-    margin-left: calc(var(--spacing) * 6);
   }
   .line-clamp-4 {
     overflow: hidden;
@@ -381,6 +387,12 @@
   .h-5 {
     height: calc(var(--spacing) * 5);
   }
+  .h-6 {
+    height: calc(var(--spacing) * 6);
+  }
+  .h-8 {
+    height: calc(var(--spacing) * 8);
+  }
   .h-9 {
     height: calc(var(--spacing) * 9);
   }
@@ -414,26 +426,8 @@
   .h-\[48rem\] {
     height: 48rem;
   }
-  .h-\[calc\(\)\] {
-    height: calc();
-  }
-  .h-\[calc\(100dvh\)\] {
-    height: calc(100dvh);
-  }
-  .h-\[calc\(100dvh-\)\] {
-    height: calc(100dvh - );
-  }
-  .h-\[calc\(100dvh-4\.5rem\)\] {
-    height: calc(100dvh - 4.5rem);
-  }
   .h-\[calc\(100dvh-7\.5rem\)\] {
     height: calc(100dvh - 7.5rem);
-  }
-  .h-\[calc\(100dvh-72px\)\] {
-    height: calc(100dvh - 72px);
-  }
-  .h-\[calc\] {
-    height: calc;
   }
   .h-auto {
     height: auto;
@@ -462,29 +456,11 @@
   .min-h-\[8\.125rem\] {
     min-height: 8.125rem;
   }
-  .w-2 {
-    width: calc(var(--spacing) * 2);
-  }
-  .w-2\.5 {
-    width: calc(var(--spacing) * 2.5);
-  }
   .w-6 {
     width: calc(var(--spacing) * 6);
   }
   .w-15 {
     width: calc(var(--spacing) * 15);
-  }
-  .w-18 {
-    width: calc(var(--spacing) * 18);
-  }
-  .w-25 {
-    width: calc(var(--spacing) * 25);
-  }
-  .w-30 {
-    width: calc(var(--spacing) * 30);
-  }
-  .w-36 {
-    width: calc(var(--spacing) * 36);
   }
   .w-37 {
     width: calc(var(--spacing) * 37);
@@ -503,9 +479,6 @@
   }
   .w-\[35\%\] {
     width: 35%;
-  }
-  .w-\[40\%\] {
-    width: 40%;
   }
   .w-\[45\%\] {
     width: 45%;
@@ -536,6 +509,9 @@
   }
   .w-max {
     width: max-content;
+  }
+  .w-px {
+    width: 1px;
   }
   .max-w-\[15\.625rem\] {
     max-width: 15.625rem;
@@ -603,6 +579,9 @@
   .gap-4 {
     gap: calc(var(--spacing) * 4);
   }
+  .gap-6 {
+    gap: calc(var(--spacing) * 6);
+  }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
   }
@@ -645,6 +624,9 @@
   }
   .gap-y-1 {
     row-gap: calc(var(--spacing) * 1);
+  }
+  .gap-y-3 {
+    row-gap: calc(var(--spacing) * 3);
   }
   .gap-y-4 {
     row-gap: calc(var(--spacing) * 4);
@@ -713,6 +695,9 @@
     --tw-border-style: solid;
     border-style: solid;
   }
+  .border-auth-input-border-color {
+    border-color: #d0d0d0;
+  }
   .border-custom-gray {
     border-color: #b4aeae;
   }
@@ -731,9 +716,6 @@
       border-color: color-mix(in oklab, var(--color-white) 50%, transparent);
     }
   }
-  .border-r-primary {
-    border-right-color: #3f51b5;
-  }
   .bg-black {
     background-color: var(--color-black);
   }
@@ -743,6 +725,9 @@
   .bg-gray-300 {
     background-color: var(--color-gray-300);
   }
+  .bg-input-divider {
+    background-color: #383838;
+  }
   .bg-primary {
     background-color: #3f51b5;
   }
@@ -751,6 +736,9 @@
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
+  }
+  .bg-text {
+    background-color: #333333;
   }
   .bg-transparent {
     background-color: transparent;
@@ -781,6 +769,9 @@
   }
   .px-4 {
     padding-inline: calc(var(--spacing) * 4);
+  }
+  .px-6 {
+    padding-inline: calc(var(--spacing) * 6);
   }
   .px-7 {
     padding-inline: calc(var(--spacing) * 7);
@@ -899,6 +890,9 @@
   .text-custom-gray {
     color: #b4aeae;
   }
+  .text-input-divider {
+    color: #383838;
+  }
   .text-primary {
     color: #3f51b5;
   }
@@ -906,10 +900,10 @@
     color: var(--color-red-500);
   }
   .text-text {
-    color: "#333333";
+    color: #333333;
   }
   .text-text2 {
-    color: "#222222";
+    color: #222222;
   }
   .text-white {
     color: var(--color-white);
@@ -934,6 +928,13 @@
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
+  }
+  .blur {
+    --tw-blur: blur(8px);
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+  }
+  .filter {
+    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .transition-all {
     transition-property: all;
@@ -1506,6 +1507,59 @@ html {
   inherits: false;
   initial-value: solid;
 }
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -1542,6 +1596,19 @@ html {
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
       --tw-duration: initial;
       --tw-ease: initial;
     }
