@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles//form.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+    <script src="../js/component.js" defer></script>
+    <script src="../js/formValidation.js"></script>
+    <script src="../js/formRules.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new FormValidator("editUserForm", editUserFormValidationRules);
+      });
+    </script>
+  </head>
+  <body class="size-full">
+    <div class="bg-white h-dvh flex">
+      <div class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary">
+        <div class="mt-12 flex items-center justify-center">
+          <img src="../public/logo.png" class="h-10" alt="" />
+        </div>
+        <div class="relative h-[calc(100%-5.5rem)] pb-20 pt-[50%]">
+          <div>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мой профиль</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои отзывы</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >15</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои комплексы</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >15</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>О компании</span>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              class="border-b border-b-transparent text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои сообщения</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >+10</span
+                >
+              </div>
+            </a>
+          </div>
+          <div class="absolute bottom-6 left-6 z-40">
+            <button
+              class="border-none bg-transparent text-white outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
+            >
+              <img src="../public/icons/logout.svg" alt="" />
+              Войти
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
+      >
+        <div class="py-12 px-6 h-full flex flex-col gap-6">
+          <h1
+            class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+          >
+            Мой профиль
+          </h1>
+          <div class="flex items-center gap-x-6">
+            <img src="../public/user2.png" alt="" />
+            <div class="flex flex-col gap-1">
+              <span class="text-base font-bold text-text2 tracking-wide"
+                >User001</span
+              >
+              <span class="text-input-divider text-xs tracking-wide"
+                >Загрузить фото</span
+              >
+            </div>
+          </div>
+          <div class="w-full xl:w-[80%] mt-12">
+            <form
+              class="flex flex-wrap gap-6 form"
+              id="editUserForm"
+              novalidate
+            >
+              <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
+                <label
+                  for="registerEmail"
+                  class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                  >Почта:</label
+                >
+                <div
+                  class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
+                >
+                  <i
+                    class="mdi mdi-email"
+                    data-input-id="registerEmailIcon"
+                  ></i>
+                  <div
+                    class="h-6 w-px bg-input-divider mx-2 input-divider"
+                  ></div>
+                  <input
+                    type="text"
+                    class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                    placeholder="info@skazoknet.ru"
+                    id="registerEmail"
+                    name="email"
+                  />
+                </div>
+              </div>
+              <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
+                <label
+                  for="password"
+                  class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                  >Пароль:</label
+                >
+                <div
+                  class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
+                >
+                  <i class="mdi mdi-lock"></i>
+                  <div class="h-6 w-px bg-input-divider mx-2"></div>
+                  <input
+                    type="password"
+                    class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                    placeholder="Password"
+                    id="password"
+                  />
+                  <i
+                    class="mdi mdi-eye pl-2 cursor-pointer password-toggle"
+                    data-input-id="password"
+                    id="registerPassword"
+                  ></i>
+                </div>
+              </div>
+
+              <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
+                <label
+                  for="editUser"
+                  class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                  >Имя пользователя::</label
+                >
+                <div
+                  class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
+                >
+                  <i
+                    class="mdi mdi-account"
+                    data-input-id="registerUserIcon"
+                  ></i>
+                  <div
+                    class="h-6 w-px bg-input-divider mx-2 input-divider"
+                  ></div>
+                  <input
+                    type="text"
+                    class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                    placeholder="info@skazoknet.ru"
+                    id="editUser"
+                    name="user"
+                  />
+                </div>
+              </div>
+              <button
+                type="submit"
+                class="w-full lg:w-[calc(50%-1.5rem)] text-center h-12.5 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer mt-6.5"
+              >
+                Зарегистрировать
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
