@@ -1,0 +1,6 @@
+.modal-active {
+  display: flex;
+}
+.modal-inactive {
+  display: none;
+}

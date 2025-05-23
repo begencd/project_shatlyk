@@ -13,6 +13,7 @@
     />
 
     <script src="../js/component.js" defer></script>
+    <script src="../js/modal.js" defer></script>
   </head>
   <body class="size-full">
     <div class="size-full relative">
@@ -107,6 +108,7 @@
                 </option>
               </select> -->
               <div
+                onclick="openModal('reusableModal')"
                 class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-1"
               >
                 <div class="relative">
@@ -1327,6 +1329,95 @@
         </nav>
       </div>
       <!-- Sidebar -->
+
+      <!-- Modal -->
+
+      <div
+        id="modalOverlay"
+        class="fixed inset-0 bg-black/50 bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-out opacity-0"
+      ></div>
+
+      <div
+        id="reusableModal"
+        class="fixed inset-0 top-[6rem] z-50 items-center justify-center p-4 hidden transition-all duration-300 ease-out transform opacity-0 scale-95 -translate-y-5"
+      >
+        <div
+          class="bg-white rounded-lg shadow-xl xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full max-h-full overflow-y-auto"
+        >
+          <div class="p-6">
+            <div class="flex justify-end items-center pb-3">
+              <!-- <p
+                id="modalTitle"
+                class="text-xl md:text-2xl font-semibold text-gray-800"
+              >
+                Modal Başlığı
+              </p> -->
+              <button
+                onclick="closeModal('reusableModal')"
+                class="text-gray-500 hover:text-gray-800 focus:outline-none rounded-full border p-2 cursor-pointer"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div id="modalBody">
+              <h1
+                class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+              >
+                Выберите ваш город
+              </h1>
+              <div
+                class="mt-8 flex items-center gap-x-2 rounded-3xl border border-input-border-color px-4 h-10 w-[80%]"
+              >
+                <img src="../public/icons/search 1.svg" alt="" />
+                <input
+                  type="text"
+                  class="border-none outline-none h-10 w-full"
+                  placeholder="Введите название для быстрого поиска"
+                />
+              </div>
+
+              <div class="flex flex-col gap-4 mt-8 pl-8">
+                <div class="flex items-center gap-x-2">
+                  <span class="text-primary text-base font-bold"
+                    >Краснодар</span
+                  >
+                  <span class="text-base text-text2 font-bold"
+                    >(Краснодарский край)</span
+                  >
+                </div>
+                <div class="flex items-center gap-x-2">
+                  <span class="text-primary text-base font-bold">Анапа</span>
+                  <span class="text-base text-text2 font-bold"
+                    >(Краснодарский край)</span
+                  >
+                </div>
+                <div class="flex items-center gap-x-2">
+                  <span class="text-primary text-base font-bold">Сочи</span>
+                  <span class="text-base text-text2 font-bold"
+                    >(Краснодарский край)</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
     </div>
   </body>
 </html>
