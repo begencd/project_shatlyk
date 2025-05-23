@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles//form.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+    <script src="../js/component.js" defer></script>
+    <script src="../js/formValidation.js"></script>
+    <script src="../js/formRules.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new FormValidator("editUserForm", editUserFormValidationRules);
+      });
+    </script>
+  </head>
+  <body class="size-full">
+    <div class="bg-white h-dvh flex">
+      <div class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary">
+        <div class="mt-12 flex items-center justify-center">
+          <img src="../public/logo.png" class="h-10" alt="" />
+        </div>
+        <div class="relative h-[calc(100%-5.5rem)] pb-20 pt-[50%]">
+          <div>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мой профиль</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои отзывы</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >15</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои комплексы</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >15</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>О компании</span>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              class="border-b border-b-transparent text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои сообщения</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >+10</span
+                >
+              </div>
+            </a>
+          </div>
+          <div class="absolute bottom-6 left-6 z-40">
+            <button
+              class="border-none bg-transparent text-white outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
+            >
+              <img src="../public/icons/logout.svg" alt="" />
+              Войти
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
+      >
+        <div class="py-12 px-6 h-full flex flex-col gap-6">
+          <h1
+            class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+          >
+            Мои отзывы
+          </h1>
+          <div class="my-2 flex items-center justify-between">
+            <div class="flex items-center gap-x-8">
+              <div class="flex items-center gap-x-2">
+                <span class="bg-primary text-white p-1 px-2 rounded-lg text-sm">
+                  100</span
+                >
+                <span class="text-sm tracking-wide">Положительных отзывов</span>
+              </div>
+              <div class="flex items-center gap-x-2">
+                <span class="bg-red-500 text-white p-1 px-2 rounded-lg text-sm">
+                  15</span
+                >
+                <span class="text-sm tracking-wide">Отрицателных отзывов</span>
+              </div>
+            </div>
+            <div>
+              <button
+                class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer"
+              >
+                <span>По умолчанию</span>
+                <img src="../public/icons/Group 334.svg" alt="" />
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex flex-wrap gap-4 w-full h-full max-h-[calc(100dvh-7.125rem)] overflow-y-auto pr-2"
+          >
+            <div class="w-[calc(50%-.5rem)]">
+              <span
+                class="text-xs xl:text-sm font-normal tracking-wide text-text"
+                >2020/01/16</span
+              >
+              <div
+                class="mt-2 w-full border border-input-border-color rounded-2xl p-6"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="bg-red-500 text-white rounded-4xl px-7 py-3 text-xs tracking-wide font-bold"
+                  >
+                    Негативный отзыв
+                  </div>
+                  <div class="text-xl lg:text-3xl flex items-center">
+                    <span class="pr-1">4.79</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Star.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-text mt-6">
+                  “ТОЧНО”
+                </h2>
+                <p class="font-normal text-sm tracking-wide text-text mt-4">
+                  Купили квартиру на стадии строительства у застройщика
+                  ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили.
+                  Ну, понятное дело, на старте обычно дешевле........
+                </p>
+                <button
+                  class="mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  <i class="mdi mdi-plus"></i>
+                  Дополнить отзыв
+                </button>
+                <div class="flex items-end justify-between mt-4">
+                  <div class="flex items-center gap-x-4">
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/like.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/comment.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="text-text text-xs font-normal tracking-wide text-right"
+                      >На модерации</span
+                    >
+                    <span
+                      class="bg-primary text-white py-1 px-3 rounded-2xl text-sm"
+                      >17 Дополнений</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-[calc(50%-.5rem)]">
+              <span
+                class="text-xs xl:text-sm font-normal tracking-wide text-text"
+                >2020/01/16</span
+              >
+              <div
+                class="mt-2 w-full border border-input-border-color rounded-2xl p-6"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="bg-red-500 text-white rounded-4xl px-7 py-3 text-xs tracking-wide font-bold"
+                  >
+                    Негативный отзыв
+                  </div>
+                  <div class="text-xl lg:text-3xl flex items-center">
+                    <span class="pr-1">4.79</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Star.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-text mt-6">
+                  “ТОЧНО”
+                </h2>
+                <p class="font-normal text-sm tracking-wide text-text mt-4">
+                  Купили квартиру на стадии строительства у застройщика
+                  ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили.
+                  Ну, понятное дело, на старте обычно дешевле........
+                </p>
+                <button
+                  class="mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  <i class="mdi mdi-plus"></i>
+                  Дополнить отзыв
+                </button>
+                <div class="flex items-end justify-between mt-4">
+                  <div class="flex items-center gap-x-4">
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/like.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/comment.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="text-text text-xs font-normal tracking-wide text-right"
+                      >На модерации</span
+                    >
+                    <span
+                      class="bg-primary text-white py-1 px-3 rounded-2xl text-sm"
+                      >17 Дополнений</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-[calc(50%-.5rem)]">
+              <span
+                class="text-xs xl:text-sm font-normal tracking-wide text-text"
+                >2020/01/16</span
+              >
+              <div
+                class="mt-2 w-full border border-input-border-color rounded-2xl p-6"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="bg-red-500 text-white rounded-4xl px-7 py-3 text-xs tracking-wide font-bold"
+                  >
+                    Негативный отзыв
+                  </div>
+                  <div class="text-xl lg:text-3xl flex items-center">
+                    <span class="pr-1">4.79</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Star.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-text mt-6">
+                  “ТОЧНО”
+                </h2>
+                <p class="font-normal text-sm tracking-wide text-text mt-4">
+                  Купили квартиру на стадии строительства у застройщика
+                  ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили.
+                  Ну, понятное дело, на старте обычно дешевле........
+                </p>
+                <button
+                  class="mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  <i class="mdi mdi-plus"></i>
+                  Дополнить отзыв
+                </button>
+                <div class="flex items-end justify-between mt-4">
+                  <div class="flex items-center gap-x-4">
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/like.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/comment.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="text-text text-xs font-normal tracking-wide text-right"
+                      >На модерации</span
+                    >
+                    <span
+                      class="bg-primary text-white py-1 px-3 rounded-2xl text-sm"
+                      >17 Дополнений</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="w-[calc(50%-.5rem)] max-h-[calc(100dvh-7.125rem)] overflow-y-auto pr-2"
+            >
+              <span
+                class="text-xs xl:text-sm font-normal tracking-wide text-text"
+                >2020/01/16</span
+              >
+              <div
+                class="mt-2 w-full border border-input-border-color rounded-2xl p-6"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="bg-red-500 text-white rounded-4xl px-7 py-3 text-xs tracking-wide font-bold"
+                  >
+                    Негативный отзыв
+                  </div>
+                  <div class="text-xl lg:text-3xl flex items-center">
+                    <span class="pr-1">4.79</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Star.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-text mt-6">
+                  “ТОЧНО”
+                </h2>
+                <p class="font-normal text-sm tracking-wide text-text mt-4">
+                  Купили квартиру на стадии строительства у застройщика
+                  ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили.
+                  Ну, понятное дело, на старте обычно дешевле........
+                </p>
+                <button
+                  class="mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  <i class="mdi mdi-plus"></i>
+                  Дополнить отзыв
+                </button>
+                <div class="flex items-end justify-between mt-4">
+                  <div class="flex items-center gap-x-4">
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/like.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/comment.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="text-text text-xs font-normal tracking-wide text-right"
+                      >На модерации</span
+                    >
+                    <span
+                      class="bg-primary text-white py-1 px-3 rounded-2xl text-sm"
+                      >17 Дополнений</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-[calc(50%-.5rem)]">
+              <span
+                class="text-xs xl:text-sm font-normal tracking-wide text-text"
+                >2020/01/16</span
+              >
+              <div
+                class="mt-2 w-full border border-input-border-color rounded-2xl p-6"
+              >
+                <div class="flex items-center justify-between">
+                  <div
+                    class="bg-red-500 text-white rounded-4xl px-7 py-3 text-xs tracking-wide font-bold"
+                  >
+                    Негативный отзыв
+                  </div>
+                  <div class="text-xl lg:text-3xl flex items-center">
+                    <span class="pr-1">4.79</span>
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Star.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                      <img src="../public/icons/Stargray.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+                <h2 class="text-2xl font-bold tracking-tight text-text mt-6">
+                  “ТОЧНО”
+                </h2>
+                <p class="font-normal text-sm tracking-wide text-text mt-4">
+                  Купили квартиру на стадии строительства у застройщика
+                  ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили.
+                  Ну, понятное дело, на старте обычно дешевле........
+                </p>
+                <button
+                  class="mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                >
+                  <i class="mdi mdi-plus"></i>
+                  Дополнить отзыв
+                </button>
+                <div class="flex items-end justify-between mt-4">
+                  <div class="flex items-center gap-x-4">
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/like.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                      <span>1</span>
+                    </div>
+                    <div class="flex items-center gap-x-1">
+                      <img src="../public/comment.png" alt="" class="size-5" />
+                      <span>1</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="text-text text-xs font-normal tracking-wide text-right"
+                      >На модерации</span
+                    >
+                    <span
+                      class="bg-primary text-white py-1 px-3 rounded-2xl text-sm"
+                      >17 Дополнений</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
