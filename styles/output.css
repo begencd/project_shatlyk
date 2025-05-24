@@ -229,9 +229,6 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
-  .top-1 {
-    top: calc(var(--spacing) * 1);
-  }
   .top-1\/2 {
     top: calc(1/2 * 100%);
   }
@@ -409,9 +406,6 @@
   .inline-block {
     display: inline-block;
   }
-  .table {
-    display: table;
-  }
   .size-5 {
     width: calc(var(--spacing) * 5);
     height: calc(var(--spacing) * 5);
@@ -430,9 +424,6 @@
   .h-6 {
     height: calc(var(--spacing) * 6);
   }
-  .h-8 {
-    height: calc(var(--spacing) * 8);
-  }
   .h-9 {
     height: calc(var(--spacing) * 9);
   }
@@ -447,9 +438,6 @@
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
-  }
-  .h-22 {
-    height: calc(var(--spacing) * 22);
   }
   .h-22\.5 {
     height: calc(var(--spacing) * 22.5);
@@ -505,35 +493,8 @@
   .max-h-\[18\.75rem\] {
     max-height: 18.75rem;
   }
-  .max-h-\[cacl\] {
-    max-height: cacl;
-  }
-  .max-h-\[calc\(\)\] {
-    max-height: calc();
-  }
-  .max-h-\[calc\(100\%-3\.375rem\)\] {
-    max-height: calc(100% - 3.375rem);
-  }
-  .max-h-\[calc\(100\%-4\.375rem\)\] {
-    max-height: calc(100% - 4.375rem);
-  }
-  .max-h-\[calc\(100\%-5\.5rem\)\] {
-    max-height: calc(100% - 5.5rem);
-  }
-  .max-h-\[calc\(100\%-5\.375rem\)\] {
-    max-height: calc(100% - 5.375rem);
-  }
-  .max-h-\[calc\(100\%-6\.375rem\)\] {
-    max-height: calc(100% - 6.375rem);
-  }
   .max-h-\[calc\(100\%-6rem\)\] {
     max-height: calc(100% - 6rem);
-  }
-  .max-h-\[calc\(100\%-12\.5rem\)\] {
-    max-height: calc(100% - 12.5rem);
-  }
-  .max-h-\[calc\(100\%-rem\)\] {
-    max-height: calc(100% - rem);
   }
   .max-h-\[calc\(100dvh-7\.125rem\)\] {
     max-height: calc(100dvh - 7.125rem);
@@ -553,9 +514,6 @@
   .w-15 {
     width: calc(var(--spacing) * 15);
   }
-  .w-37 {
-    width: calc(var(--spacing) * 37);
-  }
   .w-37\.5 {
     width: calc(var(--spacing) * 37.5);
   }
@@ -564,6 +522,9 @@
   }
   .w-\[5rem\] {
     width: 5rem;
+  }
+  .w-\[6\.25rem\] {
+    width: 6.25rem;
   }
   .w-\[8\.125rem\] {
     width: 8.125rem;
@@ -627,9 +588,6 @@
   }
   .basis-full {
     flex-basis: 100%;
-  }
-  .border-collapse {
-    border-collapse: collapse;
   }
   .-translate-y-5 {
     --tw-translate-y: calc(var(--spacing) * -5);
@@ -755,9 +713,6 @@
   }
   .overflow-y-auto {
     overflow-y: auto;
-  }
-  .rounded {
-    border-radius: 0.25rem;
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
@@ -928,9 +883,6 @@
   }
   .px-12 {
     padding-inline: calc(var(--spacing) * 12);
-  }
-  .px-32 {
-    padding-inline: calc(var(--spacing) * 32);
   }
   .py-1 {
     padding-block: calc(var(--spacing) * 1);
@@ -1105,9 +1057,6 @@
   .uppercase {
     text-transform: uppercase;
   }
-  .underline {
-    text-decoration-line: underline;
-  }
   .opacity-0 {
     opacity: 0%;
   }
@@ -1123,15 +1072,8 @@
     --tw-shadow: 0 20px 25px -5px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 8px 10px -6px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
   .blur {
     --tw-blur: blur(8px);
-    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
-  }
-  .filter {
     filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
   }
   .transition-all {
@@ -1778,11 +1720,6 @@ html {
   inherits: false;
   initial-value: 0 0 #0000;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-blur {
   syntax: "*";
   inherits: false;
@@ -1877,7 +1814,6 @@ html {
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
       --tw-contrast: initial;
