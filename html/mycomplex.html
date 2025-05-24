@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles//form.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+    <script src="../js/component.js" defer></script>
+  </head>
+  <body class="size-full">
+    <div class="bg-white h-dvh flex">
+      <div class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary">
+        <div class="mt-12 flex items-center justify-center">
+          <img src="../public/logo.png" class="h-10" alt="" />
+        </div>
+        <div class="relative h-[calc(100%-5.5rem)] pb-20 pt-[50%]">
+          <div>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мой профиль</span>
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои отзывы</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >15</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои комплексы</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >15</span
+                >
+              </div>
+            </a>
+            <a
+              href="#"
+              class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>О компании</span>
+              </div>
+            </a>
+
+            <a
+              href="#"
+              class="border-b border-b-transparent text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+            >
+              <div class="flex items-center justify-between">
+                <span>Мои сообщения</span>
+                <span
+                  class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                  >+10</span
+                >
+              </div>
+            </a>
+          </div>
+          <div class="absolute bottom-6 left-6 z-40">
+            <button
+              class="border-none bg-transparent text-white outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
+            >
+              <img src="../public/icons/logout.svg" alt="" />
+              Войти
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
+      >
+        <div class="py-12 px-6 h-full flex flex-col gap-6">
+          <h1
+            class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+          >
+            Мои комплексы
+          </h1>
+          <div class="flex items-center justify-between gap-x-4 my-2">
+            <div
+              class="px-8 rounded-3xl h-12 flex items-center gap-x-2 w-[70%] border border-input-border-color"
+              style="
+                background: linear-gradient(to right, #fcfdff 10%, #f0f0f0 90%);
+              "
+            >
+              <img src="../public/icons/search 1.svg" alt="" />
+              <input type="text" class="h-12 border-none outline-none w-full" />
+            </div>
+            <div>
+              <button
+                class="border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+              >
+                <i class="mdi mdi-plus"></i>
+                Дополнить отзыв
+              </button>
+            </div>
+          </div>
+          <div
+            class="my-2 w-full gap-y-4 flex flex-col max-h-[calc(100%-6rem)] overflow-auto"
+          >
+            <div class="flex">
+              <div class="w-[35%]">
+                <img
+                  src="../public/image7.png"
+                  class="rounded-2xl h-[12.5rem] w-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+              >
+                <div>
+                  <h2 class="text-lg font-bold tracking-wide text-text3">
+                    ЖК “Губернский”
+                  </h2>
+                  <p
+                    class="text-sm font-semibold tracking-wide mt-2 text-text3"
+                  >
+                    г. Краснодар, ул.Западный обход,33
+                  </p>
+                </div>
+
+                <div>
+                  <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
+                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                    <span class="text-xs text-text2">Редактировать</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="w-[35%]">
+                <img
+                  src="../public/image7.png"
+                  class="rounded-2xl h-[12.5rem] w-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+              >
+                <div>
+                  <h2 class="text-lg font-bold tracking-wide text-text3">
+                    ЖК “Губернский”
+                  </h2>
+                  <p
+                    class="text-sm font-semibold tracking-wide mt-2 text-text3"
+                  >
+                    г. Краснодар, ул.Западный обход,33
+                  </p>
+                </div>
+
+                <div>
+                  <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
+                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                    <span class="text-xs text-text2">Редактировать</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="w-[35%]">
+                <img
+                  src="../public/image7.png"
+                  class="rounded-2xl h-[12.5rem] w-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+              >
+                <div>
+                  <h2 class="text-lg font-bold tracking-wide text-text3">
+                    ЖК “Губернский”
+                  </h2>
+                  <p
+                    class="text-sm font-semibold tracking-wide mt-2 text-text3"
+                  >
+                    г. Краснодар, ул.Западный обход,33
+                  </p>
+                </div>
+
+                <div>
+                  <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
+                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                    <span class="text-xs text-text2">Редактировать</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="w-[35%]">
+                <img
+                  src="../public/image7.png"
+                  class="rounded-2xl h-[12.5rem] w-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+              >
+                <div>
+                  <h2 class="text-lg font-bold tracking-wide text-text3">
+                    ЖК “Губернский”
+                  </h2>
+                  <p
+                    class="text-sm font-semibold tracking-wide mt-2 text-text3"
+                  >
+                    г. Краснодар, ул.Западный обход,33
+                  </p>
+                </div>
+
+                <div>
+                  <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
+                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                    <span class="text-xs text-text2">Редактировать</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="w-[35%]">
+                <img
+                  src="../public/image7.png"
+                  class="rounded-2xl h-[12.5rem] w-full"
+                  alt=""
+                />
+              </div>
+              <div
+                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+              >
+                <div>
+                  <h2 class="text-lg font-bold tracking-wide text-text3">
+                    ЖК “Губернский”
+                  </h2>
+                  <p
+                    class="text-sm font-semibold tracking-wide mt-2 text-text3"
+                  >
+                    г. Краснодар, ул.Западный обход,33
+                  </p>
+                </div>
+
+                <div>
+                  <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
+                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                    <div
+                      class="flex items-center space-x-1"
+                      aria-label="3 out of 5 stars"
+                      role="img"
+                    >
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Starmini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                      <img src="../public/icons/Stargraymini.svg" alt="" />
+                    </div>
+                    <span class="text-xs text-text2">Редактировать</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
