@@ -112,7 +112,8 @@
                 class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-1"
               >
                 <div class="relative">
-                  <span>Краснодар</span>
+                  <span id="selectedCityDisplay">Краснодар</span>
+                  <span class="text-sm text-gray-400 ml-1">(изменить)</span>
                   <div
                     class="absolute bottom-2 left-0 w-full h-[1px] bg-white/50"
                   ></div>
@@ -1390,28 +1391,10 @@
                 />
               </div>
 
-              <div class="flex flex-col gap-4 mt-8 pl-8">
-                <div class="flex items-center gap-x-2">
-                  <span class="text-primary text-base font-bold"
-                    >Краснодар</span
-                  >
-                  <span class="text-base text-text2 font-bold"
-                    >(Краснодарский край)</span
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <span class="text-primary text-base font-bold">Анапа</span>
-                  <span class="text-base text-text2 font-bold"
-                    >(Краснодарский край)</span
-                  >
-                </div>
-                <div class="flex items-center gap-x-2">
-                  <span class="text-primary text-base font-bold">Сочи</span>
-                  <span class="text-base text-text2 font-bold"
-                    >(Краснодарский край)</span
-                  >
-                </div>
-              </div>
+              <div
+                id="cityListContainer"
+                class="flex flex-col gap-4 mt-8 pl-8 max-h-[300px] overflow-y-auto"
+              ></div>
             </div>
           </div>
         </div>
