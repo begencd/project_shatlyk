@@ -13,6 +13,7 @@
     <script src="../js/component.js" defer></script>
     <script src="../js/formValidation.js"></script>
     <script src="../js/formRules.js"></script>
+    <script src="../js/downloadFile.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         new FormValidator("editUserForm", editUserFormValidationRules);
@@ -20,9 +21,9 @@
     </script>
   </head>
   <body class="size-full">
-    <div class="bg-white h-dvh flex justify-end relative justify-end relative">
+    <div class="bg-white h-dvh flex justify-end relative">
       <div
-        class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary fixed top-0 left-0 h-dvh fixed top-0 left-0 h-dvh"
+        class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary fixed top-0 left-0 h-dvh"
       >
         <div class="mt-12 flex items-center justify-center">
           <img src="../public/logo.png" class="h-10" alt="" />
@@ -103,16 +104,34 @@
             Мой профиль
           </h1>
           <div class="flex items-center gap-x-6">
-            <img src="../public/user2.png" alt="" />
+            <img
+              id="userProfileImage"
+              src="../public/user2.png"
+              alt="Profil Resmi"
+              class="w-24 h-24 object-cover rounded-full"
+            />
             <div class="flex flex-col gap-1">
               <span class="text-base font-bold text-text2 tracking-wide"
                 >User001</span
               >
-              <span class="text-input-divider text-xs tracking-wide"
+              <span
+                id="uploadPhotoText"
+                class="text-input-divider text-xs tracking-wide cursor-pointer hover:underline"
+                onclick="handleFileUpload({
+                  inputSelector: '#redaktFileInput',
+                  targetContainerSelector:'',
+                  targetImageSelector: '#userProfileImage',
+                  maxFiles: 1, 
+                  allowedTypes: ['image/jpeg', 'image/png'], 
+                  onError: (message) => {},
+                  onSuccess: (file) => console.log(`Profil resmi yüklendi: ${file.name}`)
+                });"
                 >Загрузить фото</span
               >
             </div>
           </div>
+
+          <input type="file" class="hidden" id="redaktFileInput" />
           <div class="w-full xl:w-[80%] mt-12">
             <form
               class="flex flex-wrap gap-6 form"

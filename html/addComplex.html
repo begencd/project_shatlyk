@@ -148,12 +148,16 @@
                 />
               </div>
             </div>
-            <div class="h-22.5" id="redaktFileContainer"></div>
+            <div
+              class="h-auto w-full flex items-center justify-end flex-wrap gap-4"
+              id="redaktFileContainer"
+            ></div>
             <div class="flex items-center w-full justify-end">
               <input type="file" class="hidden" id="redaktFileInput" />
               <button
+                type="button"
                 onclick="
-                handleFileUpload({inputSelector: '#redaktFileInput',  targetContainerSelector: '#redaktFileContainer', templateCallback: (file) => {console.log(file)}, maxFiles: 10, allowedTypes: ['image/jpeg', 'image/png', 'application/pdf'], onError: (message) => alert(message), onSuccess: (file) => console.log(`Dosya yüklendi: ${file.name}`)})"
+              handleFileUpload({inputSelector: '#redaktFileInput',  targetContainerSelector: '#redaktFileContainer',targetImageSelector: null, templateCallback: downloadFileTemplate, maxFiles: 10, allowedTypes: ['image/jpeg', 'image/png', 'application/pdf'], onError: (message) => {}, onSuccess: (file) => console.log(`Dosya yüklendi: ${file.name}`)})"
                 class="mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
               >
                 <i class="mdi mdi-plus"></i>
