@@ -120,7 +120,6 @@ class FormValidator {
     this.form.querySelectorAll(".password-toggle").forEach((icon) => {
       icon.addEventListener("click", () => {
         const inputId = icon.getAttribute("data-input-id");
-
         FormValidator.inputTypeToggle(inputId, icon);
       });
     });
