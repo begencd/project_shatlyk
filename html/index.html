@@ -24,7 +24,16 @@
           class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
         >
           <div class="flex items-center gap-x-12 h-10">
-            <div>
+            <div class="flex items-center gap-2">
+              <div class="lg:hidden flex">
+                <div
+                  class="cursor-pointer flex items-center justify-center pt-4 leading-10"
+                  id="menu-toggle"
+                  aria-label="Toggle menu"
+                >
+                  <img src="../public/icons/menu.svg" alt="" />
+                </div>
+              </div>
               <a href="#">
                 <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
               </a>
@@ -39,7 +48,7 @@
             </div>
           </div>
           <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
-            <div class="lg:hidden flex">
+            <!-- <div class="lg:hidden flex">
               <div
                 class="container cursor-pointer flex"
                 id="menu-toggle"
@@ -89,11 +98,9 @@
                   </g>
                 </svg>
               </div>
-            </div>
-            <div
-              class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center leading-10 pt-4"
-            >
-              <span class="text-lg">Ваш город:</span>
+            </div> -->
+            <div class="flex gap-x-1 lg:gap-x-2 items-center leading-10 pt-4">
+              <span class="hidden lg:inline-block text-lg">Ваш город:</span>
               <!-- <select
                 class="border-b border-white/50 outline-none border-solid"
               >
@@ -120,7 +127,7 @@
                 <img src="../public/icons/down-arrow 1.svg" alt="" />
               </div>
             </div>
-            <div class="leading-10 pt-4">
+            <div class="leading-10 pt-0 lg:pt-4 hidden lg:block">
               <button
                 class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
               >
@@ -132,8 +139,10 @@
         </div>
       </header>
       <section class="flex flex-row relative w-full">
-        <div class="w-[55%] bg-primary relative"></div>
-        <div class="w-[45%] relative">
+        <div
+          class="w-full md:w-[55%] bg-primary relative h-dvh md:h-auto"
+        ></div>
+        <div class="w-0 hidden md:block md:w-[45%] relative">
           <img
             src="../public/Rectangle 3.png"
             class="w-full h-[48rem]"
@@ -141,64 +150,142 @@
           />
           <!--  -->
         </div>
-        <div class="absolute top-[40%] left-0 leading-0 w-full z-10">
+        <div
+          class="absolute top-[20%] md:top-[40%] left-0 leading-0 w-full z-10"
+        >
           <div
             class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex justify-between relative"
           >
-            <div class="w-[calc(65%-2rem)] mr-8">
+            <div class="w-full xs:w-[90%] md:w-[calc(65%-2rem)] mr-0 md:mr-8">
               <div class="text-white mb-[5rem]">
-                <h1 class="text-5xl xl:text-6xl font-bold tracking-wide mb-4">
+                <h1
+                  class="text-3xl md:text-5xl xl:text-6xl font-bold tracking-wide mb-2 md:mb-4"
+                >
                   Отзывы без иллюзий
                 </h1>
-                <p class="text-lg xl:text-xl font-medium">
+                <p class="text-xs md:text-lg xl:text-xl font-medium">
                   Забудьте о сказках, выбирайте с уверенностью
                 </p>
               </div>
               <div
-                class="w-full text-text flex flex-nowrap gap-4 xl:gap-8 items-center"
+                class="w-full text-text flex flex-wrap md:flex-nowrap gap-4 xl:gap-8 items-center"
               >
-                <div class="bg-white w-full p-4 rounded-lg flex flex-col gap-4">
+                <div
+                  class="bg-white w-full p-4 rounded-lg flex flex-row md:flex-col gap-4"
+                >
                   <img
-                    class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
+                    class="w-[5.625rem] md:w-[5rem] xl:w-[6rem] h-[4.375rem] md:h-[3rem] xl:h-[3.75rem]"
                     src="../public/1.png"
                     alt=""
                   />
-                  <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
+                  <h2
+                    class="text-base md:block hidden h-12 xl:h-auto xl:text-lg font-bold"
+                  >
                     Жилые комплексы
                   </h2>
-                  <p class="text-sm xl:text-base text-custom-gray">300</p>
+                  <p
+                    class="text-sm xl:text-base text-custom-gray hidden md:block"
+                  >
+                    300
+                  </p>
+                  <div class="w-full md:hidden flex flex-col gap-2">
+                    <h2
+                      class="text-base md:h-12 xl:h-auto xl:text-lg font-bold"
+                    >
+                      Жилые комплексы
+                    </h2>
+                    <p
+                      class="text-sm xl:text-base text-custom-gray inline-block"
+                    >
+                      300
+                    </p>
+                  </div>
                 </div>
-                <div class="bg-white w-full p-4 rounded-lg flex flex-col gap-4">
+                <div
+                  class="bg-white w-full p-4 rounded-lg flex flex-row md:flex-col gap-4"
+                >
                   <img
-                    class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
+                    class="w-[5.625rem] md:w-[5rem] xl:w-[6rem] h-[4.375rem] md:h-[3rem] xl:h-[3.75rem]"
                     src="../public/2.png"
                     alt=""
                   />
-                  <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
+
+                  <h2
+                    class="text-base md:block hidden h-12 xl:h-auto xl:text-lg font-bold"
+                  >
                     Застройщики
                   </h2>
-                  <p class="text-sm xl:text-base text-custom-gray">250</p>
+                  <p
+                    class="text-sm xl:text-base text-custom-gray hidden md:block"
+                  >
+                    250
+                  </p>
+                  <div class="w-full md:hidden flex flex-col gap-2">
+                    <h2
+                      class="text-base md:h-12 xl:h-auto xl:text-lg font-bold"
+                    >
+                      Застройщики
+                    </h2>
+                    <p
+                      class="text-sm xl:text-base text-custom-gray inline-block"
+                    >
+                      250
+                    </p>
+                  </div>
                 </div>
-                <div class="bg-white w-full p-4 rounded-lg flex flex-col gap-4">
+                <div
+                  class="bg-white w-full p-4 rounded-lg flex flex-row md:flex-col gap-4"
+                >
                   <img
-                    class="w-[5rem] xl:w-[6rem] h-[3rem] xl:h-[3.75rem]"
+                    class="w-[5.625rem] md:w-[5rem] xl:w-[6rem] h-[4.375rem] md:h-[3rem] xl:h-[3.75rem]"
                     src="../public/1.png"
                     alt=""
                   />
-                  <h2 class="text-base h-12 xl:h-auto xl:text-lg font-bold">
+                  <h2
+                    class="text-base md:block hidden h-12 xl:h-auto xl:text-lg font-bold"
+                  >
                     Застройщики
                   </h2>
-                  <p class="text-sm xl:text-base text-custom-gray">250</p>
+                  <p
+                    class="text-sm xl:text-base text-custom-gray hidden md:block"
+                  >
+                    250
+                  </p>
+                  <div class="w-full flex-col gap-2 md:hidden flex">
+                    <h2
+                      class="text-base md:h-12 xl:h-auto xl:text-lg font-bold"
+                    >
+                      Застройщики
+                    </h2>
+                    <p
+                      class="text-sm xl:text-base text-custom-gray inline-block"
+                    >
+                      250
+                    </p>
+                  </div>
                 </div>
+              </div>
+              <div class="md:hidden block w-full mt-8">
+                <button
+                  class="border-white border w-full text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2 justify-center"
+                >
+                  <i class="mdi mdi-plus"></i>
+                  <span>Оставить отзыв</span>
+                </button>
               </div>
             </div>
             <div
-              class="w-[35%] absolute right-0 -bottom-[6.7rem] xl:-bottom-[6.2rem]"
+              class="w-full md:w-[35%] absolute right-0 z-[-1] -top-[4.25rem] md:top-auto -bottom-[2rem] md:-bottom-[3.5rem] lg:-bottom-[6.7rem] xl:-bottom-[6.2rem]"
             >
               <img
                 src="../public/project.png"
                 alt=""
-                class="w-full max-[90.625]:w-[80%] mx-auto h-auto lg:min-h-[25rem] xl:min-h-[27.75rem]"
+                class="w-[90%] md:w-full max-[90.625]:w-[80%] mx-auto h-full sm:min-h-[22.5rem] lg:min-h-[25rem] xl:min-h-[27.75rem] hidden md:block"
+              />
+              <img
+                src="../public/Group 269.png"
+                alt=""
+                class="w-full md:w-full max-[90.625]:w-[80%] mx-auto h-full sm:min-h-[22.5rem] lg:min-h-[25rem] xl:min-h-[27.75rem] md:hidden block"
               />
             </div>
           </div>
@@ -1315,7 +1402,7 @@
         </div>
       </section>
 
-      <footer class="bg-primary py-15">
+      <footer class="bg-primary py-8 sm:py-15">
         <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full">
           <div
             class="flex items-center flex-col lg:flex-row justify-between gap-16 xl:gap-24 text-white"
@@ -1328,7 +1415,7 @@
               />
             </a>
             <div
-              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] flex flex-wrap gap-x-18"
+              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] hidden sm:flex flex-wrap gap-x-18"
             >
               <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
                 <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
@@ -1372,25 +1459,90 @@
       ></div>
       <div
         id="sidebar"
-        class="fixed top-0 h-full w-64 bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block lg:hidden"
+        class="fixed top-0 h-full w-full sm:w-[50%] bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block lg:hidden"
         role="navigation"
       >
-        <div class="flex justify-end p-4">
+        <div class="flex justify-end p-4 relative">
           <button
             id="close-sidebar"
-            class="text-white text-2xl hover:rotate-90 hover:bg-white/10 p-2 rounded-full transition-all duration-200"
+            class="text-white text-2xl hover:rotate-90 hover:bg-white/10 px-1 rounded-full transition-all duration-200 border border-white"
             aria-label="Close menu"
           >
             <i class="mdi mdi-close"></i>
           </button>
-        </div>
-        <nav class="flex flex-col gap-4 p-4">
-          <a
-            href="#"
-            class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
-            >Оставить отзыв</a
+          <div
+            class="absolute z-[-1] top-0 left-1/2 -translate-x-1/2 h-full w-full flex items-center justify-center"
           >
-          <a
+            <img src="../public/logo.png" alt="" />
+          </div>
+        </div>
+        <nav class="flex flex-col gap-2 p-4 mt-12">
+          <div class="flex flex-col gap-2 border-b border-white pb-4">
+            <h2 class="text-base font-bold tracking-wide">
+              Полезная информация
+            </h2>
+            <div class="pl-4 flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >О проекте</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Застройщики</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Жилые комплексы</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 border-b border-white pb-4">
+            <h2 class="text-base font-bold tracking-wide">
+              Условия пользованияя
+            </h2>
+            <div class="pl-4 flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Пользовательское соглашение</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Обработка персональных данных</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Публикация материалов</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 pb-4">
+            <h2 class="text-base font-bold tracking-wide">Компаниям</h2>
+            <div class="pl-4 flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Получение доступа</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Реклама на сайте</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Обратная связь</a
+              >
+            </div>
+          </div>
+
+          <!-- <a
             href="#"
             class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
             >Пользователям</a
@@ -1404,29 +1556,7 @@
             href="#"
             class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
             >Контакты</a
-          >
-          <div class="flex flex-col gap-2">
-            <span class="text-lg">Ваш город:</span>
-            <!-- <select
-                class="border-b border-white/50 outline-none border-solid"
-              >
-                <option value="moscow" class="text-primary bg-white py-1">
-                  Moscow
-                </option>
-                <option value="petersburg" class="text-primary bg-white py-1">
-                  Saint Petersburg
-                </option>
-                <option value="novosibirsk" class="text-primary bg-white py-1">
-                  Novosibirsk
-                </option>
-              </select> -->
-            <div
-              class="flex items-center justify-between gap-x-2 border-b border-white/50 cursor-pointer"
-            >
-              <span>Краснодар</span>
-              <img src="../public/icons/down-arrow 1.svg" alt="" />
-            </div>
-          </div>
+          > -->
         </nav>
       </div>
       <!-- Sidebar -->

@@ -1,6 +1,10 @@
 #sidebar {
   transition: all 300ms ease-in-out;
-  left: -255px;
+  left: -50%;
+
+  @media (max-width: 640px) {
+    left: -100%;
+  }
 }
 #sidebar.active {
   left: 0px;

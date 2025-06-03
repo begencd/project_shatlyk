@@ -11,6 +11,8 @@
   --color-input-border-color: #b5b5b5;
   --color-auth-input-border-color: #d0d0d0;
   --color-input-divider: #383838;
+  --breakpoint-xs: 31.25rem;
+  --breakpoint-xxs: 25rem;
 }
 
 @font-face {
