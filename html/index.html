@@ -7,6 +7,8 @@
     <link href="../styles/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="../styles/menu.css" />
     <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/swiper/swiper-bundle.css" />
+
     <link
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
@@ -14,6 +16,8 @@
 
     <script src="../js/component.js" defer></script>
     <script src="../js/modal.js" defer></script>
+    <script src="../public/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
   </head>
   <body class="size-full">
     <div class="size-full relative">
@@ -48,72 +52,9 @@
             </div>
           </div>
           <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
-            <!-- <div class="lg:hidden flex">
-              <div
-                class="container cursor-pointer flex"
-                id="menu-toggle"
-                aria-label="Toggle menu"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 200 200"
-                >
-                  <g stroke-width="6.5" stroke-linecap="round">
-                    <path
-                      d="M72 82.286h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
-                      fill="none"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M72 125.143h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
-                      fill="none"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 82.286h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 125.143h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                  </g>
-                </svg>
-              </div>
-            </div> -->
             <div class="flex gap-x-1 lg:gap-x-2 items-center leading-10 pt-4">
               <span class="hidden lg:inline-block text-lg">Ваш город:</span>
-              <!-- <select
-                class="border-b border-white/50 outline-none border-solid"
-              >
-                <option value="moscow" class="text-primary bg-white py-1">
-                  Moscow
-                </option>
-                <option value="petersburg" class="text-primary bg-white py-1">
-                  Saint Petersburg
-                </option>
-                <option value="novosibirsk" class="text-primary bg-white py-1">
-                  Novosibirsk
-                </option>
-              </select> -->
+
               <div
                 onclick="openModal('reusableModal')"
                 class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-1"
@@ -156,7 +97,7 @@
           <div
             class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex justify-between relative"
           >
-            <div class="w-full xs:w-[90%] md:w-[calc(65%-2rem)] mr-0 md:mr-8">
+            <div class="w-full md:w-[calc(65%-2rem)] mr-0 md:mr-8">
               <div class="text-white mb-[5rem]">
                 <h1
                   class="text-3xl md:text-5xl xl:text-6xl font-bold tracking-wide mb-2 md:mb-4"
@@ -296,14 +237,18 @@
           <h1 class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wide">
             Жилые комплексы в Краснодаре
           </h1>
-          <a href="#">Все жилые комплексы</a>
+          <a href="#" class="md:inline-block hidden">Все жилые комплексы</a>
         </div>
-        <div class="flex gap-8 flex-wrap">
+        <div class="hidden sm:flex gap-8 flex-wrap">
           <div
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="../public/image.png" class="w-full h-auto" alt="" />
+              <img
+                src="../public/image.png"
+                class="w-full h-auto min-h-[10.625rem]"
+                alt=""
+              />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -312,7 +257,9 @@
               <p>г. Краснодар, ул.Западный обход,33</p>
               <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -330,7 +277,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <!-- <i class="mdi mdi-plus"></i> -->
                     <img src="../public/icons/Vector.svg" alt="" />
@@ -362,7 +309,11 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="../public/image.png" class="w-full h-auto" alt="" />
+              <img
+                src="../public/image.png"
+                class="w-full h-auto min-h-[10.625rem]"
+                alt=""
+              />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -371,7 +322,9 @@
               <p>г. Краснодар, ул.Западный обход,33</p>
               <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -389,7 +342,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <!-- <i class="mdi mdi-plus"></i> -->
                     <img src="../public/icons/Vector.svg" alt="" />
@@ -421,7 +374,11 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="../public/image.png" class="w-full h-auto" alt="" />
+              <img
+                src="../public/image.png"
+                class="w-full h-auto min-h-[10.625rem] min-h-[10.625rem]"
+                alt=""
+              />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -430,7 +387,9 @@
               <p>г. Краснодар, ул.Западный обход,33</p>
               <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -448,7 +407,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <!-- <i class="mdi mdi-plus"></i> -->
                     <img src="../public/icons/Vector.svg" alt="" />
@@ -480,7 +439,11 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="../public/image.png" class="w-full h-auto" alt="" />
+              <img
+                src="../public/image.png"
+                class="w-full h-auto min-h-[10.625rem]"
+                alt=""
+              />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -489,7 +452,9 @@
               <p>г. Краснодар, ул.Западный обход,33</p>
               <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -507,7 +472,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <!-- <i class="mdi mdi-plus"></i> -->
                     <img src="../public/icons/Vector.svg" alt="" />
@@ -539,7 +504,11 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="../public/image.png" class="w-full h-auto" alt="" />
+              <img
+                src="../public/image.png"
+                class="w-full h-auto min-h-[10.625rem]"
+                alt=""
+              />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -548,7 +517,9 @@
               <p>г. Краснодар, ул.Западный обход,33</p>
               <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -566,7 +537,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <!-- <i class="mdi mdi-plus"></i> -->
                     <img src="../public/icons/Vector.svg" alt="" />
@@ -598,7 +569,11 @@
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
           >
             <div>
-              <img src="../public/image.png" class="w-full h-auto" alt="" />
+              <img
+                src="../public/image.png"
+                class="w-full h-auto min-h-[10.625rem]"
+                alt=""
+              />
             </div>
             <div
               class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
@@ -607,7 +582,9 @@
               <p>г. Краснодар, ул.Западный обход,33</p>
               <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -625,7 +602,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <!-- <i class="mdi mdi-plus"></i> -->
                     <img src="../public/icons/Vector.svg" alt="" />
@@ -653,6 +630,354 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="mt-8 block sm:hidden">
+          <div class="swiper krasnodorSwiper relative">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
+                >
+                  <div>
+                    <img
+                      src="../public/image.png"
+                      class="w-full h-auto min-h-[10.625rem]"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
+                  >
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p>г. Краснодар, ул.Западный обход,33</p>
+                    <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <!-- <i class="mdi mdi-plus"></i> -->
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
+                >
+                  <div>
+                    <img
+                      src="../public/image.png"
+                      class="w-full h-auto min-h-[10.625rem]"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
+                  >
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p>г. Краснодар, ул.Западный обход,33</p>
+                    <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <!-- <i class="mdi mdi-plus"></i> -->
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
+                >
+                  <div>
+                    <img
+                      src="../public/image.png"
+                      class="w-full h-auto min-h-[10.625rem]"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
+                  >
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p>г. Краснодар, ул.Западный обход,33</p>
+                    <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <!-- <i class="mdi mdi-plus"></i> -->
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
+                >
+                  <div>
+                    <img
+                      src="../public/image.png"
+                      class="w-full h-auto min-h-[10.625rem]"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
+                  >
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p>г. Краснодар, ул.Западный обход,33</p>
+                    <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <!-- <i class="mdi mdi-plus"></i> -->
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md"
+                >
+                  <div>
+                    <img
+                      src="../public/image.png"
+                      class="w-full h-auto min-h-[10.625rem]"
+                      alt=""
+                    />
+                  </div>
+                  <div
+                    class="p-4 flex flex-col gap-2 group-hover:border-primary border-custom-gray border border-t-0 rounded-bl-xl rounded-br-xl"
+                  >
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p>г. Краснодар, ул.Западный обход,33</p>
+                    <p class="mt-8">Застройщик: ЮгСтройИнвест</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col gap-2 flex-row justify-between w-full md:w-auto"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary border text-sm xl:text-base rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <!-- <i class="mdi mdi-plus"></i> -->
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 block md:hidden">
+          <button
+            class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
+          >
+            Все застройщики
+          </button>
         </div>
       </section>
       <section class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full my-25">
@@ -660,9 +985,9 @@
           <h1 class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wide">
             Застройщики в Краснодаре
           </h1>
-          <a href="#">Все жилые комплексы</a>
+          <a href="#" class="md:inline-block hidden">Все жилые комплексы</a>
         </div>
-        <div class="flex gap-8 flex-wrap">
+        <div class="hidden sm:flex gap-8 flex-wrap">
           <div
             class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
           >
@@ -680,7 +1005,9 @@
               <p>Год основания: 2013 г.</p>
               <p class="mt-8">Количество объектов: 11</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -699,7 +1026,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <img src="../public/icons/Vector.svg" alt="" />
                     <span>Оставить отзыв</span>
@@ -743,7 +1070,9 @@
               <p>Год основания: 2013 г.</p>
               <p class="mt-8">Количество объектов: 11</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -762,7 +1091,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <img src="../public/icons/Vector.svg" alt="" />
                     <span>Оставить отзыв</span>
@@ -806,7 +1135,9 @@
               <p>Год основания: 2013 г.</p>
               <p class="mt-8">Количество объектов: 11</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -825,7 +1156,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <img src="../public/icons/Vector.svg" alt="" />
                     <span>Оставить отзыв</span>
@@ -869,7 +1200,9 @@
               <p>Год основания: 2013 г.</p>
               <p class="mt-8">Количество объектов: 11</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -888,7 +1221,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <img src="../public/icons/Vector.svg" alt="" />
                     <span>Оставить отзыв</span>
@@ -932,7 +1265,9 @@
               <p>Год основания: 2013 г.</p>
               <p class="mt-8">Количество объектов: 11</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -951,7 +1286,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <img src="../public/icons/Vector.svg" alt="" />
                     <span>Оставить отзыв</span>
@@ -995,7 +1330,9 @@
               <p>Год основания: 2013 г.</p>
               <p class="mt-8">Количество объектов: 11</p>
               <div class="flex items-center justify-between gap-x-2">
-                <div>
+                <div
+                  class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                >
                   <div
                     class="flex items-center space-x-1"
                     aria-label="3 out of 5 stars"
@@ -1014,7 +1351,7 @@
                 </div>
                 <div class="group-hover:hidden">
                   <button
-                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer flex items-center gap-x-2"
+                    class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
                   >
                     <img src="../public/icons/Vector.svg" alt="" />
                     <span>Оставить отзыв</span>
@@ -1041,6 +1378,354 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="mt-8 block sm:hidden">
+          <div class="swiper krasnodor2Swiper relative">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
+                >
+                  <div
+                    class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/image 3.png"
+                      class="w-[75%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col gap-2">
+                    <h2 class="font-semibold text-lg">DOGMA</h2>
+                    <p>Год основания: 2013 г.</p>
+                    <p class="mt-8">Количество объектов: 11</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <!--<img src="../public/icons/Starmini.svg" alt="" /> -->
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
+                >
+                  <div
+                    class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/image 3.png"
+                      class="w-[75%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col gap-2">
+                    <h2 class="font-semibold text-lg">DOGMA</h2>
+                    <p>Год основания: 2013 г.</p>
+                    <p class="mt-8">Количество объектов: 11</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <!--<img src="../public/icons/Starmini.svg" alt="" /> -->
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
+                >
+                  <div
+                    class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/image 3.png"
+                      class="w-[75%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col gap-2">
+                    <h2 class="font-semibold text-lg">DOGMA</h2>
+                    <p>Год основания: 2013 г.</p>
+                    <p class="mt-8">Количество объектов: 11</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <!--<img src="../public/icons/Starmini.svg" alt="" /> -->
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
+                >
+                  <div
+                    class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/image 3.png"
+                      class="w-[75%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col gap-2">
+                    <h2 class="font-semibold text-lg">DOGMA</h2>
+                    <p>Год основания: 2013 г.</p>
+                    <p class="mt-8">Количество объектов: 11</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <!--<img src="../public/icons/Starmini.svg" alt="" /> -->
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all"
+                >
+                  <div
+                    class="border-b border-custom-gray h-[13.75rem] flex items-center justify-center"
+                  >
+                    <img
+                      src="../public/image 3.png"
+                      class="w-[75%] mx-auto h-auto"
+                      alt=""
+                    />
+                  </div>
+                  <div class="p-4 flex flex-col gap-2">
+                    <h2 class="font-semibold text-lg">DOGMA</h2>
+                    <p>Год основания: 2013 г.</p>
+                    <p class="mt-8">Количество объектов: 11</p>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div
+                        class="flex md:flex-col flex-row gap-2 justify-between w-full"
+                      >
+                        <div
+                          class="flex items-center space-x-1"
+                          aria-label="3 out of 5 stars"
+                          role="img"
+                        >
+                          <!--<img src="../public/icons/Starmini.svg" alt="" /> -->
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Starmini.svg" alt="" />
+                          <img src="../public/icons/Stargraymini.svg" alt="" />
+                        </div>
+                        <div class="text-primary text-sm">
+                          115/<span class="text-red-500">15</span>
+                        </div>
+                      </div>
+                      <div class="group-hover:hidden">
+                        <button
+                          class="border-primary text-sm xl:text-base border rounded-3xl px-3 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer hidden md:flex items-center gap-x-2"
+                        >
+                          <img src="../public/icons/Vector.svg" alt="" />
+                          <span>Оставить отзыв</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="absolute top-4 right-4 z-10">
+                    <span class="bg-primary text-white py-2 px-3 rounded-lg">
+                      115 Отзывов
+                    </span>
+                  </div>
+                  <div
+                    class="absolute top-0 left-0 z-11 size-full bg-primary/90 rounded-xl flex items-center justify-center text-white opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    <div class="flex flex-col gap-2 items-center">
+                      <span> Узнать подробнее</span>
+                      <button
+                        class="border-white border text-sm xl:text-base rounded-3xl px-3 py-2 text-white transition-colors cursor-pointer flex items-center gap-x-2"
+                      >
+                        <i class="mdi mdi-plus"></i>
+                        <span>Оставить отзыв</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 block md:hidden">
+          <button
+            class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
+          >
+            Все жилые комплексы
+          </button>
         </div>
       </section>
       <section class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full my-25">
@@ -1048,18 +1733,21 @@
           <h1 class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wide">
             Лучшие отзывы недели
           </h1>
-          <a href="#">Все отзывы</a>
+          <a href="#" class="md:inline-block hidden">Все отзывы</a>
         </div>
-        <div class="flex gap-8 flex-wrap">
+        <div class="hidden sm:flex gap-8 flex-wrap">
           <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
           >
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-1">
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="hidden md:flex items-center gap-1">
                   <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
+                <span class="inline-block md:hidden text-xs">
+                  На модерации
+                </span>
                 <span
                   class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
                   >17 Дополнений</span
@@ -1079,15 +1767,19 @@
                 </div>
                 <span class="text-sm">2020/01/16</span>
               </div>
+              <div class="flex md:hidden items-center gap-1">
+                <img src="../public/user 7.png" class="size-8" alt="" />
+                <span>User001</span>
+              </div>
               <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
               <p class="text-sm line-clamp-4">
                 Купили квартиру на стадии строительства у застройщика
                 ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
                 понятное дело, на старте обычно дешевле
               </p>
-              <div class="my-8">
+              <div class="my-4 md:my-8">
                 <button
-                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
                 >
                   Читать отзыв
                 </button>
@@ -1105,19 +1797,24 @@
                   <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
-                <a href="" class="text-sm"> На модерации </a>
+                <a href="" class="md:inline-block hidden text-sm">
+                  На модерации
+                </a>
               </div>
             </div>
           </div>
           <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
           >
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-1">
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="hidden md:flex items-center gap-1">
                   <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
+                <span class="inline-block md:hidden text-xs">
+                  На модерации
+                </span>
                 <span
                   class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
                   >17 Дополнений</span
@@ -1137,15 +1834,19 @@
                 </div>
                 <span class="text-sm">2020/01/16</span>
               </div>
+              <div class="flex md:hidden items-center gap-1">
+                <img src="../public/user 7.png" class="size-8" alt="" />
+                <span>User001</span>
+              </div>
               <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
               <p class="text-sm line-clamp-4">
                 Купили квартиру на стадии строительства у застройщика
                 ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
                 понятное дело, на старте обычно дешевле
               </p>
-              <div class="my-8">
+              <div class="my-4 md:my-8">
                 <button
-                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
                 >
                   Читать отзыв
                 </button>
@@ -1163,19 +1864,24 @@
                   <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
-                <a href="" class="text-sm"> На модерации </a>
+                <a href="" class="md:inline-block hidden text-sm">
+                  На модерации
+                </a>
               </div>
             </div>
           </div>
           <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
           >
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-1">
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="hidden md:flex items-center gap-1">
                   <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
+                <span class="inline-block md:hidden text-xs">
+                  На модерации
+                </span>
                 <span
                   class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
                   >17 Дополнений</span
@@ -1195,15 +1901,19 @@
                 </div>
                 <span class="text-sm">2020/01/16</span>
               </div>
+              <div class="flex md:hidden items-center gap-1">
+                <img src="../public/user 7.png" class="size-8" alt="" />
+                <span>User001</span>
+              </div>
               <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
               <p class="text-sm line-clamp-4">
                 Купили квартиру на стадии строительства у застройщика
                 ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
                 понятное дело, на старте обычно дешевле
               </p>
-              <div class="my-8">
+              <div class="my-4 md:my-8">
                 <button
-                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
                 >
                   Читать отзыв
                 </button>
@@ -1221,19 +1931,24 @@
                   <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
-                <a href="" class="text-sm"> На модерации </a>
+                <a href="" class="md:inline-block hidden text-sm">
+                  На модерации
+                </a>
               </div>
             </div>
           </div>
           <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
           >
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-1">
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="hidden md:flex items-center gap-1">
                   <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
+                <span class="inline-block md:hidden text-xs">
+                  На модерации
+                </span>
                 <span
                   class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
                   >17 Дополнений</span
@@ -1253,15 +1968,19 @@
                 </div>
                 <span class="text-sm">2020/01/16</span>
               </div>
+              <div class="flex md:hidden items-center gap-1">
+                <img src="../public/user 7.png" class="size-8" alt="" />
+                <span>User001</span>
+              </div>
               <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
               <p class="text-sm line-clamp-4">
                 Купили квартиру на стадии строительства у застройщика
                 ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
                 понятное дело, на старте обычно дешевле
               </p>
-              <div class="my-8">
+              <div class="my-4 md:my-8">
                 <button
-                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
                 >
                   Читать отзыв
                 </button>
@@ -1279,19 +1998,24 @@
                   <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
-                <a href="" class="text-sm"> На модерации </a>
+                <a href="" class="md:inline-block hidden text-sm">
+                  На модерации
+                </a>
               </div>
             </div>
           </div>
           <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
           >
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-1">
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="hidden md:flex items-center gap-1">
                   <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
+                <span class="inline-block md:hidden text-xs">
+                  На модерации
+                </span>
                 <span
                   class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
                   >17 Дополнений</span
@@ -1311,15 +2035,19 @@
                 </div>
                 <span class="text-sm">2020/01/16</span>
               </div>
+              <div class="flex md:hidden items-center gap-1">
+                <img src="../public/user 7.png" class="size-8" alt="" />
+                <span>User001</span>
+              </div>
               <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
               <p class="text-sm line-clamp-4">
                 Купили квартиру на стадии строительства у застройщика
                 ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
                 понятное дело, на старте обычно дешевле
               </p>
-              <div class="my-8">
+              <div class="my-4 md:my-8">
                 <button
-                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
                 >
                   Читать отзыв
                 </button>
@@ -1337,19 +2065,24 @@
                   <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
-                <a href="" class="text-sm"> На модерации </a>
+                <a href="" class="md:inline-block hidden text-sm">
+                  На модерации
+                </a>
               </div>
             </div>
           </div>
           <div
-            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-8"
+            class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
           >
             <div class="flex flex-col gap-4">
-              <div class="flex items-center justify-between">
-                <div class="flex items-center gap-1">
+              <div class="flex items-center justify-between gap-x-2">
+                <div class="hidden md:flex items-center gap-1">
                   <img src="../public/user 7.png" class="size-7" alt="" />
                   <span>User001</span>
                 </div>
+                <span class="inline-block md:hidden text-xs">
+                  На модерации
+                </span>
                 <span
                   class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
                   >17 Дополнений</span
@@ -1369,15 +2102,19 @@
                 </div>
                 <span class="text-sm">2020/01/16</span>
               </div>
+              <div class="flex md:hidden items-center gap-1">
+                <img src="../public/user 7.png" class="size-8" alt="" />
+                <span>User001</span>
+              </div>
               <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
               <p class="text-sm line-clamp-4">
                 Купили квартиру на стадии строительства у застройщика
                 ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно удивили. Ну,
                 понятное дело, на старте обычно дешевле
               </p>
-              <div class="my-8">
+              <div class="my-4 md:my-8">
                 <button
-                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                  class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
                 >
                   Читать отзыв
                 </button>
@@ -1395,7 +2132,400 @@
                   <img src="../public/comment.png" alt="" class="size-5" />
                   <span>1</span>
                 </div>
-                <a href="" class="text-sm"> На модерации </a>
+                <a href="" class="md:inline-block hidden text-sm">
+                  На модерации
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 block sm:hidden">
+          <div class="swiper krasnodor3Swiper relative">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
+                >
+                  <div class="flex flex-col gap-4">
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="hidden md:flex items-center gap-1">
+                        <img src="../public/user 7.png" class="size-7" alt="" />
+                        <span>User001</span>
+                      </div>
+                      <span class="inline-block md:hidden text-xs">
+                        На модерации
+                      </span>
+                      <span
+                        class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                        >17 Дополнений</span
+                      >
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                      <div
+                        class="flex items-center space-x-1"
+                        aria-label="3 out of 5 stars"
+                        role="img"
+                      >
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                      </div>
+                      <span class="text-sm">2020/01/16</span>
+                    </div>
+                    <div class="flex md:hidden items-center gap-1">
+                      <img src="../public/user 7.png" class="size-8" alt="" />
+                      <span>User001</span>
+                    </div>
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p class="text-sm line-clamp-4">
+                      Купили квартиру на стадии строительства у застройщика
+                      ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно
+                      удивили. Ну, понятное дело, на старте обычно дешевле
+                    </p>
+                    <div class="my-4 md:my-8">
+                      <button
+                        class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
+                      >
+                        Читать отзыв
+                      </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="flex items-center gap-x-1">
+                        <img src="../public/like.png" alt="" class="size-5" />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/dislike.png"
+                          alt=""
+                          class="h-5 w-6"
+                        />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/comment.png"
+                          alt=""
+                          class="size-5"
+                        />
+                        <span>1</span>
+                      </div>
+                      <a href="" class="md:inline-block hidden text-sm">
+                        На модерации
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
+                >
+                  <div class="flex flex-col gap-4">
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="hidden md:flex items-center gap-1">
+                        <img src="../public/user 7.png" class="size-7" alt="" />
+                        <span>User001</span>
+                      </div>
+                      <span class="inline-block md:hidden text-xs">
+                        На модерации
+                      </span>
+                      <span
+                        class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                        >17 Дополнений</span
+                      >
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                      <div
+                        class="flex items-center space-x-1"
+                        aria-label="3 out of 5 stars"
+                        role="img"
+                      >
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                      </div>
+                      <span class="text-sm">2020/01/16</span>
+                    </div>
+                    <div class="flex md:hidden items-center gap-1">
+                      <img src="../public/user 7.png" class="size-8" alt="" />
+                      <span>User001</span>
+                    </div>
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p class="text-sm line-clamp-4">
+                      Купили квартиру на стадии строительства у застройщика
+                      ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно
+                      удивили. Ну, понятное дело, на старте обычно дешевле
+                    </p>
+                    <div class="my-4 md:my-8">
+                      <button
+                        class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
+                      >
+                        Читать отзыв
+                      </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="flex items-center gap-x-1">
+                        <img src="../public/like.png" alt="" class="size-5" />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/dislike.png"
+                          alt=""
+                          class="h-5 w-6"
+                        />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/comment.png"
+                          alt=""
+                          class="size-5"
+                        />
+                        <span>1</span>
+                      </div>
+                      <a href="" class="md:inline-block hidden text-sm">
+                        На модерации
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
+                >
+                  <div class="flex flex-col gap-4">
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="hidden md:flex items-center gap-1">
+                        <img src="../public/user 7.png" class="size-7" alt="" />
+                        <span>User001</span>
+                      </div>
+                      <span class="inline-block md:hidden text-xs">
+                        На модерации
+                      </span>
+                      <span
+                        class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                        >17 Дополнений</span
+                      >
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                      <div
+                        class="flex items-center space-x-1"
+                        aria-label="3 out of 5 stars"
+                        role="img"
+                      >
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                      </div>
+                      <span class="text-sm">2020/01/16</span>
+                    </div>
+                    <div class="flex md:hidden items-center gap-1">
+                      <img src="../public/user 7.png" class="size-8" alt="" />
+                      <span>User001</span>
+                    </div>
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p class="text-sm line-clamp-4">
+                      Купили квартиру на стадии строительства у застройщика
+                      ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно
+                      удивили. Ну, понятное дело, на старте обычно дешевле
+                    </p>
+                    <div class="my-4 md:my-8">
+                      <button
+                        class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
+                      >
+                        Читать отзыв
+                      </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="flex items-center gap-x-1">
+                        <img src="../public/like.png" alt="" class="size-5" />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/dislike.png"
+                          alt=""
+                          class="h-5 w-6"
+                        />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/comment.png"
+                          alt=""
+                          class="size-5"
+                        />
+                        <span>1</span>
+                      </div>
+                      <a href="" class="md:inline-block hidden text-sm">
+                        На модерации
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
+                >
+                  <div class="flex flex-col gap-4">
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="hidden md:flex items-center gap-1">
+                        <img src="../public/user 7.png" class="size-7" alt="" />
+                        <span>User001</span>
+                      </div>
+                      <span class="inline-block md:hidden text-xs">
+                        На модерации
+                      </span>
+                      <span
+                        class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                        >17 Дополнений</span
+                      >
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                      <div
+                        class="flex items-center space-x-1"
+                        aria-label="3 out of 5 stars"
+                        role="img"
+                      >
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                      </div>
+                      <span class="text-sm">2020/01/16</span>
+                    </div>
+                    <div class="flex md:hidden items-center gap-1">
+                      <img src="../public/user 7.png" class="size-8" alt="" />
+                      <span>User001</span>
+                    </div>
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p class="text-sm line-clamp-4">
+                      Купили квартиру на стадии строительства у застройщика
+                      ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно
+                      удивили. Ну, понятное дело, на старте обычно дешевле
+                    </p>
+                    <div class="my-4 md:my-8">
+                      <button
+                        class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
+                      >
+                        Читать отзыв
+                      </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="flex items-center gap-x-1">
+                        <img src="../public/like.png" alt="" class="size-5" />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/dislike.png"
+                          alt=""
+                          class="h-5 w-6"
+                        />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/comment.png"
+                          alt=""
+                          class="size-5"
+                        />
+                        <span>1</span>
+                      </div>
+                      <a href="" class="md:inline-block hidden text-sm">
+                        На модерации
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div
+                  class="relative rounded-xl basis-[calc((100%-32px)/2)] lg:basis-[calc((100%-64px)/3)] group hover:shadow-md border-custom-gray border hover:border-primary transition-all p-4 md:p-8"
+                >
+                  <div class="flex flex-col gap-4">
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="hidden md:flex items-center gap-1">
+                        <img src="../public/user 7.png" class="size-7" alt="" />
+                        <span>User001</span>
+                      </div>
+                      <span class="inline-block md:hidden text-xs">
+                        На модерации
+                      </span>
+                      <span
+                        class="bg-primary text-white py-1 px-2 rounded-2xl text-sm"
+                        >17 Дополнений</span
+                      >
+                    </div>
+                    <div class="flex items-center justify-between mt-4">
+                      <div
+                        class="flex items-center space-x-1"
+                        aria-label="3 out of 5 stars"
+                        role="img"
+                      >
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Starmini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                        <img src="../public/icons/Stargraymini.svg" alt="" />
+                      </div>
+                      <span class="text-sm">2020/01/16</span>
+                    </div>
+                    <div class="flex md:hidden items-center gap-1">
+                      <img src="../public/user 7.png" class="size-8" alt="" />
+                      <span>User001</span>
+                    </div>
+                    <h2 class="font-semibold text-lg">ЖК “Губернский”</h2>
+                    <p class="text-sm line-clamp-4">
+                      Купили квартиру на стадии строительства у застройщика
+                      ЮгСтройИмпериал в ЖК Родные просторы. Цены приятно
+                      удивили. Ну, понятное дело, на старте обычно дешевле
+                    </p>
+                    <div class="my-4 md:my-8">
+                      <button
+                        class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full"
+                      >
+                        Читать отзыв
+                      </button>
+                    </div>
+                    <div class="flex items-center justify-between gap-x-2">
+                      <div class="flex items-center gap-x-1">
+                        <img src="../public/like.png" alt="" class="size-5" />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/dislike.png"
+                          alt=""
+                          class="h-5 w-6"
+                        />
+                        <span>1</span>
+                      </div>
+                      <div class="flex items-center gap-x-1">
+                        <img
+                          src="../public/comment.png"
+                          alt=""
+                          class="size-5"
+                        />
+                        <span>1</span>
+                      </div>
+                      <a href="" class="md:inline-block hidden text-sm">
+                        На модерации
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -1410,7 +2540,7 @@
             <a href="#" class="w-full max-w-[15rem] xl:max-w-[18.125rem]">
               <img
                 src="../public/footer_logo.png"
-                class="w-full h-auto"
+                class="w-full h-auto min-h-[10.625rem]"
                 alt=""
               />
             </a>
