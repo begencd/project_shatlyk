@@ -25,13 +25,18 @@
           class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
         >
           <div class="flex items-center gap-x-12 h-10">
-            <div>
+            <div class="flex items-center gap-2">
+              <div class="lg:hidden flex">
+                <div
+                  class="cursor-pointer flex items-center justify-center pt-4 leading-10"
+                  id="menu-toggle"
+                  aria-label="Toggle menu"
+                >
+                  <img src="../public/icons/menu.svg" alt="" />
+                </div>
+              </div>
               <a href="#">
-                <img
-                  class="w-[8.125rem] h-10"
-                  src="../public/logo.png"
-                  alt=""
-                />
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
               </a>
             </div>
             <div class="hidden items-center gap-x-8 lg:flex">
@@ -44,77 +49,15 @@
             </div>
           </div>
           <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
-            <div class="lg:hidden flex">
+            <div class="flex gap-x-1 lg:gap-x-2 items-center leading-10 pt-4">
+              <span class="hidden lg:inline-block text-lg">Ваш город:</span>
+
               <div
-                class="container cursor-pointer flex"
-                id="menu-toggle"
-                aria-label="Toggle menu"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 200 200"
-                >
-                  <g stroke-width="6.5" stroke-linecap="round">
-                    <path
-                      d="M72 82.286h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
-                      fill="none"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M72 125.143h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
-                      fill="none"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 82.286h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 125.143h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                  </g>
-                </svg>
-              </div>
-            </div>
-            <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
-              <span class="text-lg leading-10 pt-4">Ваш город:</span>
-              <!-- <select
-                class="border-b border-white/50 outline-none border-solid"
-              >
-                <option value="moscow" class="text-primary bg-white py-1">
-                  Moscow
-                </option>
-                <option value="petersburg" class="text-primary bg-white py-1">
-                  Saint Petersburg
-                </option>
-                <option value="novosibirsk" class="text-primary bg-white py-1">
-                  Novosibirsk
-                </option>
-              </select> -->
-              <div
-                class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-5"
+                onclick="openModal('reusableModal')"
+                class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-1"
               >
                 <div class="relative">
-                  <span>Краснодар</span>
+                  <span id="selectedCityDisplay">Краснодар</span>
                   <div
                     class="absolute bottom-2 left-0 w-full h-[1px] bg-white/50"
                   ></div>
@@ -122,7 +65,7 @@
                 <img src="../public/icons/down-arrow 1.svg" alt="" />
               </div>
             </div>
-            <div class="leading-10 pt-0 lg:pt-4">
+            <div class="leading-10 pt-0 lg:pt-4 hidden lg:block">
               <button
                 class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
               >
