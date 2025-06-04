@@ -13,7 +13,7 @@
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
     />
-
+    <script src="../js/modal.js" defer></script>
     <script src="../js/component.js" defer></script>
     <script src="../public/swiper/swiper-bundle.min.js" defer></script>
     <script src="../js/swiper.js" defer></script>
@@ -25,18 +25,13 @@
           class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
         >
           <div class="flex items-center gap-x-12 h-10">
-            <div class="flex items-center gap-2">
-              <div class="lg:hidden flex">
-                <div
-                  class="cursor-pointer flex items-center justify-center pt-4 leading-10"
-                  id="menu-toggle"
-                  aria-label="Toggle menu"
-                >
-                  <img src="../public/icons/menu.svg" alt="" />
-                </div>
-              </div>
+            <div>
               <a href="#">
-                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
+                <img
+                  class="w-[8.125rem] h-10"
+                  src="../public/logo.png"
+                  alt=""
+                />
               </a>
             </div>
             <div class="hidden items-center gap-x-8 lg:flex">
@@ -49,15 +44,77 @@
             </div>
           </div>
           <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
-            <div class="flex gap-x-1 lg:gap-x-2 items-center leading-10 pt-4">
-              <span class="hidden lg:inline-block text-lg">Ваш город:</span>
-
+            <div class="lg:hidden flex">
               <div
-                onclick="openModal('reusableModal')"
-                class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-1"
+                class="container cursor-pointer flex"
+                id="menu-toggle"
+                aria-label="Toggle menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="48"
+                  height="48"
+                  viewBox="0 0 200 200"
+                >
+                  <g stroke-width="6.5" stroke-linecap="round">
+                    <path
+                      d="M72 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M72 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
+                      fill="none"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 82.286h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                    <path
+                      d="M100.75 125.143h28.75"
+                      fill="#009100"
+                      fill-rule="evenodd"
+                      stroke="#fff"
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
+              <span class="text-lg leading-10 pt-4">Ваш город:</span>
+              <!-- <select
+                class="border-b border-white/50 outline-none border-solid"
+              >
+                <option value="moscow" class="text-primary bg-white py-1">
+                  Moscow
+                </option>
+                <option value="petersburg" class="text-primary bg-white py-1">
+                  Saint Petersburg
+                </option>
+                <option value="novosibirsk" class="text-primary bg-white py-1">
+                  Novosibirsk
+                </option>
+              </select> -->
+              <div
+                class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-5"
               >
                 <div class="relative">
-                  <span id="selectedCityDisplay">Краснодар</span>
+                  <span>Краснодар</span>
                   <div
                     class="absolute bottom-2 left-0 w-full h-[1px] bg-white/50"
                   ></div>
@@ -65,7 +122,7 @@
                 <img src="../public/icons/down-arrow 1.svg" alt="" />
               </div>
             </div>
-            <div class="leading-10 pt-0 lg:pt-4 hidden lg:block">
+            <div class="leading-10 pt-0 lg:pt-4">
               <button
                 class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
               >
@@ -77,7 +134,9 @@
         </div>
       </header>
 
-      <div class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+      <div
+        class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto md:flex hidden"
+      >
         <span class="text-sm xl:text-xs tracking-widest cursor-pointer"
           >Главная</span
         >
@@ -92,9 +151,11 @@
       </div>
 
       <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
-        <div class="flex items-start justify-between gap-x-8 lg:gap-x-12">
+        <div
+          class="flex items-start justify-between gap-x-8 lg:gap-x-12 flex-col md:flex-row"
+        >
           <div
-            class="h-[12.5rem] max-w-[15.625rem] lg:max-w-[19.375rem] size-full border rounded-xl border-custom-gray flex items-center justify-center"
+            class="h-[12.5rem] mx-auto md:mx-0 max-w-[18.125rem] md:max-w-[15.625rem] lg:max-w-[19.375rem] size-full border-transparent border rounded-xl md:border-custom-gray flex items-center justify-center"
           >
             <img
               src="../public/tocno.png"
@@ -103,7 +164,7 @@
             />
           </div>
           <div
-            class="w-[calc(100%-17.625rem)] lg:w-[calc(100%-22.375rem)] flex flex-col gap-2 lg:gap-4"
+            class="w-full md:w-[calc(100%-17.625rem)] lg:w-[calc(100%-22.375rem)] flex flex-col gap-2 lg:gap-4"
           >
             <h1
               class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
@@ -111,16 +172,17 @@
               Строительная компания «Точно»
             </h1>
             <div
-              class="flex items-center gap-x-3 lg:gap-x-6 w-full xl:w-[80%] mr-0 xl:mr-auto"
+              class="flex items-start xs:items-center gap-3 lg:gap-6 w-full xl:w-[80%] mr-0 xl:mr-auto xs:flex-row flex-col"
             >
               <h4 class="text-sm lg:text-base font-semibold tracking-wider">
                 Год основания: 2013 г.
               </h4>
-              <div>|</div>
+              <div class="xs:inline-block hidden">|</div>
               <div class="text-sm lg:text-base font-semibold">
                 Количество объектов: 11
               </div>
             </div>
+            <hr class="md:hidden border-auth-input-border-color" />
             <p
               class="text-xs lg:text-sm tracking-wide w-full xl:w-[80%] mr-0 xl:mr-auto"
             >
@@ -132,34 +194,85 @@
           </div>
         </div>
         <div
-          class="mt-8 w-full xl:w-[80%] mr-0 xl:mr-auto flex items-center justify-between"
+          class="mt-8 w-full xl:w-[80%] mr-0 xl:mr-auto flex items-center justify-between md:flex-nowrap flex-wrap"
         >
-          <div class="text-xs 2xl:text-sm tracking-wide">
+          <div
+            class="text-xs 2xl:text-sm tracking-wide order-4 md:order-none md:w-auto w-full md:mt-0 mt-4 md:text-left text-center"
+          >
             Ваша компания? <a href="#" class="text-primary">Оставьте заявку</a>
           </div>
-          <div class="text-xl lg:text-3xl flex items-center">
+          <div
+            class="text-xl lg:text-3xl flex items-center w-[50%] md:w-auto order-1 md:order-0"
+          >
             <span class="pr-1">4.79</span>
             <div
               class="flex items-center space-x-1"
               aria-label="3 out of 5 stars"
               role="img"
             >
-              <img src="../public/icons/Star.svg" alt="" />
-              <img src="../public/icons/Star.svg" alt="" />
-              <img src="../public/icons/Star.svg" alt="" />
-              <img src="../public/icons/Stargray.svg" alt="" />
-              <img src="../public/icons/Stargray.svg" alt="" />
+              <img
+                src="../public/icons/Star.svg"
+                class="min-[51.875rem]:inline-block hidden"
+                alt=""
+              />
+              <img
+                src="../public/icons/Star.svg"
+                class="min-[51.875rem]:inline-block hidden"
+                alt=""
+              />
+              <img
+                src="../public/icons/Star.svg"
+                class="min-[51.875rem]:inline-block hidden"
+                alt=""
+              />
+              <img
+                src="../public/icons/Stargray.svg"
+                class="min-[51.875rem]:inline-block hidden"
+                alt=""
+              />
+              <img
+                src="../public/icons/Stargray.svg"
+                class="min-[51.875rem]:inline-block hidden"
+                alt=""
+              />
+              <img
+                src="../public/icons/Starmini.svg"
+                class="min-[51.875rem]:hidden inline-block"
+                alt=""
+              />
+              <img
+                src="../public/icons/Starmini.svg"
+                class="min-[51.875rem]:hidden inline-block"
+                alt=""
+              />
+              <img
+                src="../public/icons/Starmini.svg"
+                class="min-[51.875rem]:hidden inline-block"
+                alt=""
+              />
+              <img
+                src="../public/icons/Stargraymini.svg"
+                class="min-[51.875rem]:hidden inline-block"
+                alt=""
+              />
+              <img
+                src="../public/icons/Stargraymini.svg"
+                class="min-[51.875rem]:hidden inline-block"
+                alt=""
+              />
             </div>
           </div>
-          <div class="flex items-center gap-x-2">
+          <div
+            class="flex items-center gap-x-2 w-[50%] md:w-auto order-2 md:order-none md:justify-start justify-end"
+          >
             <span class="bg-primary text-white p-1 px-2 rounded-lg text-sm">
               115</span
             >
             <span class="text-sm tracking-wide">Отзывов</span>
           </div>
-          <div>
+          <div class="order-3 md:order-none md:mt-0 mt-4 md:w-auto w-full">
             <button
-              class="border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+              class="md:w-auto w-full border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
             >
               <i class="mdi mdi-plus"></i>
               Оставить отзыв
