@@ -25,13 +25,18 @@
           class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
         >
           <div class="flex items-center gap-x-12 h-10">
-            <div>
+            <div class="flex items-center gap-2">
+              <div class="lg:hidden flex">
+                <div
+                  class="cursor-pointer flex items-center justify-center pt-4 leading-10"
+                  id="menu-toggle"
+                  aria-label="Toggle menu"
+                >
+                  <img src="../public/icons/menu.svg" alt="" />
+                </div>
+              </div>
               <a href="#">
-                <img
-                  class="w-[8.125rem] h-10"
-                  src="../public/logo.png"
-                  alt=""
-                />
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
               </a>
             </div>
             <div class="hidden items-center gap-x-8 lg:flex">
@@ -44,77 +49,15 @@
             </div>
           </div>
           <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
-            <div class="lg:hidden flex">
+            <div class="flex gap-x-1 lg:gap-x-2 items-center leading-10 pt-4">
+              <span class="hidden lg:inline-block text-lg">Ваш город:</span>
+
               <div
-                class="container cursor-pointer flex"
-                id="menu-toggle"
-                aria-label="Toggle menu"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="48"
-                  height="48"
-                  viewBox="0 0 200 200"
-                >
-                  <g stroke-width="6.5" stroke-linecap="round">
-                    <path
-                      d="M72 82.286h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 103.714l72.482-.143c.043 39.398-32.284 71.434-72.16 71.434-39.878 0-72.204-32.036-72.204-71.554"
-                      fill="none"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M72 125.143h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 103.714l-71.908-.143c.026-39.638 32.352-71.674 72.23-71.674 39.876 0 72.203 32.036 72.203 71.554"
-                      fill="none"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 82.286h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                    <path
-                      d="M100.75 125.143h28.75"
-                      fill="#009100"
-                      fill-rule="evenodd"
-                      stroke="#fff"
-                    />
-                  </g>
-                </svg>
-              </div>
-            </div>
-            <div class="hidden lg:flex gap-x-1 lg:gap-x-2 items-center">
-              <span class="text-lg leading-10 pt-4">Ваш город:</span>
-              <!-- <select
-                class="border-b border-white/50 outline-none border-solid"
-              >
-                <option value="moscow" class="text-primary bg-white py-1">
-                  Moscow
-                </option>
-                <option value="petersburg" class="text-primary bg-white py-1">
-                  Saint Petersburg
-                </option>
-                <option value="novosibirsk" class="text-primary bg-white py-1">
-                  Novosibirsk
-                </option>
-              </select> -->
-              <div
-                class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-5"
+                onclick="openModal('reusableModal')"
+                class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-1"
               >
                 <div class="relative">
-                  <span>Краснодар</span>
+                  <span id="selectedCityDisplay">Краснодар</span>
                   <div
                     class="absolute bottom-2 left-0 w-full h-[1px] bg-white/50"
                   ></div>
@@ -122,7 +65,7 @@
                 <img src="../public/icons/down-arrow 1.svg" alt="" />
               </div>
             </div>
-            <div class="leading-10 pt-0 lg:pt-4">
+            <div class="leading-10 pt-0 lg:pt-4 hidden lg:block">
               <button
                 class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
               >
@@ -150,7 +93,9 @@
         >
       </div>
 
-      <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+      <div
+        class="my-12 md:my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto relative"
+      >
         <div
           class="flex items-start justify-between gap-x-8 lg:gap-x-12 flex-col md:flex-row"
         >
@@ -279,28 +224,78 @@
             </button>
           </div>
         </div>
-      </div>
 
+        <button
+          class="absolute right-12 top-4 z-10 rounded-full px-2 py-1 bg-custom-gray-2 cursor-pointer text-white md:hidden block"
+        >
+          <i class="mdi mdi-chevron-left"></i>
+        </button>
+      </div>
       <div
         class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex flex-col gap-y-4"
       >
         <div
-          class="flex flex-col gap-8 p-8 w-full border border-custom-gray rounded-3xl"
+          class="flex flex-col gap-8 px-0 py-8 md:px-8 w-full border-y lg:border border-custom-gray rounded-none lg:rounded-3xl"
         >
           <div class="flex items-center justify-between gap-x-6">
             <div class="flex items-center gap-x-6">
-              <div class="text-xl lg:text-3xl flex items-center">
+              <div class="text-xl lg:text-3xl hidden lg:flex items-center">
                 <span class="pr-1">1</span>
                 <div
                   class="flex items-center space-x-1"
                   aria-label="3 out of 5 stars"
                   role="img"
                 >
-                  <img src="../public/icons/Star.svg" alt="" />
-                  <img src="../public/icons/Stargray.svg" alt="" />
-                  <img src="../public/icons/Stargray.svg" alt="" />
-                  <img src="../public/icons/Stargray.svg" alt="" />
-                  <img src="../public/icons/Stargray.svg" alt="" />
+                  <img
+                    src="../public/icons/Star.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Star.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Star.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargray.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargray.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Starmini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Starmini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Starmini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargraymini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargraymini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
                 </div>
               </div>
               <div
@@ -310,26 +305,107 @@
               </div>
             </div>
             <div class="flex items-center gap-x-6">
-              <div class="flex items-center gap-x-1">
+              <div class="hidden lg:flex items-center gap-x-1">
                 <img src="../public/like.png" alt="" class="size-5" />
                 <span>1</span>
               </div>
-              <div class="flex items-center gap-x-1">
+              <div class="hidden lg:flex items-center gap-x-1">
                 <img src="../public/dislike.png" alt="" class="h-5 w-6" />
                 <span>1</span>
               </div>
-              <div class="flex items-center gap-x-1">
+              <div class="hidden lg:flex items-center gap-x-1">
                 <img src="../public/comment.png" alt="" class="size-5" />
                 <span>1</span>
               </div>
-              <span class="bg-primary text-white py-1 px-3 rounded-2xl text-sm"
+              <span
+                class="bg-primary text-white py-1 px-3 rounded-2xl text-sm hidden lg:inline-block"
                 >17 Дополнений</span
               ><span class="text-sm text-text">2020/01/16</span>
             </div>
           </div>
-          <div class="flex items-center gap-x-6">
-            <img src="../public/user2.png" alt="" />
-            <span class="text-base font-bold text-text2">User001</span>
+          <div class="flex justify-between items-center">
+            <div class="flex items-center gap-x-6">
+              <img src="../public/user2.png" class="size-6 md:size-20" alt="" />
+              <span class="text-base font-bold text-text2">User001</span>
+            </div>
+            <div class="text-xl lg:text-3xl flex lg:hidden items-center">
+              <span class="pr-1">1</span>
+              <div
+                class="flex items-center space-x-1"
+                aria-label="3 out of 5 stars"
+                role="img"
+              >
+                <img
+                  src="../public/icons/Star.svg"
+                  class="min-[51.875rem]:inline-block hidden"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Star.svg"
+                  class="min-[51.875rem]:inline-block hidden"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Star.svg"
+                  class="min-[51.875rem]:inline-block hidden"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Stargray.svg"
+                  class="min-[51.875rem]:inline-block hidden"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Stargray.svg"
+                  class="min-[51.875rem]:inline-block hidden"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Starmini.svg"
+                  class="min-[51.875rem]:hidden inline-block"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Starmini.svg"
+                  class="min-[51.875rem]:hidden inline-block"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Starmini.svg"
+                  class="min-[51.875rem]:hidden inline-block"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Stargraymini.svg"
+                  class="min-[51.875rem]:hidden inline-block"
+                  alt=""
+                />
+                <img
+                  src="../public/icons/Stargraymini.svg"
+                  class="min-[51.875rem]:hidden inline-block"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between gap-x-6">
+            <div class="flex lg:hidden items-center gap-x-1">
+              <img src="../public/like.png" alt="" class="size-5" />
+              <span>1</span>
+            </div>
+            <div class="flex lg:hidden items-center gap-x-1">
+              <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+              <span>1</span>
+            </div>
+            <div class="flex lg:hidden items-center gap-x-1">
+              <img src="../public/comment.png" alt="" class="size-5" />
+              <span>1</span>
+            </div>
+            <span
+              class="bg-primary text-white py-1 px-3 rounded-2xl text-sm inline-block lg:hidden"
+              >17 Дополнений</span
+            >
           </div>
 
           <h1 class="text-2xl font-bold tracking-widest text-text2">
@@ -374,7 +450,7 @@
 
           <div class="flex items-center gap-x-4">
             <button
-              class="my-tocno-swiper-button-prev bg-custom-gray-2 p-1 px-2.5 rounded-full text-lg cursor-pointer"
+              class="my-tocno-swiper-button-prev bg-custom-gray-2 p-1 px-2.5 rounded-full text-lg cursor-pointer md:block hidden"
             >
               <i class="mdi mdi-chevron-left"></i>
             </button>
@@ -419,7 +495,7 @@
             </div>
 
             <button
-              class="my-tocno-swiper-button-next bg-custom-gray-2 p-1 px-2.5 rounded-full text-lg cursor-pointer"
+              class="my-tocno-swiper-button-next bg-custom-gray-2 p-1 px-2.5 rounded-full text-lg cursor-pointer md:block hidden"
             >
               <i class="mdi mdi-chevron-right"></i>
             </button>
@@ -434,7 +510,9 @@
         <div
           class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
         >
-          <div class="flex items-center justify-between gap-x-4">
+          <div
+            class="flex items-center justify-between sm:flex-row flex-col gap-4"
+          >
             <div class="flex items-center gap-x-4">
               <div
                 class="w-15 h-9 border border-custom-gray flex items-center justify-center"
@@ -445,9 +523,11 @@
                   alt=""
                 />
               </div>
-              <div class="text-xs font-medium tracking-wider text-text2">
+              <div
+                class="text-xs font-medium tracking-wider text-text2 sm:inline-block sm:flex-row flex flex-col"
+              >
                 <span>Официальный ответ</span>
-                <span class="px-2">|</span>
+                <span class="px-2 sm:inline hidden">|</span>
                 <span
                   >Застройщик: <a href="#" class="text-primary">ТОЧНО</a></span
                 >
@@ -465,6 +545,7 @@
               </div>
             </div>
           </div>
+          <hr class="mt-6 sm:hidden flex border-custom-gray" />
           <p
             class="text-sm font-normal mt-6 text-text2 h-[2.5rem] overflow-hidden transition-all duration-300 ease-in-out"
             id="collapse-content-1"
@@ -475,19 +556,10 @@
             Рекомендую эту компанию всем, кто ищет надежного партнера для
             строительства или ремонта — они действительно делают свою работу
             точно! Если нужно, могу дополнительно адаптировать отзыв под
-            конкретный тип проекта или ваши пожелания! Lorem ipsum dolor sit
-            amet, consectetur adipisicing elit. Debitis omnis fugiat accusantium
-            ipsam in amet eaque, harum voluptatibus. Quo quam ut pariatur autem
-            libero, perferendis, recusandae quas maiores asperiores, similique
-            quibusdam. Excepturi voluptatum vel consequatur pariatur accusamus
-            nobis omnis, delectus magni minima distinctio. Eaque incidunt quam
-            doloremque aliquid distinctio suscipit voluptas quia labore esse ut
-            quibusdam autem odio sit alias nemo, fuga explicabo et, impedit
-            animi sequi laudantium repellendus earum. A inventore magnam amet?
-            Porro dolores similique ducimus deserunt magnam repellat, architecto
-            incidunt quod veritatis commodi eum facilis magni dolore assumenda
-            ullam eos hic laboriosam officia perspiciatis blanditiis vero autem!
+            конкретный тип проекта или ваши пожелания!
           </p>
+          <hr class="mt-6 sm:hidden flex border-custom-gray" />
+
           <button
             class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-2 cursor-pointer"
             id="collapse-button-1"
@@ -512,13 +584,17 @@
             <span class="bg-primary text-white p-1 px-2 rounded-lg text-sm">
               115</span
             >
-            <span class="text-sm tracking-wide">Комментариев</span>
+            <span class="text-sm tracking-wide hidden sm:inline"
+              >Комментариев</span
+            >
           </div>
           <div class="flex flex-col gap-4">
             <div
               class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
             >
-              <div class="flex items-center justify-between gap-x-4">
+              <div
+                class="flex items-center justify-between sm:flex-row flex-col gap-4"
+              >
                 <div class="flex items-center gap-x-4">
                   <div
                     class="w-15 h-9 border border-custom-gray flex items-center justify-center"
@@ -529,9 +605,11 @@
                       alt=""
                     />
                   </div>
-                  <div class="text-xs font-medium tracking-wider text-text2">
+                  <div
+                    class="text-xs font-medium tracking-wider text-text2 sm:inline-block sm:flex-row flex flex-col"
+                  >
                     <span>Официальный ответ</span>
-                    <span class="px-2">|</span>
+                    <span class="px-2 sm:inline hidden">|</span>
                     <span
                       >Застройщик:
                       <a href="#" class="text-primary">ТОЧНО</a></span
@@ -550,6 +628,7 @@
                   </div>
                 </div>
               </div>
+              <hr class="mt-6 sm:hidden flex border-custom-gray" />
               <p
                 class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem] overflow-hidden"
                 id="collapse-content-2"
@@ -563,6 +642,8 @@
                 адаптировать отзыв под конкретный тип проекта или ваши
                 пожелания!
               </p>
+              <hr class="mt-6 sm:hidden flex border-custom-gray" />
+
               <button
                 class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-2 cursor-pointer"
                 id="collapse-button-2"
@@ -575,7 +656,9 @@
             <div
               class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
             >
-              <div class="flex items-center justify-between gap-x-4">
+              <div
+                class="flex items-center justify-between sm:flex-row flex-col gap-4"
+              >
                 <div class="flex items-center gap-x-4">
                   <div
                     class="w-15 h-9 border border-custom-gray flex items-center justify-center"
@@ -586,9 +669,11 @@
                       alt=""
                     />
                   </div>
-                  <div class="text-xs font-medium tracking-wider text-text2">
+                  <div
+                    class="text-xs font-medium tracking-wider text-text2 sm:inline-block sm:flex-row flex flex-col"
+                  >
                     <span>Официальный ответ</span>
-                    <span class="px-2">|</span>
+                    <span class="px-2 sm:inline hidden">|</span>
                     <span
                       >Застройщик:
                       <a href="#" class="text-primary">ТОЧНО</a></span
@@ -607,6 +692,7 @@
                   </div>
                 </div>
               </div>
+              <hr class="mt-6 sm:hidden flex border-custom-gray" />
               <p
                 class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem] overflow-hidden"
                 id="collapse-content-3"
@@ -620,6 +706,8 @@
                 адаптировать отзыв под конкретный тип проекта или ваши
                 пожелания!
               </p>
+              <hr class="mt-6 sm:hidden flex border-custom-gray" />
+
               <button
                 class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-2 cursor-pointer"
                 id="collapse-button-3"
@@ -632,7 +720,9 @@
             <div
               class="rounded-2xl border-2 border-custom-gray hover:border-primary hover:shadow-md transition-all duration-300 ease-in-out p-4"
             >
-              <div class="flex items-center justify-between gap-x-4">
+              <div
+                class="flex items-center justify-between sm:flex-row flex-col gap-4"
+              >
                 <div class="flex items-center gap-x-4">
                   <div
                     class="w-15 h-9 border border-custom-gray flex items-center justify-center"
@@ -643,9 +733,11 @@
                       alt=""
                     />
                   </div>
-                  <div class="text-xs font-medium tracking-wider text-text2">
+                  <div
+                    class="text-xs font-medium tracking-wider text-text2 sm:inline-block sm:flex-row flex flex-col"
+                  >
                     <span>Официальный ответ</span>
-                    <span class="px-2">|</span>
+                    <span class="px-2 sm:inline hidden">|</span>
                     <span
                       >Застройщик:
                       <a href="#" class="text-primary">ТОЧНО</a></span
@@ -664,6 +756,7 @@
                   </div>
                 </div>
               </div>
+              <hr class="mt-6 sm:hidden flex border-custom-gray" />
               <p
                 class="text-sm font-normal mt-6 text-text2 h-full max-h-[2.5rem] overflow-hidden"
                 id="collapse-content-4"
@@ -677,6 +770,8 @@
                 адаптировать отзыв под конкретный тип проекта или ваши
                 пожелания!
               </p>
+              <hr class="mt-6 sm:hidden flex border-custom-gray" />
+
               <button
                 class="mt-4 float-right tracking-wide text-xs flex items-center gap-x-2 cursor-pointer"
                 id="collapse-button-4"
@@ -687,9 +782,9 @@
               </button>
             </div>
           </div>
-          <div class="flex items-center justify-end">
+          <div class="flex items-center justify-start sm:justify-end">
             <button
-              class="flex items-center gap-x-2 px-10 group py-3.5 rounded-3xl border border-primary text-primary w-max text-sm hover:bg-primary hover:text-white transition-all duration-300 ease-in-out cursor-pointer hover:shadow-lg"
+              class="flex items-center sm:justify-start justify-center gap-x-2 px-10 w-full group py-3.5 rounded-3xl border border-primary text-primary sm:w-max text-sm hover:bg-primary hover:text-white transition-all duration-300 ease-in-out cursor-pointer hover:shadow-lg"
             >
               <img
                 src="../public/icons/comment_blue.svg "
@@ -846,23 +941,68 @@
               >
             </div>
           </div>
-
-          <!-- <a
-          href="#"
-          class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
-          >Пользователям</a
-        >
-        <a
-          href="#"
-          class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
-          >Главная</a
-        >
-        <a
-          href="#"
-          class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
-          >Контакты</a
-        > -->
         </nav>
+      </div>
+
+      <div
+        id="modalOverlay"
+        class="fixed inset-0 bg-black/50 bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-out opacity-0"
+      ></div>
+
+      <div
+        id="reusableModal"
+        class="fixed inset-0 top-[6rem] z-50 items-center justify-center p-4 hidden transition-all duration-300 ease-out transform opacity-0 scale-95 -translate-y-5"
+      >
+        <div
+          class="bg-white rounded-lg shadow-xl xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full max-h-full overflow-y-auto"
+        >
+          <div class="p-6">
+            <div class="flex justify-end items-center pb-3">
+              <button
+                onclick="closeModal('reusableModal')"
+                class="text-gray-500 hover:text-gray-800 focus:outline-none rounded-full border p-2 cursor-pointer"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div id="modalBody">
+              <h1
+                class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+              >
+                Выберите ваш город
+              </h1>
+              <div
+                class="mt-8 flex items-center gap-x-2 rounded-3xl border border-input-border-color px-4 h-10 w-full md:w-[80%]"
+              >
+                <img src="../public/icons/search 1.svg" alt="" />
+                <input
+                  type="text"
+                  class="border-none outline-none h-10 w-full"
+                  placeholder="Введите название для быстрого поиска"
+                />
+              </div>
+
+              <div
+                id="cityListContainer"
+                class="flex flex-col gap-4 mt-8 pl-8 max-h-[300px] overflow-y-auto"
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
