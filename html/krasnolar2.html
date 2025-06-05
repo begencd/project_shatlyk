@@ -15,6 +15,8 @@
     />
 
     <script src="../js/component.js" defer></script>
+    <script src="../js/modal.js" defer></script>
+
     <script src="../public/swiper/swiper-bundle.min.js" defer></script>
     <script src="../js/swiper.js" defer></script>
   </head>
@@ -77,7 +79,9 @@
         </div>
       </header>
 
-      <div class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+      <div
+        class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto md:flex hidden"
+      >
         <span class="text-sm xl:text-xs tracking-widest cursor-pointer"
           >Главная</span
         >
@@ -87,16 +91,18 @@
         >
       </div>
 
-      <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+      <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto relative">
         <div class="flex flex-col gap-y-8">
           <h1
             class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-text"
           >
             Жилые комплексы, Краснодар
           </h1>
-          <div class="flex items-center justify-between gap-x-4">
+          <div
+            class="flex items-start md:items-center md:flex-row flex-col justify-between gap-4"
+          >
             <div
-              class="px-8 rounded-3xl h-12 flex items-center gap-x-2 w-[70%] border border-input-border-color"
+              class="px-8 rounded-3xl h-12 flex items-center gap-x-2 w-full md:w-[70%] border border-input-border-color"
               style="
                 background: linear-gradient(to right, #fcfdff 10%, #f0f0f0 90%);
               "
@@ -115,7 +121,7 @@
           </div>
           <div class="flex flex-wrap gap-8">
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -128,15 +134,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -161,10 +165,13 @@
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
                 </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
               </div>
             </div>
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -177,15 +184,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -210,10 +215,13 @@
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
                 </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
               </div>
             </div>
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -226,15 +234,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -259,10 +265,13 @@
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
                 </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
               </div>
             </div>
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -275,15 +284,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -308,10 +315,13 @@
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
                 </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
               </div>
             </div>
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -324,15 +334,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -357,10 +365,13 @@
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
                 </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
               </div>
             </div>
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -373,15 +384,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -406,10 +415,13 @@
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
                 </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
               </div>
             </div>
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -422,15 +434,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -455,10 +465,13 @@
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
                 </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
+                </div>
               </div>
             </div>
             <div
-              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-start gap-x-4 xl:gap-x-8"
+              class="w-full lg:w-[calc(100%/2-1rem)] rounded-2xl p-8 border border-input-border-color flex items-center sm:items-start gap-4 sm:flex-row flex-col xl:gap-8"
             >
               <div
                 class="min-h-[8.125rem] flex items-center justify-center border border-input-border-color rounded-md"
@@ -471,15 +484,13 @@
               </div>
               <div class="flex flex-col gap-2 w-full">
                 <h2 class="text-lg font-bold text-text2 tracking-wide">
-                  «Точно»
+                  ЖК “Cказка Град”
                 </h2>
                 <p class="font-semibold text-sm tracking-wide text-text2">
-                  <span>Год основания: 2013 г.</span>
-                  <span class="px-2">|</span>
-                  <span>Количество объектов: 11</span>
+                  г. Краснодар, ул.Западный обход,33
                 </p>
                 <div
-                  class="flex items-start xl:items-center xl:flex-row flex-col justify-between my-0 xl:my-6 gap-y-1 xl:gap-0"
+                  class="flex items-start xl:items-center xl:flex-row flex-col xs:flex-row sm:flex-col justify-between my-0 xl:my-2 gap-y-1 xl:gap-0"
                 >
                   <div class="flex items-center gap-x-2">
                     <span class="text-lg font-semibold">4.7</span>
@@ -503,11 +514,19 @@
                     >
                     <span class="text-sm tracking-wide">Комментариев</span>
                   </div>
+                </div>
+                <div class="font-semibold text-sm tracking-wide">
+                  Застройщик: <span class="text-primary">ТОЧНО</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <button
+          class="absolute right-12 -top-12 z-10 rounded-full px-2 py-1 bg-custom-gray-2 cursor-pointer text-white md:hidden block"
+        >
+          <i class="mdi mdi-chevron-left"></i>
+        </button>
       </div>
 
       <footer class="bg-primary py-8 sm:py-15">
@@ -648,23 +667,68 @@
               >
             </div>
           </div>
-
-          <!-- <a
-          href="#"
-          class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
-          >Пользователям</a
-        >
-        <a
-          href="#"
-          class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
-          >Главная</a
-        >
-        <a
-          href="#"
-          class="text-lg font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
-          >Контакты</a
-        > -->
         </nav>
+      </div>
+
+      <div
+        id="modalOverlay"
+        class="fixed inset-0 bg-black/50 bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-out opacity-0"
+      ></div>
+
+      <div
+        id="reusableModal"
+        class="fixed inset-0 top-[6rem] z-50 items-center justify-center p-4 hidden transition-all duration-300 ease-out transform opacity-0 scale-95 -translate-y-5"
+      >
+        <div
+          class="bg-white rounded-lg shadow-xl xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full max-h-full overflow-y-auto"
+        >
+          <div class="p-6">
+            <div class="flex justify-end items-center pb-3">
+              <button
+                onclick="closeModal('reusableModal')"
+                class="text-gray-500 hover:text-gray-800 focus:outline-none rounded-full border p-2 cursor-pointer"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div id="modalBody">
+              <h1
+                class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+              >
+                Выберите ваш город
+              </h1>
+              <div
+                class="mt-8 flex items-center gap-x-2 rounded-3xl border border-input-border-color px-4 h-10 w-full md:w-[80%]"
+              >
+                <img src="../public/icons/search 1.svg" alt="" />
+                <input
+                  type="text"
+                  class="border-none outline-none h-10 w-full"
+                  placeholder="Введите название для быстрого поиска"
+                />
+              </div>
+
+              <div
+                id="cityListContainer"
+                class="flex flex-col gap-4 mt-8 pl-8 max-h-[300px] overflow-y-auto"
+              ></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
