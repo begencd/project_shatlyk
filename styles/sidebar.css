@@ -5,6 +5,10 @@
   @media (max-width: 640px) {
     left: -100%;
   }
+
+  &.admin-sidebar {
+    left: -100%;
+  }
 }
 #sidebar.active {
   left: 0px;

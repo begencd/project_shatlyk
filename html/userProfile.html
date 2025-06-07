@@ -6,6 +6,7 @@
     <title>Project</title>
     <link href="../styles/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="../styles//form.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
     <link
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
@@ -20,10 +21,28 @@
       });
     </script>
   </head>
-  <body class="size-full">
-    <div class="bg-white h-dvh flex justify-end relative">
+  <body class="size-full relative">
+    <header class="h-[4.375rem] bg-primary w-full md:hidden block">
+      <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto h-full relative">
+        <div class="flex h-full w-fit items-center">
+          <div
+            class="cursor-pointer flex items-center justify-center pt-4 leading-10"
+            id="menu-toggle"
+            aria-label="Toggle menu"
+          >
+            <img src="../public/icons/menu.svg" alt="" />
+          </div>
+        </div>
+        <div
+          class="absolute top-0 left-0 h-full w-full flex items-center justify-center"
+        >
+          <img src="../public/logo.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <div class="bg-white h-[calc(100dvh-4.375rem)] flex justify-end relative">
       <div
-        class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary fixed top-0 left-0 h-dvh"
+        class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary fixed top-0 left-0 h-dvh md:block hidden"
       >
         <div class="mt-12 flex items-center justify-center">
           <img src="../public/logo.png" class="h-10" alt="" />
@@ -97,7 +116,7 @@
         </div>
       </div>
       <div
-        class="max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
+        class="max-w-full md:max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
       >
         <div class="py-12 px-6 h-full flex flex-col gap-6">
           <h1
@@ -226,5 +245,99 @@
         </div>
       </div>
     </div>
+
+    <!-- Sidebar -->
+    <div
+      id="sidebar-overlay"
+      class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-20"
+    ></div>
+    <div
+      id="sidebar"
+      class="admin-sidebar fixed top-0 h-full w-full bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block md:hidden"
+      role="navigation"
+    >
+      <div class="flex justify-end p-4 relative">
+        <button
+          id="close-sidebar"
+          class="text-white text-2xl hover:rotate-90 hover:bg-white/10 px-1 rounded-full transition-all duration-200 border border-white"
+          aria-label="Close menu"
+        >
+          <i class="mdi mdi-close"></i>
+        </button>
+        <div
+          class="absolute z-[-1] top-0 left-1/2 -translate-x-1/2 h-full w-full flex items-center justify-center"
+        >
+          <img src="../public/logo.png" alt="" />
+        </div>
+      </div>
+      <div
+        class="relative px-4 h-[calc(100%-5.5rem)] pt-[12rem] flex flex-col justify-between overflow-auto"
+      >
+        <div>
+          <a
+            href="#"
+            class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+          >
+            <div class="flex items-center justify-between">
+              <span>Мой профиль</span>
+            </div>
+          </a>
+          <a
+            href="#"
+            class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+          >
+            <div class="flex items-center justify-between">
+              <span>Мои отзывы</span>
+              <span
+                class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                >15</span
+              >
+            </div>
+          </a>
+          <a
+            href="#"
+            class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+          >
+            <div class="flex items-center justify-between">
+              <span>Мои комплексы</span>
+              <span
+                class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                >15</span
+              >
+            </div>
+          </a>
+          <a
+            href="#"
+            class="border-b border-white text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+          >
+            <div class="flex items-center justify-between">
+              <span>О компании</span>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            class="border-b border-b-transparent text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
+          >
+            <div class="flex items-center justify-between">
+              <span>Мои сообщения</span>
+              <span
+                class="py-1 xl:py-2 px-3 xl:px-4 rounded-xl bg-white text-primary"
+                >+10</span
+              >
+            </div>
+          </a>
+        </div>
+        <div class="pb-6 pl-6 flex items-center justify-center">
+          <button
+            class="border-none bg-transparent text-white outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
+          >
+            <img src="../public/icons/logout.svg" alt="" />
+            Войти
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Sidebar -->
   </body>
 </html>
