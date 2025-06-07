@@ -372,6 +372,9 @@
   .my-auto {
     margin-block: auto;
   }
+  .mt-0 {
+    margin-top: calc(var(--spacing) * 0);
+  }
   .mt-1 {
     margin-top: calc(var(--spacing) * 1);
   }
@@ -410,6 +413,9 @@
   }
   .-ml-3 {
     margin-left: calc(var(--spacing) * -3);
+  }
+  .ml-0 {
+    margin-left: calc(var(--spacing) * 0);
   }
   .line-clamp-4 {
     overflow: hidden;
@@ -518,9 +524,6 @@
   .h-\[70\%\] {
     height: 70%;
   }
-  .h-\[calc\(100\%-4\.375rem\)\] {
-    height: calc(100% - 4.375rem);
-  }
   .h-\[calc\(100\%-5\.5rem\)\] {
     height: calc(100% - 5.5rem);
   }
@@ -620,6 +623,9 @@
   .w-\[90\%\] {
     width: 90%;
   }
+  .w-\[calc\(\(100\%-1rem\)\/2\)\] {
+    width: calc((100% - 1rem) / 2);
+  }
   .w-\[calc\(\(100\%\/3\)-3rem\)\] {
     width: calc((100% / 3) - 3rem);
   }
@@ -655,9 +661,6 @@
   }
   .max-w-full {
     max-width: 100%;
-  }
-  .basis-\[calc\(\(100\%-16px\)\/2\)\] {
-    flex-basis: calc((100% - 16px) / 2);
   }
   .basis-\[calc\(\(100\%-32px\)\/2\)\] {
     flex-basis: calc((100% - 32px) / 2);
@@ -828,6 +831,9 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
+  .rounded-tl-2xl {
+    border-top-left-radius: var(--radius-2xl);
+  }
   .rounded-r-lg {
     border-top-right-radius: var(--radius-lg);
     border-bottom-right-radius: var(--radius-lg);
@@ -840,6 +846,9 @@
   }
   .rounded-br-xl {
     border-bottom-right-radius: var(--radius-xl);
+  }
+  .rounded-bl-2xl {
+    border-bottom-left-radius: var(--radius-2xl);
   }
   .rounded-bl-xl {
     border-bottom-left-radius: var(--radius-xl);
@@ -863,6 +872,10 @@
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
+  }
+  .border-l {
+    border-left-style: var(--tw-border-style);
+    border-left-width: 1px;
   }
   .border-l-0 {
     border-left-style: var(--tw-border-style);
@@ -1396,16 +1409,6 @@
       width: 80%;
     }
   }
-  .max-\[56\.25\]\:basis-\[calc\(\(100\%-16px\)\/2\)\] {
-    @media (width < 56.25) {
-      flex-basis: calc((100% - 16px) / 2);
-    }
-  }
-  .max-\[56\.25rem\]\:basis-\[calc\(\(100\%-16px\)\/2\)\] {
-    @media (width < 56.25rem) {
-      flex-basis: calc((100% - 16px) / 2);
-    }
-  }
   .xs\:inline-block {
     @media (width >= 31.25rem) {
       display: inline-block;
@@ -1627,11 +1630,6 @@
       height: 100dvh;
     }
   }
-  .md\:h-full {
-    @media (width >= 48rem) {
-      height: 100%;
-    }
-  }
   .md\:max-h-max {
     @media (width >= 48rem) {
       max-height: max-content;
@@ -1795,6 +1793,11 @@
       bottom: calc(6.7rem * -1);
     }
   }
+  .lg\:-ml-3 {
+    @media (width >= 64rem) {
+      margin-left: calc(var(--spacing) * -3);
+    }
+  }
   .lg\:block {
     @media (width >= 64rem) {
       display: block;
@@ -1825,6 +1828,21 @@
       min-height: 25rem;
     }
   }
+  .lg\:w-\[35\%\] {
+    @media (width >= 64rem) {
+      width: 35%;
+    }
+  }
+  .lg\:w-\[65\%\] {
+    @media (width >= 64rem) {
+      width: 65%;
+    }
+  }
+  .lg\:w-\[70\%\] {
+    @media (width >= 64rem) {
+      width: 70%;
+    }
+  }
   .lg\:w-\[calc\(45\%-1\.5rem\)\] {
     @media (width >= 64rem) {
       width: calc(45% - 1.5rem);
@@ -1850,6 +1868,11 @@
       width: calc(100% / 2 - 1rem);
     }
   }
+  .lg\:w-full {
+    @media (width >= 64rem) {
+      width: 100%;
+    }
+  }
   .lg\:max-w-\[19\.375rem\] {
     @media (width >= 64rem) {
       max-width: 19.375rem;
@@ -1868,6 +1891,16 @@
   .lg\:flex-row {
     @media (width >= 64rem) {
       flex-direction: row;
+    }
+  }
+  .lg\:items-center {
+    @media (width >= 64rem) {
+      align-items: center;
+    }
+  }
+  .lg\:items-start {
+    @media (width >= 64rem) {
+      align-items: flex-start;
     }
   }
   .lg\:justify-between {
@@ -1905,15 +1938,36 @@
       column-gap: calc(var(--spacing) * 12);
     }
   }
+  .lg\:rounded-2xl {
+    @media (width >= 64rem) {
+      border-radius: var(--radius-2xl);
+    }
+  }
   .lg\:rounded-3xl {
     @media (width >= 64rem) {
       border-radius: var(--radius-3xl);
+    }
+  }
+  .lg\:rounded-tr-2xl {
+    @media (width >= 64rem) {
+      border-top-right-radius: var(--radius-2xl);
+    }
+  }
+  .lg\:rounded-bl-none {
+    @media (width >= 64rem) {
+      border-bottom-left-radius: 0;
     }
   }
   .lg\:border {
     @media (width >= 64rem) {
       border-style: var(--tw-border-style);
       border-width: 1px;
+    }
+  }
+  .lg\:border-l-0 {
+    @media (width >= 64rem) {
+      border-left-style: var(--tw-border-style);
+      border-left-width: 0px;
     }
   }
   .lg\:pt-4 {
