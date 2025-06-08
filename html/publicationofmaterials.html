@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+    <link rel="stylesheet" href="../styles/collapse.css" />
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../public/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
+    />
+    <script src="../js/modal.js" defer></script>
+    <script src="../js/component.js" defer></script>
+    <script src="../public/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
+  </head>
+  <body class="size-full">
+    <div class="size-full relative">
+      <header class="h-[6.25rem] bg-primary w-full">
+        <div
+          class="flex items-center xl:container px-12 xl:px-4 mx-0 xl:mx-auto justify-between h-full"
+        >
+          <div class="flex items-center gap-x-12 h-10">
+            <div class="flex items-center gap-2">
+              <div class="lg:hidden flex">
+                <div
+                  class="cursor-pointer flex items-center justify-center pt-4 leading-10"
+                  id="menu-toggle"
+                  aria-label="Toggle menu"
+                >
+                  <img src="../public/icons/menu.svg" alt="" />
+                </div>
+              </div>
+              <a href="#">
+                <img class="w-[8.125rem]" src="../public/logo.png" alt="" />
+              </a>
+            </div>
+            <div class="hidden items-center gap-x-8 lg:flex">
+              <a href="#" class="text-white text-lg leading-10 pt-4"
+                >Оставить отзыв</a
+              >
+              <a href="#" class="text-white text-lg leading-10 pt-4"
+                >Пользователям</a
+              >
+            </div>
+          </div>
+          <div class="flex items-center gap-x-6 lg:gap-x-12 text-white h-10">
+            <div class="flex gap-x-1 lg:gap-x-2 items-center leading-10 pt-4">
+              <span class="hidden lg:inline-block text-lg">Ваш город:</span>
+
+              <div
+                onclick="openModal('reusableModal')"
+                class="flex items-center justify-between gap-x-2 cursor-pointer leading-10 pt-1"
+              >
+                <div class="relative">
+                  <span id="selectedCityDisplay">Краснодар</span>
+                  <div
+                    class="absolute bottom-2 left-0 w-full h-[1px] bg-white/50"
+                  ></div>
+                </div>
+                <img src="../public/icons/down-arrow 1.svg" alt="" />
+              </div>
+            </div>
+            <div class="leading-10 pt-0 lg:pt-4 hidden lg:block">
+              <button
+                class="border-none bg-transparent outline-none hover:bg-black/5 transition-colors p-2 rounded-lg text-lg flex items-center gap-x-2"
+              >
+                <img src="../public/icons/add 1.svg" alt="" />
+                Войти
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto md:flex hidden items-center"
+      >
+        <span class="text-sm xl:text-xs tracking-widest cursor-pointer"
+          >Главная</span
+        >
+        <span class="px-2">|</span>
+        <span class="text-sm xl:text-xs tracking-widest text-primary">
+          О проекте</span
+        >
+      </div>
+
+      <div
+        class="my-12 md:my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto relative"
+      >
+        <div class="flex gap-4">
+          <div class="w-full md:w-[60%] flex flex-col gap-6 lg:gap-10">
+            <h1
+              class="font-bold text-xl md:text-2xl lg:text-4xl tracking-widest text-text w-[80%]"
+            >
+              Публикация материалов
+            </h1>
+            <div class="flex flex-col gap-8 mt-8">
+              <div>
+                <p class="text-sm md:text-base text-text2 tracking-wide">
+                  Мы ценим ваше мнение и рады, что вы делитесь своим опытом на
+                  нашей онлайн-площадке. Для обеспечения комфортной и
+                  уважительной атмосферы все отзывы проходят обязательную
+                  модерацию. Пожалуйста, в своих комментариях придерживайтесь
+                  следующих правил
+                </p>
+                <ul class="list-disc">
+                  <li class="text-sm md:text-base text-text2 tracking-wide">
+                    Не используйте мат и ругательные слова
+                  </li>
+                  <li class="text-sm md:text-base text-text2 tracking-wide">
+                    Описывайте только факты и личный опыт.
+                  </li>
+                  <li class="text-sm md:text-base text-text2 tracking-wide">
+                    Не публикуйте недостоверную или вводящую в заблуждение
+                    информацию.
+                  </li>
+                </ul>
+              </div>
+              <p class="text-sm md:text-base text-text2 tracking-wide">
+                Мы много лет работаем в области информационных технологий и
+                занимаемся только одним направлением - разработкой и поддержкой
+                крупнейшего сайта отзывов в российском сегменте Интернета.
+                Однако, в этом направлении мы сумели добиться существенных
+                успехов, благодаря команде талантливых программистов, системных
+                администраторов, менеджеров и всех остальных сотрудников.
+              </p>
+              <p class="text-sm md:text-base text-text2 tracking-wide">
+                Миллионы пользователей на Отзовике ежедневно читают и публикуют
+                отзывы обо всем на свете. В базе данных сервиса накопилось уже
+                более 15 млн. отзывов и 44 млн. комментариев, а ежемесячная
+                аудитория ~ 25 миллионов пользователей. На Отзовике активно
+                используются передовые технологии и технические решения для
+                обеспечения надежности и безопасности нашего сервиса и его
+                пользователей. Мы применяем уникальные практики для работы с
+                высоконагруженными системами и обработки больших объемов
+                текстовой и графической информации. Использование реплицируемого
+                кластера MySQL с доработками позволяет добиваться Uptime наших
+                серверов в 99.9% более 10 лет! Элементы искусственного
+                интеллекта и сложных алгоритмических структур дают возможность
+                на очень высоком уровне выявлять фейки и сгенерированные отзывы.
+              </p>
+              <p class="text-sm md:text-base text-text2 tracking-wide">
+                Наша миссия заключается в обеспечении возможностей для любого
+                потребителя получить честные отзывы на интересующие
+                товары/услуги и помочь принять правильное решение перед
+                покупкой, а для производителей и предпринимателей - своевременно
+                обнаруживать возможные проблемы в бизнесе и постоянно
+                совершенствоваться. Мы стремимся создать максимально удобный и
+                функциональный сервис для наших пользователей, чтобы каждый мог
+                легко и быстро найти необходимую информацию, оставить честный
+                отзыв из личного опыта и получить необходимую помощь от
+                официальных представителей компаний
+              </p>
+              <p class="text-sm md:text-base text-text2 tracking-wide">
+                Наш сервис всегда открыт для
+                <a href="#" class="text-primary"
+                  >обратной связи, пожеланий и отзывов.</a
+                >
+              </p>
+            </div>
+          </div>
+          <div class="md:w-[40%] hidden md:flex items-center justify-center">
+            <img
+              class="w-full h-auto max-w-[26.25rem] max-h-[25rem] min-h-[21.875rem]"
+              src="../public/Group 456.png"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <button
+          class="absolute right-12 top-4 z-10 rounded-full px-2 py-1 bg-custom-gray-2 cursor-pointer text-white md:hidden block"
+        >
+          <i class="mdi mdi-chevron-left"></i>
+        </button>
+        <div
+          class="md:hidden absolute left-0 top-0 z-[-1] size-full flex justify-center"
+        >
+          <img
+            src="../public/Group 2344.png"
+            class="w-full max-w-[25rem] h-auto max-h-[31rem] min-h-[31rem]"
+            alt=""
+          />
+        </div>
+      </div>
+
+      <footer class="bg-primary py-8 sm:py-15 md:block hidden">
+        <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full">
+          <div
+            class="flex items-center flex-col lg:flex-row justify-between gap-16 xl:gap-24 text-white"
+          >
+            <a href="#" class="w-full max-w-[15rem] xl:max-w-[18.125rem]">
+              <img
+                src="../public/footer_logo.png"
+                class="w-full h-auto"
+                alt=""
+              />
+            </a>
+            <div
+              class="basis-full lg:w-[calc(100%-19rem)] xl:w-[calc(100%-24.125rem)] hidden sm:flex flex-wrap gap-x-18"
+            >
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Полезная информация
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">О проекте</a>
+                  <a href="#" class="text-sm">Застройщики</a>
+                  <a href="#" class="text-sm">Жилые комплексы</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Условия пользования
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Пользовательское соглашение</a>
+                  <a href="#" class="text-sm">Обработка персональных данных</a>
+                  <a href="#" class="text-sm">Публикация</a>
+                </div>
+              </div>
+              <div class="w-[calc((100%/3)-3rem)] gap-y-4 xl:gap-y-6">
+                <h2 class="font-semibold text-lg xl:text-xl mb-4 xl:mb-6">
+                  Компаниям
+                </h2>
+                <div class="flex flex-col gap-y-4 xl:gap-y-6 pl-2">
+                  <a href="#" class="text-sm">Получение доступа</a>
+                  <a href="#" class="text-sm">Реклама на сайте</a>
+                  <a href="#" class="text-sm">Обратная связь</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-20"
+      ></div>
+      <div
+        id="sidebar"
+        class="fixed top-0 h-full w-full sm:w-[50%] bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block lg:hidden"
+        role="navigation"
+      >
+        <div class="flex justify-end p-4 relative">
+          <button
+            id="close-sidebar"
+            class="text-white text-2xl hover:rotate-90 hover:bg-white/10 px-1 rounded-full transition-all duration-200 border border-white"
+            aria-label="Close menu"
+          >
+            <i class="mdi mdi-close"></i>
+          </button>
+          <div
+            class="absolute z-[-1] top-0 left-1/2 -translate-x-1/2 h-full w-full flex items-center justify-center"
+          >
+            <img src="../public/logo.png" alt="" />
+          </div>
+        </div>
+        <nav class="flex flex-col gap-2 p-4 mt-12">
+          <div class="flex flex-col gap-2 border-b border-white pb-4">
+            <h2 class="text-base font-bold tracking-wide">
+              Полезная информация
+            </h2>
+            <div class="pl-4 flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >О проекте</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Застройщики</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Жилые комплексы</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 border-b border-white pb-4">
+            <h2 class="text-base font-bold tracking-wide">
+              Условия пользованияя
+            </h2>
+            <div class="pl-4 flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Пользовательское соглашение</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Обработка персональных данных</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Публикация материалов</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-2 pb-4">
+            <h2 class="text-base font-bold tracking-wide">Компаниям</h2>
+            <div class="pl-4 flex flex-col gap-2">
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Получение доступа</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Реклама на сайте</a
+              >
+              <a
+                href="#"
+                class="text-sm font-medium hover:bg-white/10 p-2 rounded-lg transition-colors duration-200"
+                >Обратная связь</a
+              >
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div
+        id="modalOverlay"
+        class="fixed inset-0 bg-black/50 bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-out opacity-0"
+      ></div>
+
+      <div
+        id="reusableModal"
+        class="fixed inset-0 top-[6rem] z-50 items-center justify-center p-4 hidden transition-all duration-300 ease-out transform opacity-0 scale-95 -translate-y-5"
+      >
+        <div
+          class="bg-white rounded-lg shadow-xl xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full max-h-full overflow-y-auto"
+        >
+          <div class="p-6">
+            <div class="flex justify-end items-center pb-3">
+              <button
+                onclick="closeModal('reusableModal')"
+                class="text-gray-500 hover:text-gray-800 focus:outline-none rounded-full border p-2 cursor-pointer"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <div id="modalBody">
+              <h1
+                class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+              >
+                Выберите ваш город
+              </h1>
+              <div
+                class="mt-8 flex items-center gap-x-2 rounded-3xl border border-input-border-color px-4 h-10 w-full md:w-[80%]"
+              >
+                <img src="../public/icons/search 1.svg" alt="" />
+                <input
+                  type="text"
+                  class="border-none outline-none h-10 w-full"
+                  placeholder="Введите название для быстрого поиска"
+                />
+              </div>
+
+              <div
+                id="cityListContainer"
+                class="flex flex-col gap-4 mt-8 pl-8 max-h-[300px] overflow-y-auto"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
