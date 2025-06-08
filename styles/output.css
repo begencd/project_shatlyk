@@ -1741,6 +1741,11 @@
       display: none;
     }
   }
+  .md\:inline {
+    @media (width >= 48rem) {
+      display: inline;
+    }
+  }
   .md\:inline-block {
     @media (width >= 48rem) {
       display: inline-block;
@@ -1827,9 +1832,19 @@
       width: auto;
     }
   }
+  .md\:w-fit {
+    @media (width >= 48rem) {
+      width: fit-content;
+    }
+  }
   .md\:w-full {
     @media (width >= 48rem) {
       width: 100%;
+    }
+  }
+  .md\:w-max {
+    @media (width >= 48rem) {
+      width: max-content;
     }
   }
   .md\:max-w-\[15\.625rem\] {
