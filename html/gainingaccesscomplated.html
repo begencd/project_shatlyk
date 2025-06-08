@@ -103,72 +103,23 @@
               >Для получения доступа в личный кабинет, заполните пожалуйста
               форму ниже и мы свяжемся с вами в ближайшее время.</span
             >
-            <div class="w-full mt-8">
-              <form
-                class="flex flex-wrap gap-6 form"
-                id="editUserForm"
-                novalidate
-              >
-                <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
-                  <label
-                    for="registerEmail"
-                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
-                    >Название компании::</label
-                  >
-                  <div
-                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
-                  >
-                    <input
-                      type="text"
-                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
-                      placeholder="Введите название компании"
-                      id="registerEmail"
-                      name="email"
-                    />
-                  </div>
-                </div>
-                <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
-                  <label
-                    for="text"
-                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
-                    >ИНН организации::</label
-                  >
-                  <div
-                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
-                  >
-                    <input
-                      type="text"
-                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
-                      placeholder="ИНН организации"
-                    />
-                  </div>
-                </div>
-
-                <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
-                  <label
-                    for="editUser"
-                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
-                    >Введите почту:</label
-                  >
-                  <div
-                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
-                  >
-                    <input
-                      type="text"
-                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
-                      placeholder="Введите вашу почту"
-                      id="editUser"
-                      name="user"
-                    />
-                  </div>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full lg:w-[calc(50%-1.5rem)] text-center h-12.5 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer mt-6.5"
+            <div
+              class="flex items-center w-full justify-between md:flex-row flex-col"
+            >
+              <div class="flex items-center md:flex-row flex-col gap-4 mt-6">
+                <img src="../public/icons/check.svg" alt="" />
+                <p
+                  class="font-semibold text-base md:text-left text-center tracking-wider"
                 >
-                  Отправить
-                </button>
-              </form>
+                  Заявка принята
+                </p>
+              </div>
+              <button
+                type="submit"
+                class="w-full lg:w-[calc(50%-1.5rem)] text-center h-12.5 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer mt-6.5"
+              >
+                Перейти на главную
+              </button>
             </div>
           </div>
           <div class="md:w-[40%] hidden md:flex items-center justify-center">
@@ -190,7 +141,7 @@
         >
           <img
             src="../public/Group 2344.png"
-            class="w-full max-w-[25rem] h-auto max-h-[31rem] min-h-[31rem]"
+            class="w-full max-w-[25rem] h-auto max-h-[31rem] min-h-[31rem] min-h-[31rem]"
             alt=""
           />
         </div>

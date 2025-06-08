@@ -376,11 +376,17 @@
   .my-12 {
     margin-block: calc(var(--spacing) * 12);
   }
+  .my-16 {
+    margin-block: calc(var(--spacing) * 16);
+  }
   .my-20 {
     margin-block: calc(var(--spacing) * 20);
   }
   .my-25 {
     margin-block: calc(var(--spacing) * 25);
+  }
+  .my-26 {
+    margin-block: calc(var(--spacing) * 26);
   }
   .my-auto {
     margin-block: auto;
@@ -417,6 +423,15 @@
   }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
+  }
+  .mb-22 {
+    margin-bottom: calc(var(--spacing) * 22);
+  }
+  .mb-50 {
+    margin-bottom: calc(var(--spacing) * 50);
   }
   .mb-\[5rem\] {
     margin-bottom: 5rem;
@@ -609,6 +624,9 @@
   }
   .min-h-\[21\.875rem\] {
     min-height: 21.875rem;
+  }
+  .min-h-\[31rem\] {
+    min-height: 31rem;
   }
   .w-0 {
     width: calc(var(--spacing) * 0);
@@ -1696,6 +1714,11 @@
   .md\:mr-8 {
     @media (width >= 48rem) {
       margin-right: calc(var(--spacing) * 8);
+    }
+  }
+  .md\:mb-0 {
+    @media (width >= 48rem) {
+      margin-bottom: calc(var(--spacing) * 0);
     }
   }
   .md\:mb-4 {
