@@ -33,7 +33,9 @@
         </div>
       </div>
     </header>
-    <div class="bg-white h-dvh flex justify-end relative">
+    <div
+      class="bg-white h-[calc(100dvh-4.375rem)] md:h-dvh flex justify-end relative"
+    >
       <div
         class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary fixed top-0 left-0 h-dvh md:block hidden"
       >
@@ -111,9 +113,9 @@
       <div
         class="max-w-full md:max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
       >
-        <div class="py-12 px-6 h-full flex flex-col gap-6">
+        <div class="py-4 md:py-12 px-6 h-full flex flex-col gap-6 relative">
           <h1
-            class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+            class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto mt-4 md:mt-0"
           >
             Мои комплексы
           </h1>
@@ -136,7 +138,16 @@
               </button>
             </div>
           </div>
-          <div class="lg:hidden flex items-center justify-end">
+          <div
+            class="lg:hidden flex items-center justify-end md:justify-between"
+          >
+            <button
+              type="button"
+              class="border-primary md:inline-block hidden text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+            >
+              <i class="mdi mdi-plus"></i>
+              Дополнить отзыв
+            </button>
             <button
               class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer"
             >
@@ -145,20 +156,27 @@
             </button>
           </div>
           <div
-            class="my-2 w-full gap-4 flex flex-col max-h-[calc(100%-6rem)] overflow-auto"
+            class="my-2 w-full gap-4 flex flex-col flex-nowrap sm:flex-wrap lg:flex-nowrap sm:flex-row lg:flex-col max-h-[calc(100%-6rem)] overflow-auto pr-2 lg:pr-0"
           >
             <div
-              class="flex w-[calc((100%-1rem)/2)] lg:w-full flex-col lg:flex-row lg:items-start items-center"
+              class="flex w-full sm:w-[calc((100%-16px)/2)] lg:w-full flex-col lg:flex-row lg:items-start items-center"
             >
-              <div class="w-full lg:w-[35%]">
+              <div class="w-full lg:w-[30%] relative">
                 <img
-                  src="../public/image7.png"
+                  src="../public/image.png"
                   class="rounded-tl-2xl rounded-tr-2xl lg:rounded-2xl h-[12.5rem] w-full"
                   alt=""
                 />
+                <div class="absolute top-4 right-4 z-10">
+                  <span
+                    class="bg-primary text-white py-1 px-2 rounded-lg text-xs"
+                  >
+                    115 Отзывов
+                  </span>
+                </div>
               </div>
               <div
-                class="w-full h-full lg:w-[65%] py-4 px-8 border border-t-0 lg:border-l-0 border-input-border-color rounded-bl-2xl lg:rounded-bl-none rounded-br-2xl lg:rounded-tr-2xl ml-0 lg:-ml-3 flex flex-col justify-between"
+                class="w-full h-full lg:w-[70%] py-4 px-4 lg:px-8 border border-t-0 lg:border-t lg:border-l-0 border-input-border-color rounded-bl-2xl lg:rounded-bl-none rounded-br-2xl lg:rounded-tr-2xl ml-0 lg:-ml-3 flex flex-col justify-between"
               >
                 <div>
                   <h2 class="text-lg font-bold tracking-wide text-text3">
@@ -171,9 +189,9 @@
                   </p>
                 </div>
 
-                <div>
+                <div class="lg:mt-0 mt-4">
                   <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
-                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                  <div class="flex items-center gap-2 justify-between mt-4">
                     <div
                       class="flex items-center space-x-1"
                       aria-label="3 out of 5 stars"
@@ -188,22 +206,35 @@
                     <button
                       class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer text-sm"
                     >
-                      <span>Редактировать</span>
+                      <span class="lg:inline hidden">Редактировать</span>
+                      <span class="lg:hidden inline text-primary"
+                        >115<span class="px-1">/</span
+                        ><span class="text-red-500">15</span></span
+                      >
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-            <!-- <div class="flex">
-              <div class="w-[35%]">
+            <div
+              class="flex w-full sm:w-[calc((100%-16px)/2)] lg:w-full flex-col lg:flex-row lg:items-start items-center"
+            >
+              <div class="w-full lg:w-[30%] relative">
                 <img
-                  src="../public/image7.png"
-                  class="rounded-2xl h-[12.5rem] w-full"
+                  src="../public/image.png"
+                  class="rounded-tl-2xl rounded-tr-2xl lg:rounded-2xl h-[12.5rem] w-full"
                   alt=""
                 />
+                <div class="absolute top-4 right-4 z-10">
+                  <span
+                    class="bg-primary text-white py-1 px-2 rounded-lg text-xs"
+                  >
+                    115 Отзывов
+                  </span>
+                </div>
               </div>
               <div
-                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+                class="w-full h-full lg:w-[70%] py-4 px-4 lg:px-8 border border-t-0 lg:border-t lg:border-l-0 border-input-border-color rounded-bl-2xl lg:rounded-bl-none rounded-br-2xl lg:rounded-tr-2xl ml-0 lg:-ml-3 flex flex-col justify-between"
               >
                 <div>
                   <h2 class="text-lg font-bold tracking-wide text-text3">
@@ -216,9 +247,9 @@
                   </p>
                 </div>
 
-                <div>
+                <div class="lg:mt-0 mt-4">
                   <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
-                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                  <div class="flex items-center gap-2 justify-between mt-4">
                     <div
                       class="flex items-center space-x-1"
                       aria-label="3 out of 5 stars"
@@ -233,22 +264,35 @@
                     <button
                       class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer text-sm"
                     >
-                      <span>Редактировать</span>
+                      <span class="lg:inline hidden">Редактировать</span>
+                      <span class="lg:hidden inline text-primary"
+                        >115<span class="px-1">/</span
+                        ><span class="text-red-500">15</span></span
+                      >
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="flex">
-              <div class="w-[35%]">
+            <div
+              class="flex w-full sm:w-[calc((100%-16px)/2)] lg:w-full flex-col lg:flex-row lg:items-start items-center"
+            >
+              <div class="w-full lg:w-[30%] relative">
                 <img
-                  src="../public/image7.png"
-                  class="rounded-2xl h-[12.5rem] w-full"
+                  src="../public/image.png"
+                  class="rounded-tl-2xl rounded-tr-2xl lg:rounded-2xl h-[12.5rem] w-full"
                   alt=""
                 />
+                <div class="absolute top-4 right-4 z-10">
+                  <span
+                    class="bg-primary text-white py-1 px-2 rounded-lg text-xs"
+                  >
+                    115 Отзывов
+                  </span>
+                </div>
               </div>
               <div
-                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+                class="w-full h-full lg:w-[70%] py-4 px-4 lg:px-8 border border-t-0 lg:border-t lg:border-l-0 border-input-border-color rounded-bl-2xl lg:rounded-bl-none rounded-br-2xl lg:rounded-tr-2xl ml-0 lg:-ml-3 flex flex-col justify-between"
               >
                 <div>
                   <h2 class="text-lg font-bold tracking-wide text-text3">
@@ -261,9 +305,9 @@
                   </p>
                 </div>
 
-                <div>
+                <div class="lg:mt-0 mt-4">
                   <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
-                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                  <div class="flex items-center gap-2 justify-between mt-4">
                     <div
                       class="flex items-center space-x-1"
                       aria-label="3 out of 5 stars"
@@ -278,22 +322,35 @@
                     <button
                       class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer text-sm"
                     >
-                      <span>Редактировать</span>
+                      <span class="lg:inline hidden">Редактировать</span>
+                      <span class="lg:hidden inline text-primary"
+                        >115<span class="px-1">/</span
+                        ><span class="text-red-500">15</span></span
+                      >
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="flex">
-              <div class="w-[35%]">
+            <div
+              class="flex w-full sm:w-[calc((100%-16px)/2)] lg:w-full flex-col lg:flex-row lg:items-start items-center"
+            >
+              <div class="w-full lg:w-[30%] relative">
                 <img
-                  src="../public/image7.png"
-                  class="rounded-2xl h-[12.5rem] w-full"
+                  src="../public/image.png"
+                  class="rounded-tl-2xl rounded-tr-2xl lg:rounded-2xl h-[12.5rem] w-full"
                   alt=""
                 />
+                <div class="absolute top-4 right-4 z-10">
+                  <span
+                    class="bg-primary text-white py-1 px-2 rounded-lg text-xs"
+                  >
+                    115 Отзывов
+                  </span>
+                </div>
               </div>
               <div
-                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
+                class="w-full h-full lg:w-[70%] py-4 px-4 lg:px-8 border border-t-0 lg:border-t lg:border-l-0 border-input-border-color rounded-bl-2xl lg:rounded-bl-none rounded-br-2xl lg:rounded-tr-2xl ml-0 lg:-ml-3 flex flex-col justify-between"
               >
                 <div>
                   <h2 class="text-lg font-bold tracking-wide text-text3">
@@ -306,9 +363,9 @@
                   </p>
                 </div>
 
-                <div>
+                <div class="lg:mt-0 mt-4">
                   <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
-                  <div class="flex items-center gap-x-2 justify-between mt-4">
+                  <div class="flex items-center gap-2 justify-between mt-4">
                     <div
                       class="flex items-center space-x-1"
                       aria-label="3 out of 5 stars"
@@ -323,57 +380,24 @@
                     <button
                       class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer text-sm"
                     >
-                      <span>Редактировать</span>
+                      <span class="lg:inline hidden">Редактировать</span>
+                      <span class="lg:hidden inline text-primary"
+                        >115<span class="px-1">/</span
+                        ><span class="text-red-500">15</span></span
+                      >
                     </button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="flex">
-              <div class="w-[35%]">
-                <img
-                  src="../public/image7.png"
-                  class="rounded-2xl h-[12.5rem] w-full"
-                  alt=""
-                />
-              </div>
-              <div
-                class="w-[65%] py-4 px-8 border border-l-0 border-input-border-color rounded-tr-2xl rounded-br-2xl -ml-3 flex flex-col justify-between"
-              >
-                <div>
-                  <h2 class="text-lg font-bold tracking-wide text-text3">
-                    ЖК “Губернский”
-                  </h2>
-                  <p
-                    class="text-sm font-semibold tracking-wide mt-2 text-text3"
-                  >
-                    г. Краснодар, ул.Западный обход,33
-                  </p>
-                </div>
-
-                <div>
-                  <p class="text-xs">Застройщик: <b>ЮгСтройИнвест</b></p>
-                  <div class="flex items-center gap-x-2 justify-between mt-4">
-                    <div
-                      class="flex items-center space-x-1"
-                      aria-label="3 out of 5 stars"
-                      role="img"
-                    >
-                      <img src="../public/icons/Starmini.svg" alt="" />
-                      <img src="../public/icons/Starmini.svg" alt="" />
-                      <img src="../public/icons/Starmini.svg" alt="" />
-                      <img src="../public/icons/Stargraymini.svg" alt="" />
-                      <img src="../public/icons/Stargraymini.svg" alt="" />
-                    </div>
-                    <button
-                      class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer text-sm"
-                    >
-                      <span>Редактировать</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+          </div>
+          <div class="md:hidden block absolute bottom-8 left-0 px-4 w-full">
+            <button
+              class="border-primary text-sm xl:text-base border bg-white rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer w-full"
+            >
+              <i class="mdi mdi-plus"></i>
+              Дополнить отзыв
+            </button>
           </div>
         </div>
       </div>
