@@ -6,17 +6,41 @@
     <title>Project</title>
     <link href="../styles/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="../styles//form.css" />
+    <link rel="stylesheet" href="../public/swiper/swiper-bundle.css" />
+
     <link
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
     />
     <script src="../js/component.js" defer></script>
     <script src="../js/downloadFile.js" defer></script>
+    <script src="../public/swiper/swiper-bundle.min.js" defer></script>
+    <script src="../js/swiper.js" defer></script>
   </head>
-  <body class="size-full">
-    <div class="bg-white h-dvh flex justify-end relative">
+  <body class="size-full relative">
+    <header class="h-[4.375rem] bg-primary w-full md:hidden block">
+      <div class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto h-full relative">
+        <div class="flex h-full w-fit items-center">
+          <div
+            class="cursor-pointer flex items-center justify-center pt-4 leading-10"
+            id="menu-toggle"
+            aria-label="Toggle menu"
+          >
+            <img src="../public/icons/menu.svg" alt="" />
+          </div>
+        </div>
+        <div
+          class="absolute top-0 left-0 h-full w-full flex items-center justify-center"
+        >
+          <img src="../public/logo.png" alt="" />
+        </div>
+      </div>
+    </header>
+    <div
+      class="bg-white h-[calc(100dvh-4.375rem)] md:h-dvh flex justify-end relative"
+    >
       <div
-        class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary fixed top-0 left-0 h-dvh"
+        class="max-w-[15.625rem] xl:max-w-[21.875rem] w-full bg-primary fixed top-0 left-0 h-dvh md:block hidden"
       >
         <div class="mt-12 flex items-center justify-center">
           <img src="../public/logo.png" class="h-10" alt="" />
@@ -90,10 +114,10 @@
         </div>
       </div>
       <div
-        class="max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
+        class="max-w-full md:max-w-[calc(100%-15.625rem)] xl:max-w-[calc(100%-21.875rem)] w-full h-full"
       >
-        <div class="py-12 px-6 h-full flex flex-col gap-6">
-          <div class="flex items-center gap-x-6">
+        <div class="py-12 px-6 h-full flex flex-col gap-12">
+          <div class="flex items-center gap-6">
             <div
               class="border rounded-xl w-[6.25rem] px-2 py-1 h-20 flex items-center justify-center"
             >
@@ -108,7 +132,7 @@
               >
             </div>
           </div>
-          <form class="flex flex-wrap gap-6 form" id="redaktForm" novalidate>
+          <form class="flex flex-wrap gap-8 form" id="redaktForm" novalidate>
             <div class="form-item w-full">
               <label
                 for="name"
@@ -146,16 +170,20 @@
               </div>
             </div>
             <div
-              class="h-auto w-full flex items-center justify-end flex-wrap gap-4"
+              class="w-full swiper md:!overflow-auto md:pr-2 pr-0"
               id="redaktFileContainer"
-            ></div>
+            >
+              <div
+                class="swiper-wrapper md:flex md:items-center md:justify-end md:flex-wrap md:gap-4 md:max-h-[14.6875rem] md:h-auto"
+              ></div>
+            </div>
             <div class="flex items-center w-full justify-end">
               <input type="file" class="hidden" id="redaktFileInput" />
               <button
                 type="button"
                 onclick="
-               handleFileUpload({inputSelector: '#redaktFileInput',  targetContainerSelector: '#redaktFileContainer',targetImageSelector: null, templateCallback: downloadFileTemplate, maxFiles: 10, allowedTypes: ['image/jpeg', 'image/png', 'application/pdf'], onError: (message) => {}, onSuccess: (file) => console.log(`Dosya yüklendi: ${file.name}`)})"
-                class="mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+             handleFileUpload({inputSelector: '#redaktFileInput', targetContainerSelector: '#redaktFileContainer .swiper-wrapper', targetImageSelector: null, templateCallback: downloadFileTemplate, maxFiles: 10, allowedTypes: ['image/jpeg', 'image/png', 'application/pdf'], onError: (message) => alert(message), onSuccess: (file) => console.log(`Dosya yüklendi: ${file.name}`)})"
+                class="md:w-fit w-full mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
               >
                 <i class="mdi mdi-plus"></i>
                 Загрузить изображение
@@ -163,7 +191,7 @@
             </div>
             <button
               type="submit"
-              class="w-full text-center h-12.5 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer mt-6.5"
+              class="w-full text-center px-4 py-2 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer mt-6.5"
             >
               Сохранить изменения
             </button>
