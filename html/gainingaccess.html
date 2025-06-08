@@ -97,22 +97,79 @@
             <h1
               class="font-bold text-xl md:text-2xl lg:text-4xl tracking-widest text-text w-[80%]"
             >
-              СказокНет — онлайн-платформа где люди публикуют отзывы без иллюзий
+              Получение доступа
             </h1>
             <span class="text-sm md:text-base text-text2 tracking-wide"
-              >Забудьте о сказках, выбирайте с уверенностью.</span
+              >Для получения доступа в личный кабинет, заполните пожалуйста
+              форму ниже и мы свяжемся с вами в ближайшее время.</span
             >
-            <div class="w-[30%] h-[2px] bg-auth-input-border-color"></div>
-            <span class="text-sm md:text-base text-text2 tracking-wide"
-              >Официальные редставители застройщиков оперативно помогают на
-              платформе СказокНет решить любые вопросы прямо в отзывах
-              недовольных клиентов.</span
-            >
-            <button
-              class="text-center md:w-fit w-full h-12.5 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer"
-            >
-              Зарегистрироваться
-            </button>
+            <div class="w-full mt-8">
+              <form
+                class="flex flex-wrap gap-6 form"
+                id="editUserForm"
+                novalidate
+              >
+                <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
+                  <label
+                    for="registerEmail"
+                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                    >Название компании::</label
+                  >
+                  <div
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
+                  >
+                    <input
+                      type="text"
+                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                      placeholder="Введите название компании"
+                      id="registerEmail"
+                      name="email"
+                    />
+                  </div>
+                </div>
+                <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
+                  <label
+                    for="text"
+                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                    >ИНН организации::</label
+                  >
+                  <div
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
+                  >
+                    <input
+                      type="text"
+                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                      placeholder="ИНН организации"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
+                  <label
+                    for="editUser"
+                    class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                    >Введите почту:</label
+                  >
+                  <div
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
+                  >
+                    <input
+                      type="text"
+                      class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
+                      placeholder="Введите вашу почту"
+                      id="editUser"
+                      name="user"
+                    />
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full lg:w-[calc(50%-1.5rem)] text-center h-12.5 rounded-3xl border border-primary text-primary text-sm font-bold tracking-wide px-8 hover:bg-primary hover:text-white transition-colors cursor-pointer mt-6.5"
+                >
+                  Отправить
+                </button>
+              </form>
+            </div>
           </div>
           <div class="md:w-[40%] hidden md:flex items-center justify-center">
             <img
@@ -120,55 +177,6 @@
               src="../public/Group 456.png"
               alt=""
             />
-          </div>
-        </div>
-        <div class="mt-6">
-          <h1
-            class="font-bold text-xl md:text-2xl lg:text-4xl tracking-widest text-text"
-          >
-            О проекте
-          </h1>
-          <div class="flex flex-col gap-8 mt-8">
-            <p class="text-sm md:text-base text-text2 tracking-wide">
-              Мы много лет работаем в области информационных технологий и
-              занимаемся только одним направлением - разработкой и поддержкой
-              крупнейшего сайта отзывов в российском сегменте Интернета. Однако,
-              в этом направлении мы сумели добиться существенных успехов,
-              благодаря команде талантливых программистов, системных
-              администраторов, менеджеров и всех остальных сотрудников.
-            </p>
-            <p class="text-sm md:text-base text-text2 tracking-wide">
-              Миллионы пользователей на Отзовике ежедневно читают и публикуют
-              отзывы обо всем на свете. В базе данных сервиса накопилось уже
-              более 15 млн. отзывов и 44 млн. комментариев, а ежемесячная
-              аудитория ~ 25 миллионов пользователей. На Отзовике активно
-              используются передовые технологии и технические решения для
-              обеспечения надежности и безопасности нашего сервиса и его
-              пользователей. Мы применяем уникальные практики для работы с
-              высоконагруженными системами и обработки больших объемов текстовой
-              и графической информации. Использование реплицируемого кластера
-              MySQL с доработками позволяет добиваться Uptime наших серверов в
-              99.9% более 10 лет! Элементы искусственного интеллекта и сложных
-              алгоритмических структур дают возможность на очень высоком уровне
-              выявлять фейки и сгенерированные отзывы.
-            </p>
-            <p class="text-sm md:text-base text-text2 tracking-wide">
-              Наша миссия заключается в обеспечении возможностей для любого
-              потребителя получить честные отзывы на интересующие товары/услуги
-              и помочь принять правильное решение перед покупкой, а для
-              производителей и предпринимателей - своевременно обнаруживать
-              возможные проблемы в бизнесе и постоянно совершенствоваться. Мы
-              стремимся создать максимально удобный и функциональный сервис для
-              наших пользователей, чтобы каждый мог легко и быстро найти
-              необходимую информацию, оставить честный отзыв из личного опыта и
-              получить необходимую помощь от официальных представителей компаний
-            </p>
-            <p class="text-sm md:text-base text-text2 tracking-wide">
-              Наш сервис всегда открыт для
-              <a href="#" class="text-primary"
-                >обратной связи, пожеланий и отзывов.</a
-              >
-            </p>
           </div>
         </div>
 
