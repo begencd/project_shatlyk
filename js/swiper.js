@@ -33,58 +33,16 @@ var swiper2 = new Swiper(".myTocnoSwiper", {
 });
 
 var swiper3 = new Swiper(".krasnodorSwiper", {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  breakpoints: {
-    640: {
-      slidesPerView: 1.4,
-      spaceBetween: 20,
-    },
-    400: {
-      slidesPerView: 1.4,
-      spaceBetween: 20,
-    },
-    300: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
+  slidesPerView: 1.4,
+  spaceBetween: 20,
 });
 
 var swiper4 = new Swiper(".krasnodor2Swiper", {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  breakpoints: {
-    640: {
-      slidesPerView: 1.4,
-      spaceBetween: 20,
-    },
-    400: {
-      slidesPerView: 1.4,
-      spaceBetween: 20,
-    },
-    300: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
+  slidesPerView: 1.4,
+  spaceBetween: 20,
 });
 
 var swiper5 = new Swiper(".krasnodor3Swiper", {
-  slidesPerView: 4,
-  spaceBetween: 30,
-  breakpoints: {
-    640: {
-      slidesPerView: 1.4,
-      spaceBetween: 20,
-    },
-    400: {
-      slidesPerView: 1.4,
-      spaceBetween: 20,
-    },
-    300: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-  },
+  slidesPerView: 1.4,
+  spaceBetween: 20,
 });

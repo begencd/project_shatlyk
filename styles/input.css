@@ -13,6 +13,7 @@
   --color-input-divider: #383838;
   --breakpoint-xs: 31.25rem;
   --breakpoint-xxs: 25rem;
+  --text-xxs: 0.5rem;
 }
 
 @font-face {
