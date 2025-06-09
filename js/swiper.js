@@ -40,7 +40,7 @@ var swiper3 = new Swiper(".krasnodorSwiper", {
       slidesPerView: 1.4,
       spaceBetween: 20,
     },
-    500: {
+    400: {
       slidesPerView: 1.4,
       spaceBetween: 20,
     },
@@ -59,7 +59,7 @@ var swiper4 = new Swiper(".krasnodor2Swiper", {
       slidesPerView: 1.4,
       spaceBetween: 20,
     },
-    500: {
+    400: {
       slidesPerView: 1.4,
       spaceBetween: 20,
     },
@@ -78,7 +78,7 @@ var swiper5 = new Swiper(".krasnodor3Swiper", {
       slidesPerView: 1.4,
       spaceBetween: 20,
     },
-    500: {
+    400: {
       slidesPerView: 1.4,
       spaceBetween: 20,
     },
