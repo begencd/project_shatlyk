@@ -97,11 +97,16 @@
       <div
         class="my-12 md:my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto relative"
       >
+        <h1
+          class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-[90%] md:w-full xl:w-[80%] mr-0 xl:mr-auto sm:hidden block"
+        >
+          Оставить отзыв
+        </h1>
         <div
-          class="flex items-start justify-between gap-x-8 lg:gap-x-12 flex-col md:flex-row"
+          class="flex items-start justify-between gap-x-8 lg:gap-x-12 flex-col md:flex-row sm:mt-0 mt-8"
         >
           <div
-            class="h-[12.5rem] mx-auto md:mx-0 max-w-[18.125rem] md:max-w-[15.625rem] lg:max-w-[19.375rem] size-full border-transparent border rounded-xl md:border-custom-gray flex items-center justify-center"
+            class="h-[12.5rem] mx-auto md:mx-0 max-w-[18.125rem] md:max-w-[15.625rem] lg:max-w-[19.375rem] size-full border-transparent border rounded-xl md:border-custom-gray hidden sm:flex items-center justify-center"
           >
             <img
               src="../public/tocno.png"
@@ -117,8 +122,11 @@
             >
               Строительная компания «Точно»
             </h1>
+            <div class="sm:hidden block font-semibold text-sm tracking-wide">
+              Застройщик: <span class="text-primary">ТОЧНО</span>
+            </div>
             <div
-              class="flex items-start xs:items-center gap-3 lg:gap-6 w-full xl:w-[80%] mr-0 xl:mr-auto xs:flex-row flex-col"
+              class="hidden sm:flex items-start xs:items-center gap-3 lg:gap-6 w-full xl:w-[80%] mr-0 xl:mr-auto xs:flex-row flex-col"
             >
               <h4 class="text-sm lg:text-base font-semibold tracking-wider">
                 Год основания: 2013 г.
@@ -128,9 +136,11 @@
                 Количество объектов: 11
               </div>
             </div>
-            <hr class="md:hidden border-auth-input-border-color" />
+            <hr
+              class="hidden sm:block md:hidden border-auth-input-border-color"
+            />
             <p
-              class="text-xs lg:text-sm tracking-wide w-full xl:w-[80%] mr-0 xl:mr-auto"
+              class="sm:block hidden text-xs lg:text-sm tracking-wide w-full xl:w-[80%] mr-0 xl:mr-auto"
             >
               Компания «ТОЧНО» занимает лидирующие позиции в Краснодаре среди
               застройщиков полного цикла. Компания берет на себя весь комплекс
@@ -143,7 +153,7 @@
           class="mt-8 w-full xl:w-[80%] mr-0 xl:mr-auto flex items-center justify-between md:flex-nowrap flex-wrap"
         >
           <div
-            class="text-xs 2xl:text-sm tracking-wide order-4 md:order-none md:w-auto w-full md:mt-0 mt-4 md:text-left text-center"
+            class="sm:block hidden text-xs 2xl:text-sm tracking-wide order-4 md:order-none md:w-auto w-full md:mt-0 mt-4 md:text-left text-center"
           >
             Ваша компания? <a href="#" class="text-primary">Оставьте заявку</a>
           </div>
@@ -216,7 +226,9 @@
             >
             <span class="text-sm tracking-wide">Отзывов</span>
           </div>
-          <div class="order-3 md:order-none md:mt-0 mt-4 md:w-auto w-full">
+          <div
+            class="sm:block hidden order-3 md:order-none md:mt-0 mt-4 md:w-auto w-full"
+          >
             <button
               class="md:w-auto w-full border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
             >
@@ -236,28 +248,35 @@
       <section
         class="xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto w-full my-12 md:my-25 flex flex-col"
       >
-        <div class="border border-input-border-color rounded-2xl p-6">
+        <hr class="block sm:hidden border-auth-input-border-color" />
+        <div
+          class="sm:border sm:border-input-border-color rounded-2xl p-0 sm:p-6"
+        >
           <h1
-            class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+            class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto sm:block hidden"
           >
             Оставить отзыв
           </h1>
-          <div class="mt-8 flex flex-col gap-6">
-            <div class="flex items-center gap-22">
-              <div>
+          <div class="mt-4 sm:mt-8 flex flex-col gap-6">
+            <div
+              class="flex items-start sm:items-center gap-6 sm:flex-row flex-col md:gap-16 lg:gap-22"
+            >
+              <div class="sm:w-auto w-full">
                 <label
                   for="registerEmail"
                   class="text-input-divider text-xs font-medium tracking-wide pl-2 inline-block"
                   >Выберите тип отзыва:</label
                 >
 
-                <div class="flex items-center gap-x-4 mt-2">
+                <div
+                  class="flex items-start sm:items-center sm:flex-row flex-col gap-2 md:gap-4 mt-2"
+                >
                   <span
-                    class="text-sm px-8 py-2.5 rounded-3xl font-medium border border-primary text-primary"
+                    class="text-center sm:inline inline-block whitespace-nowrap w-full text-xs md:text-sm px-6 py-1.5 md:px-8 md:py-2.5 rounded-3xl font-medium border border-primary text-primary"
                     >Положительный отзыв</span
                   >
                   <span
-                    class="text-sm px-8 py-2.5 rounded-3xl font-medium border border-red-500 text-red-500"
+                    class="text-center sm:inline inline-block whitespace-nowrap w-full text-xs md:text-sm px-6 py-1.5 md:px-8 md:py-2.5 rounded-3xl font-medium border border-red-500 text-red-500"
                     >Негативный отзыв</span
                   >
                 </div>
@@ -272,7 +291,7 @@
                 <div
                   class="text-xl lg:text-3xl flex items-center w-[50%] md:w-auto mt-2"
                 >
-                  <span class="pr-1">1</span>
+                  <span class="pr-1 text-xl sm:text-base">1</span>
                   <div
                     class="flex items-center space-x-px xs:space-x-1"
                     aria-label="3 out of 5 stars"
@@ -280,52 +299,52 @@
                   >
                     <img
                       src="../public/icons/Star.svg"
-                      class="min-[51.875rem]:inline-block hidden"
+                      class="min-[51.875rem]:inline-block sm:hidden inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Star.svg"
-                      class="min-[51.875rem]:inline-block hidden"
+                      class="min-[51.875rem]:inline-block sm:hidden inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Star.svg"
-                      class="min-[51.875rem]:inline-block hidden"
+                      class="min-[51.875rem]:inline-block sm:hidden inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Stargray.svg"
-                      class="min-[51.875rem]:inline-block hidden"
+                      class="min-[51.875rem]:inline-block sm:hidden inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Stargray.svg"
-                      class="min-[51.875rem]:inline-block hidden"
+                      class="min-[51.875rem]:inline-block sm:hidden inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Starmini.svg"
-                      class="min-[51.875rem]:hidden inline-block"
+                      class="min-[51.875rem]:hidden size-5 hidden sm:inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Starmini.svg"
-                      class="min-[51.875rem]:hidden inline-block"
+                      class="min-[51.875rem]:hidden size-5 hidden sm:inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Starmini.svg"
-                      class="min-[51.875rem]:hidden inline-block"
+                      class="min-[51.875rem]:hidden size-5 hidden sm:inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Stargraymini.svg"
-                      class="min-[51.875rem]:hidden inline-block"
+                      class="min-[51.875rem]:hidden size-5 hidden sm:inline-block"
                       alt=""
                     />
                     <img
                       src="../public/icons/Stargraymini.svg"
-                      class="min-[51.875rem]:hidden inline-block"
+                      class="min-[51.875rem]:hidden size-5 hidden sm:inline-block"
                       alt=""
                     />
                   </div>
@@ -382,7 +401,7 @@
                 type="button"
                 onclick="
              handleFileUpload({inputSelector: '#feedbackFileInput', targetContainerSelector: '#feedbackInputContainer .swiper-wrapper', targetImageSelector: null, templateCallback: downloadFileTemplate, maxFiles: 10, allowedTypes: ['image/jpeg', 'image/png', 'application/pdf'], onError: (message) => alert(message), onSuccess: (file) => console.log(`Dosya yüklendi: ${file.name}`)})"
-                class="md:w-fit w-full mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
+                class="md:w-fit w-full mt-6 border-primary text-sm xl:text-base border rounded-3xl px-4 py-3 font-bold sm:py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer"
               >
                 <i class="mdi mdi-plus"></i>
                 Загрузить изображение
