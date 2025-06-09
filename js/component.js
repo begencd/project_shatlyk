@@ -52,3 +52,31 @@ const toggleCollapse = (contentSelector, buttonSelector) => {
     icon.src = "../public/icons/down.svg";
   }
 };
+
+document.querySelectorAll(".dropdown").forEach((dropdown) => {
+  const dropdownContent = dropdown.querySelector(".dropdown-content");
+  const dropdownItems = dropdown.querySelectorAll(".dropdown-item");
+  let selectedItem = dropdown.querySelector(".dropdown-item");
+
+  dropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdownContent.classList.toggle("hidden");
+  });
+
+  dropdownItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      selectedItem.querySelector(".check-icon").classList.add("hidden");
+      selectedItem = item;
+      item.querySelector(".check-icon").classList.remove("hidden");
+      dropdownContent.classList.add("hidden");
+    });
+  });
+});
+
+document.addEventListener("click", (e) => {
+  document.querySelectorAll(".dropdown-content").forEach((content) => {
+    if (!content.closest(".dropdown").contains(e.target)) {
+      content.classList.add("hidden");
+    }
+  });
+});

@@ -1,9 +1,9 @@
-let swiperInstance = null;
+let swiperInstances = {};
 
-function initializeSwiper() {
-  const container = document.querySelector("#redaktFileContainer");
-  if (window.innerWidth < 768 && !swiperInstance) {
-    swiperInstance = new Swiper("#redaktFileContainer", {
+function initializeSwiper(containerSelector) {
+  const container = document.querySelector(containerSelector);
+  if (window.innerWidth < 768 && !swiperInstances[containerSelector]) {
+    swiperInstances[containerSelector] = new Swiper(containerSelector, {
       slidesPerView: 4,
       spaceBetween: 16,
       freeMode: true,
@@ -25,10 +25,10 @@ function initializeSwiper() {
   }
 }
 
-function destroySwiper() {
-  if (swiperInstance) {
-    swiperInstance.destroy(true, true);
-    swiperInstance = null;
+function destroySwiper(containerSelector) {
+  if (swiperInstances[containerSelector]) {
+    swiperInstances[containerSelector].destroy(true, true);
+    delete swiperInstances[containerSelector];
   }
 }
 
@@ -42,6 +42,8 @@ function handleFileUpload({
   onError = (message) => alert(message),
   onSuccess = (file) => console.log(`Dosya yüklendi: ${file.name}`),
 }) {
+  console.log("handleFileUpload");
+
   const fileInput = document.querySelector(inputSelector);
   const targetContainer =
     targetContainerSelector.length > 0
@@ -95,10 +97,18 @@ function handleFileUpload({
           targetContainer.insertAdjacentHTML("beforeend", template);
           onSuccess(file);
           if (window.innerWidth < 768) {
-            if (swiperInstance) {
-              swiperInstance.update();
+            if (
+              swiperInstances[
+                targetContainerSelector.replace(" .swiper-wrapper", "")
+              ]
+            ) {
+              swiperInstances[
+                targetContainerSelector.replace(" .swiper-wrapper", "")
+              ].update();
             } else {
-              initializeSwiper();
+              initializeSwiper(
+                targetContainerSelector.replace(" .swiper-wrapper", "")
+              );
             }
           }
         };
@@ -109,10 +119,18 @@ function handleFileUpload({
           targetContainer.insertAdjacentHTML("beforeend", template);
           onSuccess(file);
           if (window.innerWidth < 768) {
-            if (swiperInstance) {
-              swiperInstance.update();
+            if (
+              swiperInstances[
+                targetContainerSelector.replace(" .swiper-wrapper", "")
+              ]
+            ) {
+              swiperInstances[
+                targetContainerSelector.replace(" .swiper-wrapper", "")
+              ].update();
             } else {
-              initializeSwiper();
+              initializeSwiper(
+                targetContainerSelector.replace(" .swiper-wrapper", "")
+              );
             }
           }
         }
@@ -131,12 +149,18 @@ const downloadFileTemplate = (file, fileUrl = null) => {
 
   if (file.type.startsWith("image/") && fileUrl) {
     return `
-      <div id="${fileElementId}" class="h-30 md:w-30  w-full rounded-xl shadow-md relative group ${slideClass} gap-4">
-        <img src="${fileUrl}" alt="${file.name}" class="h-30 md:w-30  w-full object-cover rounded-xl" />
-        <div class="h-30 md:w-30  w-full absolute left-0 top-0 flex items-center justify-center bg-black/10 md:bg-black/20 rounded-xl z-10 md:opacity-0 md:group-hover:opacity-100 transition-opacity md:group-hover:pointer-events-auto md:pointer-events-none">
-          <button class=" bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstance) { swiperInstance.update(); }">
-          <i class="mdi mdi-delete"></i>
-        </button>
+      <div id="${fileElementId}" class="h-30 md:w-30 w-full rounded-xl shadow-md relative group ${slideClass} gap-4">
+        <img src="${fileUrl}" alt="${
+      file.name
+    }" class="h-30 md:w-30 w-full object-cover rounded-xl" />
+        <div class="h-30 md:w-30 w-full absolute left-0 top-0 flex items-center justify-center bg-black/10 md:bg-black/20 rounded-xl z-10 md:opacity-0 md:group-hover:opacity-100 transition-opacity md:group-hover:pointer-events-auto md:pointer-events-none">
+          <button class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${
+      document.querySelector(".swiper").id
+    }']) { swiperInstances['${
+      document.querySelector(".swiper").id
+    }'].update(); }">
+            <i class="mdi mdi-delete"></i>
+          </button>
         </div>
       </div>`;
   } else if (file.type === "application/pdf") {
@@ -144,7 +168,11 @@ const downloadFileTemplate = (file, fileUrl = null) => {
       <div id="${fileElementId}" class="size-22.5 rounded-xl flex flex-col items-center justify-center bg-gray-100 shadow-md p-2 text-center relative group ${slideClass}">
         <span class="text-4xl text-red-500 mdi mdi-file-pdf-box"></span>
         <span class="text-xs text-gray-700 break-words mt-1">${file.name}</span>
-        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstance) { swiperInstance.update(); }">
+        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${
+      document.querySelector(".swiper").id
+    }']) { swiperInstances['${
+      document.querySelector(".swiper").id
+    }'].update(); }">
           <i class="mdi mdi-delete"></i>
         </button>
       </div>`;
@@ -153,45 +181,41 @@ const downloadFileTemplate = (file, fileUrl = null) => {
       <div id="${fileElementId}" class="size-22.5 rounded-xl flex flex-col items-center justify-center bg-gray-100 shadow-md p-2 text-center relative group ${slideClass}">
         <span class="text-4xl text-gray-500 mdi mdi-file"></span>
         <span class="text-xs text-gray-700 break-words mt-1">${file.name}</span>
-        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstance) { swiperInstance.update(); }">
+        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${
+      document.querySelector(".swiper").id
+    }']) { swiperInstances['${
+      document.querySelector(".swiper").id
+    }'].update(); }">
           <i class="mdi mdi-close"></i>
         </button>
       </div>`;
   }
 };
 
-window.addEventListener("resize", () => {
-  const container = document.querySelector("#redaktFileContainer");
-  const slides = document.querySelectorAll(
-    "#redaktFileContainer > .swiper-wrapper > div"
-  );
-  if (window.innerWidth < 768) {
-    slides.forEach((slide) => slide.classList.add("swiper-slide"));
-    initializeSwiper();
-  } else {
-    slides.forEach((slide) => slide.classList.remove("swiper-slide"));
-    destroySwiper();
-    container.classList.add(
-      "flex",
-      "items-center",
-      "justify-end",
-      "flex-wrap",
-      "gap-4"
-    );
-  }
-});
+function manageSwiperContainers() {
+  const containers = document.querySelectorAll(".swiper");
+  containers.forEach((container) => {
+    const containerSelector = `#${container.id}`;
+    const slides = container.querySelectorAll(".swiper-wrapper > div");
+    if (window.innerWidth < 768) {
+      slides.forEach((slide) => slide.classList.add("swiper-slide"));
+      initializeSwiper(containerSelector);
+    } else {
+      slides.forEach((slide) => slide.classList.remove("swiper-slide"));
+      destroySwiper(containerSelector);
+      container.classList.add(
+        "md:flex",
+        "md:items-center",
+        "md:justify-end",
+        "md:flex-wrap",
+        "md:gap-4",
+        "md:max-h-[14.6875rem]",
+        "md:h-auto"
+      );
+    }
+  });
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector("#redaktFileContainer");
-  if (window.innerWidth < 768) {
-    initializeSwiper();
-  } else {
-    container.classList.add(
-      "flex",
-      "items-center",
-      "justify-end",
-      "flex-wrap",
-      "gap-4"
-    );
-  }
-});
+window.addEventListener("resize", manageSwiperContainers);
+
+document.addEventListener("DOMContentLoaded", manageSwiperContainers);
