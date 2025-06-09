@@ -566,6 +566,12 @@
   .max-h-\[25rem\] {
     max-height: 25rem;
   }
+  .max-h-\[26\.25rem\] {
+    max-height: 26.25rem;
+  }
+  .max-h-\[30rem\] {
+    max-height: 30rem;
+  }
   .max-h-\[31rem\] {
     max-height: 31rem;
   }
@@ -1840,6 +1846,13 @@
   .md\:max-h-max {
     @media (width >= 48rem) {
       max-height: max-content;
+    }
+  }
+  .md\:md\:w-fit {
+    @media (width >= 48rem) {
+      @media (width >= 48rem) {
+        width: fit-content;
+      }
     }
   }
   .md\:w-30 {

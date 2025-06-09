@@ -12,7 +12,7 @@ function initializeSwiper(containerSelector) {
           slidesPerView: 4,
           spaceBetween: 40,
         },
-        768: {
+        640: {
           slidesPerView: 3,
           spaceBetween: 30,
         },

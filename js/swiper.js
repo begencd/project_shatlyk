@@ -3,6 +3,9 @@ var swiper = new Swiper(".mySwiper", {
     nextEl: ".my-swiper-button-next",
     prevEl: ".my-swiper-button-prev",
   },
+  pagination: {
+    el: ".swiper-pagination",
+  },
 });
 
 var swiper2 = new Swiper(".myTocnoSwiper", {
