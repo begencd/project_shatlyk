@@ -46,22 +46,21 @@ function selectCity(city) {
   closeModal("reusableModal");
 }
 
+function filterAndRenderCities() {
+  const searchTerm = searchInput.value.toLowerCase().trim();
+  const filteredCities =
+    searchTerm === ""
+      ? allCities
+      : allCities.filter(
+          (cityData) =>
+            cityData.name.toLowerCase().includes(searchTerm) ||
+            cityData.region.toLowerCase().includes(searchTerm)
+        );
+  renderCities(filteredCities);
+}
+
 if (searchInput) {
-  searchInput.addEventListener("input", (event) => {
-    const searchTerm = event.target.value.toLowerCase().trim();
-
-    if (searchTerm === "") {
-      cityListContainer.innerHTML = "";
-      return;
-    }
-
-    const filteredCities = allCities.filter(
-      (cityData) =>
-        cityData.name.toLowerCase().includes(searchTerm) ||
-        cityData.region.toLowerCase().includes(searchTerm)
-    );
-    renderCities(filteredCities);
-  });
+  searchInput.addEventListener("input", filterAndRenderCities);
 } else {
   console.error(
     "Arama input elementi bulunamadı. Seçiciyi kontrol edin: '#modalBody input[type=\"text\"]'"
@@ -80,9 +79,7 @@ const openModal = (modalId) => {
 
     if (searchInput) {
       searchInput.value = "";
-    }
-    if (cityListContainer) {
-      cityListContainer.innerHTML = "";
+      filterAndRenderCities();
     }
 
     requestAnimationFrame(() => {

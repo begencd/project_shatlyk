@@ -290,24 +290,24 @@
 
       <div
         id="modalOverlay"
-        class="fixed inset-0 bg-black/50 bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-out opacity-0"
+        class="fixed inset-0 bg-black/50 bg-opacity-50 z-40 hidden transition-opacity duration-300 ease-out opacity-0 backdrop-blur-md"
       ></div>
 
       <div
         id="reusableModal"
-        class="fixed inset-0 top-[6rem] z-50 items-center justify-center p-4 hidden transition-all duration-300 ease-out transform opacity-0 scale-95 -translate-y-5"
+        class="fixed inset-0 h-auto sm:h-full top-0 sm:top-[6rem] z-50 items-center justify-center p-0 sm:p-4 hidden transition-all duration-300 ease-out transform opacity-0 scale-95 -translate-y-5"
       >
         <div
-          class="bg-white rounded-lg shadow-xl xl:container px-12 xl:px-4 mx-0 xl:mx-auto w-full max-h-full overflow-y-auto"
+          class="bg-white rounded-lg shadow-xl xl:container px-0 sm:px-8 lg:px-12 xl:px-4 mx-0 xl:mx-auto w-full max-h-full h-full sm:h-auto overflow-y-auto"
         >
-          <div class="p-6">
+          <div class="p-4 lg:p-6">
             <div class="flex justify-end items-center pb-3">
               <button
                 onclick="closeModal('reusableModal')"
-                class="text-gray-500 hover:text-gray-800 focus:outline-none rounded-full border p-2 cursor-pointer"
+                class="text-gray-500 hover:text-gray-800 focus:outline-none rounded-full border p-1 sm:p-2 cursor-pointer"
               >
                 <svg
-                  class="w-6 h-6"
+                  class="sm:size-6 size-4"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -325,12 +325,12 @@
 
             <div id="modalBody">
               <h1
-                class="tracking-widest text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
+                class="tracking-widest text-lg sm:text-2xl lg:text-3xl xl:text-4xl font-bold w-full xl:w-[80%] mr-0 xl:mr-auto"
               >
                 Выберите ваш город
               </h1>
               <div
-                class="mt-8 flex items-center gap-x-2 rounded-3xl border border-input-border-color px-4 h-10 w-full md:w-[80%]"
+                class="mt-4 sm:mt-8 flex items-center gap-x-2 rounded-3xl border border-input-border-color px-4 h-10 w-full md:w-[80%]"
               >
                 <img src="../public/icons/search 1.svg" alt="" />
                 <input
@@ -342,7 +342,7 @@
 
               <div
                 id="cityListContainer"
-                class="flex flex-col gap-4 mt-8 pl-8 max-h-[300px] overflow-y-auto"
+                class="flex flex-col gap-4 mt-8 pl-2 sm:pl-8 max-h-[300px] overflow-y-auto"
               ></div>
             </div>
           </div>
