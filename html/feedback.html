@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="size-full">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -121,7 +121,9 @@
         </div>
       </header>
 
-      <div class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+      <div
+        class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto md:flex hidden"
+      >
         <span class="text-sm xl:text-sm tracking-widest cursor-pointer"
           >Главная</span
         >
@@ -131,7 +133,9 @@
         >
       </div>
 
-      <div class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto h-full">
+      <div
+        class="my-12 md:my-20 xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto h-full max-h-[calc(100%-328px)] sm:max-h-[calc(100%-588px)]"
+      >
         <div class="flex flex-col gap-y-8">
           <h1
             class="text-2xl lg:text-3xl xl:text-4xl font-bold tracking-wider text-text"
@@ -141,14 +145,14 @@
           <h4 class="xl:text-base text-sm text-black tracking-wide font-normal">
             Отзыв могут оставить только зарегистрированные пользователи
           </h4>
-          <div class="flex items-center gap-x-6">
+          <div class="flex items-center sm:flex-row flex-col gap-6">
             <button
-              class="border border-primary rounded-3xl text-primary text-sm font-bold tracking-wide px-8 py-3 hover:bg-primary hover:text-white transition-colors cursor-pointer"
+              class="sm:w-fit w-full border border-primary rounded-3xl text-primary text-sm font-bold tracking-wide px-8 py-3 hover:bg-primary hover:text-white transition-colors cursor-pointer"
             >
               Войти
             </button>
             <button
-              class="border border-primary rounded-3xl text-primary text-sm font-bold tracking-wide px-8 py-3 hover:bg-primary hover:text-white transition-colors cursor-pointer"
+              class="sm:w-fit w-full border border-primary rounded-3xl text-primary text-sm font-bold tracking-wide px-8 py-3 hover:bg-primary hover:text-white transition-colors cursor-pointer"
             >
               Зарегистрироваться
             </button>
