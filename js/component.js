@@ -37,7 +37,7 @@ const toggleCollapse = (contentSelector, buttonSelector) => {
   if (!content || !toggleButton || !icon) {
     console.error("Content, button, or icon not found");
     return;
-  }
+  } 
 
   // Toggle content visibility with Tailwind classes
   if (content.classList.contains("h-[2.5rem]")) {

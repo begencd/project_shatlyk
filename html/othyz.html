@@ -77,7 +77,9 @@
         </div>
       </header>
 
-      <div class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto">
+      <div
+        class="my-6 xl:container px-12 xl:px-4 mx-0 xl:mx-auto md:flex hidden"
+      >
         <span class="text-sm xl:text-xs tracking-widest cursor-pointer"
           >Главная</span
         >
@@ -94,15 +96,26 @@
       <div
         class="my-12 md:my-20 xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto relative"
       >
+        <div class="md:hidden flex items-start justify-between">
+          <div>
+            <h1 class="text-xl font-bold tracking-widest text-text">
+              Мои отзывы
+            </h1>
+            <span class="text-sm text-text"
+              >Отзыв: <span class="text-primary">№1223133</span></span
+            >
+          </div>
+          <span class="text-sm text-text">2020/01/16</span>
+        </div>
         <div
           class="flex items-start justify-between gap-x-8 lg:gap-x-12 flex-col md:flex-row"
         >
           <div
-            class="h-[12.5rem] mx-auto md:mx-0 max-w-[18.125rem] md:max-w-[15.625rem] lg:max-w-[19.375rem] size-full border-transparent border rounded-xl md:border-custom-gray flex items-center justify-center"
+            class="h-[8.4375rem] md:h-[12.5rem] md:mr-0 mr-auto md:mx-0 max-w-[11.25rem] md:max-w-[15.625rem] lg:max-w-[19.375rem] size-full border-transparent border rounded-xl md:border-custom-gray flex items-center justify-center"
           >
             <img
               src="../public/tocno.png"
-              class="rounded-xl w-[80%] mx-auto max-h-[9.375rem] h-auto"
+              class="rounded-xl w-full md:w-[80%] mx-auto max-h-[9.375rem] h-auto"
               alt=""
             />
           </div>
@@ -114,8 +127,11 @@
             >
               Строительная компания «Точно»
             </h1>
+            <div class="font-semibold text-sm tracking-wide">
+              Застройщик: <span class="text-primary">ТОЧНО</span>
+            </div>
             <div
-              class="flex items-start xs:items-center gap-3 lg:gap-6 w-full xl:w-[80%] mr-0 xl:mr-auto xs:flex-row flex-col"
+              class="hidden sm:flex items-start xs:items-center gap-3 lg:gap-6 w-full xl:w-[80%] mr-0 xl:mr-auto xs:flex-row flex-col"
             >
               <h4 class="text-sm lg:text-base font-semibold tracking-wider">
                 Год основания: 2013 г.
@@ -125,9 +141,106 @@
                 Количество объектов: 11
               </div>
             </div>
-            <hr class="md:hidden border-auth-input-border-color" />
+            <hr class="md:hidden md:mt-0 mt-4 border-auth-input-border-color" />
+            <div class="flex sm:hidden flex-col gap-1 mt-2">
+              <label
+                class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                >Тип отзыва:</label
+              >
+              <span
+                class="bg-red-500 text-white rounded-3xl px-5 py-2 font-medium text-sm text-center"
+                >Отрицательный отзыв</span
+              >
+            </div>
+            <div class="flex sm:hidden flex-col gap-1 mt-2">
+              <label
+                class="text-input-divider text-xs font-medium tracking-wide pl-2"
+                >Моя оценка:</label
+              >
+              <div
+                class="text-xl lg:text-3xl pl-2 flex items-center w-[50%] md:w-auto order-1 md:order-0"
+              >
+                <span class="pr-1">4.79</span>
+                <div
+                  class="flex items-center space-x-px xs:space-x-1"
+                  aria-label="3 out of 5 stars"
+                  role="img"
+                >
+                  <img
+                    src="../public/icons/Star.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Star.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Star.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargray.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargray.svg"
+                    class="min-[51.875rem]:inline-block hidden"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Starmini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Starmini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Starmini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargraymini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                  <img
+                    src="../public/icons/Stargraymini.svg"
+                    class="min-[51.875rem]:hidden inline-block"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex sm:hidden items-center justify-between gap-x-6 mt-2 pl-2"
+            >
+              <div class="flex lg:hidden items-center gap-x-1">
+                <img src="../public/like.png" alt="" class="size-5" />
+                <span>1</span>
+              </div>
+              <div class="flex lg:hidden items-center gap-x-1">
+                <img src="../public/dislike.png" alt="" class="h-5 w-6" />
+                <span>1</span>
+              </div>
+              <div class="flex lg:hidden items-center gap-x-1">
+                <img src="../public/comment.png" alt="" class="size-5" />
+                <span>1</span>
+              </div>
+              <span
+                class="bg-primary text-white py-1 px-3 rounded-2xl text-sm inline-block lg:hidden"
+                >17 Дополнений</span
+              >
+            </div>
             <p
-              class="text-xs lg:text-sm tracking-wide w-full xl:w-[80%] mr-0 xl:mr-auto"
+              class="text-xs lg:text-sm tracking-wide w-full xl:w-[80%] mr-0 xl:mr-auto sm:block hidden"
             >
               Компания «ТОЧНО» занимает лидирующие позиции в Краснодаре среди
               застройщиков полного цикла. Компания берет на себя весь комплекс
@@ -137,7 +250,7 @@
           </div>
         </div>
         <div
-          class="mt-8 w-full xl:w-[80%] mr-0 xl:mr-auto flex items-center justify-between md:flex-nowrap flex-wrap"
+          class="mt-8 w-full xl:w-[80%] mr-0 xl:mr-auto hidden sm:flex items-center justify-between md:flex-nowrap flex-wrap"
         >
           <div
             class="text-xs 2xl:text-sm tracking-wide order-4 md:order-none md:w-auto w-full md:mt-0 mt-4 md:text-left text-center"
@@ -222,16 +335,10 @@
             </button>
           </div>
         </div>
-
-        <button
-          class="absolute right-12 top-4 z-10 rounded-full px-2 py-1 bg-custom-gray-2 cursor-pointer text-white md:hidden block"
-        >
-          <i class="mdi mdi-chevron-left"></i>
-        </button>
       </div>
 
       <div
-        class="my-12 md:my-20 xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto flex flex-col gap-y-4"
+        class="my-12 md:my-20 xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto hidden md:flex flex-col gap-y-4"
       >
         <div
           class="flex flex-col gap-8 px-0 py-8 md:px-8 w-full border-y lg:border border-custom-gray rounded-none lg:rounded-3xl"
@@ -577,7 +684,45 @@
       </div>
 
       <div
-        class="xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex flex-col gap-y-8"
+        class="xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto flex sm:hidden flex-col gap-y-8"
+      >
+        <div class="border rounded-2xl border-custom-gray p-4">
+          <div class="font-bold text-[1rem] tracking-wide text-text">
+            Отзыв: Строительная компания "ТОЧНО" — МЫ РАЗОЧАРОВАНЫ В
+            ЗАСТРОЙЩИКЕ!
+          </div>
+          <hr class="my-2 border-custom-gray" />
+          <p
+            id="collapse-content-7"
+            class="text-sm text-text2 h-[2.5rem] overflow-hidden transition-all duration-300 ease-in-out"
+          >
+            Общий опыт сотрудничества с компанией "Точно" оставил у меня только
+            положительные впечатления. Я благодарен за качественную работу,
+            профессиональный подход и внимательное ....
+          </p>
+          <hr class="my-2 border-custom-gray" />
+          <div class="w-full flex items-center justify-center py-1">
+            <button
+              class="tracking-wide text-xs flex items-center justify-center gap-x-2 cursor-pointer"
+              id="collapse-button-7"
+              onclick="toggleCollapse('#collapse-content-7', '#collapse-button-7')"
+            >
+              <span>Развернуть</span>
+              <img src="../public/icons/down.svg" alt="" />
+            </button>
+          </div>
+        </div>
+        <div class="my-4 md:my-8 w-full">
+          <button
+            class="border-primary text-sm xl:text-base border rounded-3xl px-8 py-2 text-primary hover:text-white hover:border-white hover:bg-primary transition-colors cursor-pointer md:w-auto w-full md:hidden inline-block"
+          >
+            Показать еще
+          </button>
+        </div>
+      </div>
+
+      <div
+        class="xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto hidden sm:flex flex-col gap-y-8"
       >
         <div class="flex flex-col gap-y-6">
           <div class="flex items-center gap-x-2">
@@ -663,7 +808,7 @@
       </div>
 
       <div
-        class="my-20 xl:container px-12 xl:px-4 mx-0 xl:mx-auto flex flex-col gap-y-8"
+        class="my-12 md:my-20 xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto hidden sm:flex flex-col gap-y-8"
       >
         <div class="flex flex-col gap-y-6">
           <div class="flex items-center gap-x-2">
