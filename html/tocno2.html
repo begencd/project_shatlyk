@@ -262,12 +262,50 @@
             </div>
           </div>
           <div class="md:w-auto w-full md:mt-0 mt-6">
-            <button
+            <!-- <button
               class="flex items-center gap-x-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer"
             >
               <span>По умолчанию</span>
               <img src="../public/icons/Group 334.svg" alt="" />
-            </button>
+            </button> -->
+            <div class="dropdown relative inline-block">
+              <button
+                class="flex items-center gap-2 bg-transparent hover:bg-black/5 px-3 py-2 transition-colors rounded-lg cursor-pointer"
+              >
+                <span>По умолчанию</span>
+                <img src="../public/icons/Group 334.svg" alt="" />
+              </button>
+              <div
+                class="dropdown-content absolute hidden bg-white min-w-[200px] shadow-lg rounded-lg z-10"
+              >
+                <div
+                  class="dropdown-item cursor-pointer px-4 py-2"
+                  data-value="default"
+                >
+                  По умолчанию <span class="check-icon hidden">✔</span>
+                </div>
+                <div
+                  class="dropdown-item cursor-pointer px-4 py-2"
+                  data-value="client"
+                >
+                  Сначала положительные
+                  <span class="check-icon hidden">✔</span>
+                </div>
+                <div
+                  class="dropdown-item cursor-pointer px-4 py-2"
+                  data-value="rating"
+                >
+                  Сначала отрицательные
+                  <span class="check-icon hidden">✔</span>
+                </div>
+                <div
+                  class="dropdown-item cursor-pointer px-4 py-2"
+                  data-value="new"
+                >
+                  По новизне <span class="check-icon hidden">✔</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="flex gap-8 flex-wrap order-3 md:mt-0 mt-4">
