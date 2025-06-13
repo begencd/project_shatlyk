@@ -1,5 +1,5 @@
 function handleCardClick(event, cardElement) {
-  const isMobile = window.innerWidth < 768;
+  const isMobile = window.innerWidth < 1024;
   if (!isMobile) return;
 
   const overlay = cardElement.querySelector('[data-id="overlay"]');
@@ -26,7 +26,7 @@ function handleCardClick(event, cardElement) {
 
 function handleOverlayButtonClick(event, cardOverlayElementId) {
   //   event.stopPropagation();
-  const isMobile = window.innerWidth < 768;
+  const isMobile = window.innerWidth < 1024;
   if (!isMobile) return;
 
   const overlay = document.querySelector(
