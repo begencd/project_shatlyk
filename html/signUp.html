@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Project</title>
     <link href="../styles/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles//form.css" />
+    <link rel="stylesheet" href="../styles/form.css" />
     <link
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
     />
-    <script src="../js/component.js" defer></script>
-    <script src="../js/formValidation.js"></script>
-    <script src="../js/formRules.js"></script>
-    <script>
+    <script type="module" src="../js/formValidation.js"></script>
+    <script type="module" src="../js/formRules.js"></script>
+    <script type="module">
+      import FormValidator from "../js/formValidation.js";
+      import { registerFormValidationRules } from "../js/formRules.js";
+
       document.addEventListener("DOMContentLoaded", () => {
         new FormValidator("registerForm", registerFormValidationRules);
       });
@@ -22,7 +25,11 @@
   <body class="size-full">
     <div class="bg-white h-dvh">
       <div class="pt-8 pl-6 md:block hidden">
-        <img src="../public/registerlogo.png" class="h-10 w-37.5" alt="" />
+        <img
+          src="../public/registerlogo.png"
+          class="h-10 w-37.5"
+          alt="Логотип"
+        />
       </div>
       <div
         class="my-0 md:my-12 xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto h-full md:h-[calc(100dvh-7.5rem)]"
@@ -64,6 +71,11 @@
                       name="email"
                     />
                   </div>
+                  <div
+                    class="server-message hidden mt-2 rounded-lg bg-input-error text-input-error-text w-full p-4 font-light text-xs tracking-wider"
+                  >
+                    <span class="inline-block w-[90%]"></span>
+                  </div>
                 </div>
                 <div class="form-item">
                   <label
@@ -72,21 +84,29 @@
                     >Пароль:</label
                   >
                   <div
-                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
                   >
                     <i class="mdi mdi-lock"></i>
-                    <div class="h-6 w-px bg-input-divider mx-2"></div>
+                    <div
+                      class="h-6 w-px bg-input-divider mx-2 input-divider"
+                    ></div>
                     <input
                       type="password"
                       class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
-                      placeholder="Password"
+                      placeholder="Пароль"
                       id="password"
+                      name="password"
                     />
                     <i
                       class="mdi mdi-eye pl-2 cursor-pointer password-toggle"
                       data-input-id="password"
                       id="registerPassword"
                     ></i>
+                  </div>
+                  <div
+                    class="server-message hidden mt-2 rounded-lg bg-input-error text-input-error-text w-full p-4 font-light text-xs tracking-wider"
+                  >
+                    <span class="inline-block w-[90%]"></span>
                   </div>
                 </div>
                 <div class="form-item">
@@ -96,15 +116,16 @@
                     >Повторите пароль:</label
                   >
                   <div
-                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
                   >
                     <i class="mdi mdi-lock"></i>
                     <div class="h-6 w-px bg-input-divider mx-2"></div>
                     <input
                       type="password"
                       class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
-                      placeholder="Password"
+                      placeholder="Повторите пароль"
                       id="confirmPassword"
+                      name="confirmPassword"
                     />
                     <i
                       class="mdi mdi-eye pl-2 cursor-pointer password-toggle"
@@ -112,12 +133,17 @@
                       id="registerConfirmPassword"
                     ></i>
                   </div>
+                  <div
+                    class="server-message hidden mt-2 rounded-lg bg-input-error text-input-error-text w-full p-4 font-light text-xs tracking-wider"
+                  >
+                    <span class="inline-block w-[90%]"></span>
+                  </div>
                 </div>
                 <div class="form-item">
                   <label
                     for="registerUser"
                     class="text-input-divider text-xs font-medium tracking-wide pl-2"
-                    >Имя пользователя::</label
+                    >Имя пользователя:</label
                   >
                   <div
                     class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
@@ -132,10 +158,15 @@
                     <input
                       type="text"
                       class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
-                      placeholder="info@skazoknet.ru"
+                      placeholder="Имя пользователя"
                       id="registerUser"
                       name="user"
                     />
+                  </div>
+                  <div
+                    class="server-message hidden mt-2 rounded-lg bg-input-error text-input-error-text w-full p-4 font-light text-xs tracking-wider"
+                  >
+                    <span class="inline-block w-[90%]"></span>
                   </div>
                 </div>
                 <button
@@ -144,15 +175,20 @@
                 >
                   Зарегистрировать
                 </button>
-
                 <div
-                  class="mt-4 text-xs tracking-wide flex items-center gap-x-2 justify-center"
+                  class="my-4 w-[80%] mx-auto text-xs tracking-wide flex items-start gap-x-2 justify-center"
                 >
                   <input type="checkbox" class="border-primary" />
-                  <div>Соглашаюсь с правилами пользования</div>
+                  <div class="text-xs font-light tracking-wide">
+                    Я принимаю
+                    <a href="#" class="text-[#3F51B5]"
+                      >правила, пользовательское соглашение и политику
+                      конфиденциальности</a
+                    >
+                    сервиса Сказокнет
+                  </div>
                 </div>
               </form>
-              <!--  -->
             </div>
           </div>
           <div
@@ -161,14 +197,13 @@
             <img
               src="../public/registerimage.png"
               class="w-full h-auto md:inline-block hidden"
-              alt=""
+              alt="Изображение регистрации"
             />
-
             <div class="pt-8 flex items-center justify-center md:hidden">
               <img
                 src="../public/registerlogo.png"
                 class="h-10 w-37.5"
-                alt=""
+                alt="Логотип"
               />
             </div>
           </div>

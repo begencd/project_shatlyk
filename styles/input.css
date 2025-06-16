@@ -10,6 +10,8 @@
   --color-custom-gray-2: #c4c4c4;
   --color-input-border-color: #b5b5b5;
   --color-auth-input-border-color: #d0d0d0;
+  --color-input-error: #e6d5d6;
+  --color-input-error-text: #e83845;
   --color-input-divider: #383838;
   --breakpoint-xs: 31.25rem;
   --breakpoint-xxs: 25rem;

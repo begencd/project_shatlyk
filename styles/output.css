@@ -36,6 +36,7 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --font-weight-light: 300;
     --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
@@ -205,9 +206,6 @@
   }
 }
 @layer utilities {
-  .pointer-events-auto {
-    pointer-events: auto;
-  }
   .pointer-events-none {
     pointer-events: none;
   }
@@ -414,12 +412,6 @@
   }
   .mr-0 {
     margin-right: calc(var(--spacing) * 0);
-  }
-  .mr-2 {
-    margin-right: calc(var(--spacing) * 2);
-  }
-  .mr-8 {
-    margin-right: calc(var(--spacing) * 8);
   }
   .mr-auto {
     margin-right: auto;
@@ -1023,6 +1015,9 @@
   .bg-input-divider {
     background-color: #383838;
   }
+  .bg-input-error {
+    background-color: #e6d5d6;
+  }
   .bg-primary {
     background-color: #3f51b5;
   }
@@ -1235,6 +1230,10 @@
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
   }
+  .font-light {
+    --tw-font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-light);
+  }
   .font-medium {
     --tw-font-weight: var(--font-weight-medium);
     font-weight: var(--font-weight-medium);
@@ -1269,6 +1268,9 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
+  .text-\[\#3F51B5\] {
+    color: #3F51B5;
+  }
   .text-black {
     color: var(--color-black);
   }
@@ -1283,6 +1285,9 @@
   }
   .text-input-divider {
     color: #383838;
+  }
+  .text-input-error-text {
+    color: #e83845;
   }
   .text-primary {
     color: #3f51b5;
@@ -1307,9 +1312,6 @@
   }
   .opacity-0 {
     opacity: 0%;
-  }
-  .opacity-100 {
-    opacity: 100%;
   }
   .shadow-lg {
     --tw-shadow: 0 10px 15px -3px var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 4px 6px -4px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
@@ -1385,14 +1387,9 @@
   .backface-hidden {
     backface-visibility: hidden;
   }
-  .group-focus-within\:pointer-events-auto {
-    &:is(:where(.group):focus-within *) {
-      pointer-events: auto;
-    }
-  }
-  .group-focus-within\:opacity-100 {
-    &:is(:where(.group):focus-within *) {
-      opacity: 100%;
+  .\*\:mt-2 {
+    :is(& > *) {
+      margin-top: calc(var(--spacing) * 2);
     }
   }
   .group-hover\:pointer-events-auto {
@@ -1427,33 +1424,6 @@
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         opacity: 100%;
-      }
-    }
-  }
-  .group-focus\:pointer-events-auto {
-    &:is(:where(.group):focus *) {
-      pointer-events: auto;
-    }
-  }
-  .group-focus\:opacity-100 {
-    &:is(:where(.group):focus *) {
-      opacity: 100%;
-    }
-  }
-  .group-active\:pointer-events-auto {
-    &:is(:where(.group):active *) {
-      pointer-events: auto;
-    }
-  }
-  .group-active\:opacity-100 {
-    &:is(:where(.group):active *) {
-      opacity: 100%;
-    }
-  }
-  .hover\:pointer-events-auto {
-    &:hover {
-      @media (hover: hover) {
-        pointer-events: auto;
       }
     }
   }
@@ -1845,20 +1815,6 @@
       line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
-  .sm\:group-active\:pointer-events-auto {
-    @media (width >= 40rem) {
-      &:is(:where(.group):active *) {
-        pointer-events: auto;
-      }
-    }
-  }
-  .sm\:group-active\:opacity-100 {
-    @media (width >= 40rem) {
-      &:is(:where(.group):active *) {
-        opacity: 100%;
-      }
-    }
-  }
   .md\:pointer-events-none {
     @media (width >= 48rem) {
       pointer-events: none;
@@ -2203,19 +2159,9 @@
       padding: calc(var(--spacing) * 8);
     }
   }
-  .md\:px-0 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 0);
-    }
-  }
   .md\:px-8 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 8);
-    }
-  }
-  .md\:px-12 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 12);
     }
   }
   .md\:py-2\.5 {

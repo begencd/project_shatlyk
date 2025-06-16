@@ -1,3 +1,5 @@
+import formEndpoints from "./formEndpoints.js";
+
 class FormValidator {
   constructor(formId, validationRules) {
     this.form = document.getElementById(formId);
@@ -8,23 +10,23 @@ class FormValidator {
       console.error(`Form with ID ${formId} not found`);
       return;
     }
+    if (!this.validationRules) {
+      console.error(`Validation rules for form ${formId} are undefined`);
+      return;
+    }
     this.initialize();
   }
 
   // Toggle password visibility
   static inputTypeToggle(inputId, icon) {
     const input = document.getElementById(inputId);
-    console.log(input);
-
     if (!input) return;
     if (input.type === "password") {
       input.type = "text";
       icon.classList.add("text-primary");
-      console.log(icon, "text-primary");
     } else {
       input.type = "password";
       icon.classList.remove("text-primary");
-      console.log(icon, "text-primary remove");
     }
   }
 
@@ -38,7 +40,7 @@ class FormValidator {
     const input = inputContainer.querySelector("input");
     const label = inputContainer.previousElementSibling;
     const divider = inputContainer.querySelector(".input-divider");
-    const icon = inputContainer.querySelector("i, img"); // Support both <i> and <img>
+    const icon = inputContainer.querySelector("i, img");
 
     if (!isValid && validationRule?.errorMessage) {
       inputContainer.classList.add("error-border");
@@ -46,24 +48,34 @@ class FormValidator {
       divider?.classList.add("error-divider");
       input.classList.add("error-placeholder");
       icon?.classList.add("error-label");
-      if (label) label.textContent = validationRule.errorMessage; // Set error message
+      if (label) label.textContent = validationRule.errorMessage;
     } else {
       inputContainer.classList.remove("error-border");
       label.classList.remove("error-label");
       divider?.classList.remove("error-divider");
       input.classList.remove("error-placeholder");
       icon?.classList.remove("error-label");
-      if (label && originalLabelText) label.textContent = originalLabelText; // Restore original label
+      if (label && originalLabelText) label.textContent = originalLabelText;
     }
   }
 
   // Validate a single field
   validateField(field) {
     const fieldName = field.name;
-    const rule = this.validationRules[fieldName];
-    if (!rule) return true; // Skip if no validation rule
+    const rules = this.validationRules[fieldName]?.rules || [];
+    const formData = new FormData(this.form);
+    let isValid = true;
+    let firstErrorRule = null;
 
-    const isValid = rule.validate(field.value);
+    for (const rule of rules) {
+      const isRuleValid = rule.validate(field.value, formData);
+      if (!isRuleValid) {
+        isValid = false;
+        firstErrorRule = rule;
+        break;
+      }
+    }
+
     const inputContainer = field.closest(".input-container");
     if (inputContainer) {
       const label = inputContainer.previousElementSibling;
@@ -72,16 +84,114 @@ class FormValidator {
       FormValidator.setErrorStyles(
         inputContainer,
         isValid,
-        rule,
+        firstErrorRule,
         originalLabelText
       );
     }
     return isValid;
   }
 
+  // Handle server errors
+  showServerErrors(errorData) {
+    if (typeof errorData === "string") {
+      const serverMessage = this.form.querySelector(".server-message");
+      if (serverMessage) {
+        serverMessage.classList.remove("hidden");
+        serverMessage.querySelector("span").textContent = errorData;
+      }
+    } else if (errorData.errors) {
+      Object.keys(errorData.errors).forEach((fieldName) => {
+        const input = this.form.querySelector(`[name="${fieldName}"]`);
+        if (input) {
+          const serverMessage = input
+            .closest(".form-item")
+            .querySelector(".server-message");
+          if (serverMessage) {
+            serverMessage.classList.remove("hidden");
+            serverMessage.querySelector("span").textContent =
+              errorData.errors[fieldName];
+          }
+        }
+      });
+    }
+  }
+
+  // Handle form submission with fetch
+  async handleSubmit(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    let isFormValid = true;
+
+    // Client-side validation
+    this.form.querySelectorAll("input").forEach((input) => {
+      if (this.validationRules[input.name] && !this.validateField(input)) {
+        isFormValid = false;
+      }
+    });
+
+    if (!isFormValid) {
+      console.log(`Form ${this.form.id} validation failed`);
+      return;
+    }
+
+    // Clear previous server errors
+    this.form.querySelectorAll(".server-message").forEach((serverMessage) => {
+      serverMessage.classList.add("hidden");
+      serverMessage.querySelector("span").textContent = "";
+    });
+
+    // Prepare form data as plain object
+    const formData = {};
+    this.form.querySelectorAll("input").forEach((input) => {
+      if (input.name) {
+        formData[input.name] = input.value;
+      }
+    });
+
+    // Get CSRF token from meta tag
+    const csrfToken = document.querySelector(
+      'meta[name="csrf-token"]'
+    )?.content;
+    if (!csrfToken) {
+      console.error("CSRF token not found");
+      this.showServerErrors("CSRF token eksik, lütfen sayfayı yenileyin.");
+      return;
+    }
+
+    // Fetch submission
+    const endpointConfig = formEndpoints[this.form.id];
+    if (!endpointConfig) {
+      console.error(`No endpoint configuration found for form ${this.form.id}`);
+      return;
+    }
+
+    try {
+      const response = await fetch(endpointConfig.endpoint, {
+        method: endpointConfig.method,
+        body: JSON.stringify(formData),
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRF-TOKEN": csrfToken,
+        },
+      });
+
+      if (response.ok) {
+        window.location.replace(endpointConfig.redirectPath);
+      } else {
+        const errorMessage = await response.text();
+        this.showServerErrors(errorMessage);
+        console.error(`Form ${this.form.id} submission failed`, errorMessage);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      this.showServerErrors("Серверная ошибка, пожалуйста, попробуйте снова.");
+    }
+  }
+
   // Initialize event listeners
   initialize() {
-    // Store original label texts for all inputs
+    // Store original label texts
     this.form.querySelectorAll("input").forEach((input) => {
       const label = input.closest(".form-item")?.querySelector("label");
       if (label && input.id) {
@@ -89,32 +199,16 @@ class FormValidator {
       }
     });
 
-    // Handle onChange and onBlur
+    // Handle input events
     this.form.querySelectorAll("input").forEach((input) => {
       if (this.validationRules[input.name]) {
-        input.addEventListener("change", () => this.validateField(input));
+        input.addEventListener("input", () => this.validateField(input));
         input.addEventListener("blur", () => this.validateField(input));
       }
     });
 
     // Handle form submission
-    this.form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      let isFormValid = true;
-
-      this.form.querySelectorAll("input").forEach((input) => {
-        if (this.validationRules[input.name] && !this.validateField(input)) {
-          isFormValid = false;
-        }
-      });
-
-      if (isFormValid) {
-        console.log(`Form ${this.form.id} is valid, ready to submit`);
-        // Example: this.form.submit(); or handle via fetch/AJAX
-      } else {
-        console.log(`Form ${this.form.id} validation failed`);
-      }
-    });
+    this.form.addEventListener("submit", (e) => this.handleSubmit(e));
 
     // Password visibility toggle
     this.form.querySelectorAll(".password-toggle").forEach((icon) => {
@@ -125,3 +219,5 @@ class FormValidator {
     });
   }
 }
+
+export default FormValidator;
