@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>Project</title>
     <link href="../styles/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles//form.css" />
+    <link rel="stylesheet" href="../styles/form.css" />
     <link
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
     />
-    <script src="../js/component.js" defer></script>
-    <script src="../js/formValidation.js"></script>
-    <script src="../js/formRules.js"></script>
-    <script>
+    <script type="module" src="../js/formValidation.js"></script>
+    <script type="module" src="../js/formRules.js"></script>
+    <script type="module">
+      import FormValidator from "../js/formValidation.js";
+      import { loginEmailValidationRules } from "../js/formRules.js";
+
       document.addEventListener("DOMContentLoaded", () => {
         new FormValidator("loginForm", loginEmailValidationRules);
       });
@@ -22,7 +25,11 @@
   <body class="size-full">
     <div class="bg-white h-dvh">
       <div class="pt-8 pl-6 md:block hidden">
-        <img src="../public/registerlogo.png" class="h-10 w-37.5" alt="" />
+        <img
+          src="../public/registerlogo.png"
+          class="h-10 w-37.5"
+          alt="Логотип"
+        />
       </div>
       <div
         class="my-0 md:my-12 xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto h-full md:h-[calc(100dvh-7.5rem)]"
@@ -34,6 +41,18 @@
             class="w-full sm:w-[80%] md:mx-0 mx-auto md:w-[45%] xl:w-[40%] my-auto xl:mt-[10%]"
           >
             <h1 class="text-text font-bold text-2xl tracking-wider">Вход</h1>
+            <div
+              class="mt-6 login-error rounded-lg hidden bg-input-error/50 text-input-error-text w-full p-4 font-light text-xs tracking-wider"
+            >
+              Неправильный email или пароль. Если Вы забыли свой логин или
+              пароль, то воспользуйтесь
+              <a href="#" class="text-primary">
+                формой восстановление пароля.
+              </a>
+              Если Вы новый пользователь , то сначала
+              <a href="#" class="text-primary">зарегистрируйтесь.</a>
+            </div>
+
             <div class="flex flex-col w-full gap-6 mt-6">
               <form
                 class="flex flex-col gap-y-3 form"
@@ -42,17 +61,14 @@
               >
                 <div class="form-item">
                   <label
-                    for="registerEmail"
+                    for="loginEmail"
                     class="text-input-divider text-xs font-medium tracking-wide pl-2"
                     >Почта:</label
                   >
                   <div
                     class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
                   >
-                    <i
-                      class="mdi mdi-email"
-                      data-input-id="registerEmailIcon"
-                    ></i>
+                    <i class="mdi mdi-email" data-input-id="loginEmailIcon"></i>
                     <div
                       class="h-6 w-px bg-input-divider mx-2 input-divider"
                     ></div>
@@ -60,9 +76,14 @@
                       type="text"
                       class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
                       placeholder="info@skazoknet.ru"
-                      id="registerEmail"
+                      id="loginEmail"
                       name="email"
                     />
+                  </div>
+                  <div
+                    class="server-message hidden mt-2 rounded-lg bg-input-error text-input-error-text w-full p-4 font-light text-xs tracking-wider"
+                  >
+                    <span class="inline-block w-[90%]"></span>
                   </div>
                 </div>
                 <div class="form-item">
@@ -72,21 +93,29 @@
                     >Пароль:</label
                   >
                   <div
-                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1"
+                    class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
                   >
-                    <img src="../public/icons/lock.svg" alt="" />
-                    <div class="h-6 w-px bg-input-divider mx-2"></div>
+                    <i class="mdi mdi-lock"></i>
+                    <div
+                      class="h-6 w-px bg-input-divider mx-2 input-divider"
+                    ></div>
                     <input
                       type="password"
                       class="h-12.5 text-input-divider text-xs font-normal tracking-wide w-full outline-none border-none"
-                      placeholder="Password"
+                      placeholder="Пароль"
                       id="password"
+                      name="password"
                     />
                     <i
                       class="mdi mdi-eye pl-2 cursor-pointer password-toggle"
                       data-input-id="password"
                       id="passwordIcon"
                     ></i>
+                  </div>
+                  <div
+                    class="server-message hidden mt-2 rounded-lg bg-input-error text-input-error-text w-full p-4 font-light text-xs tracking-wider"
+                  >
+                    <span class="inline-block w-[90%]"></span>
                   </div>
                 </div>
                 <button
@@ -101,7 +130,6 @@
                   <a href="#" class="text-primary">Восстановление пароля</a>
                 </div>
               </form>
-              <!--  -->
             </div>
           </div>
           <div
@@ -110,13 +138,13 @@
             <img
               src="../public/registerimage.png"
               class="w-full h-auto md:max-h-max max-h-[20rem] object-contain"
-              alt=""
+              alt="Изображение регистрации"
             />
             <div class="pt-8 flex items-center justify-center md:hidden">
               <img
                 src="../public/registerlogo.png"
                 class="h-10 w-37.5"
-                alt=""
+                alt="Логотип"
               />
             </div>
           </div>

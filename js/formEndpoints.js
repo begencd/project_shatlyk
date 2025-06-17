@@ -12,7 +12,7 @@ const formEndpoints = {
     redirectPath: "/dashboard",
   },
   recoveryPasswordForm: {
-    endpoint: "https://api.example.com/recover-password",
+    endpoint: `${BASE_URL}/recover-password`,
     method: "POST",
     redirectPath: "/login",
   },

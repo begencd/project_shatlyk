@@ -93,6 +93,15 @@ class FormValidator {
 
   // Handle server errors
   showServerErrors(errorData) {
+    if (this.form.id === "loginForm") {
+      const loginErrorDiv = this.form
+        .closest(".bg-white")
+        .querySelector(".login-error");
+      if (loginErrorDiv) {
+        loginErrorDiv.classList.remove("hidden");
+      }
+    }
+
     if (typeof errorData === "string") {
       const serverMessage = this.form.querySelector(".server-message");
       if (serverMessage) {
@@ -140,6 +149,16 @@ class FormValidator {
       serverMessage.classList.add("hidden");
       serverMessage.querySelector("span").textContent = "";
     });
+
+    // Clear login-error div for loginForm
+    if (this.form.id === "loginForm") {
+      const loginErrorDiv = this.form
+        .closest(".bg-white")
+        .querySelector(".login-error");
+      if (loginErrorDiv) {
+        loginErrorDiv.classList.add("hidden");
+      }
+    }
 
     // Prepare form data as plain object
     const formData = {};

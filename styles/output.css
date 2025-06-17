@@ -1018,6 +1018,12 @@
   .bg-input-error {
     background-color: #e6d5d6;
   }
+  .bg-input-error\/10 {
+    background-color: color-mix(in oklab, #e6d5d6 10%, transparent);
+  }
+  .bg-input-error\/50 {
+    background-color: color-mix(in oklab, #e6d5d6 50%, transparent);
+  }
   .bg-primary {
     background-color: #3f51b5;
   }
@@ -1386,11 +1392,6 @@
   }
   .backface-hidden {
     backface-visibility: hidden;
-  }
-  .\*\:mt-2 {
-    :is(& > *) {
-      margin-top: calc(var(--spacing) * 2);
-    }
   }
   .group-hover\:pointer-events-auto {
     &:is(:where(.group):hover *) {

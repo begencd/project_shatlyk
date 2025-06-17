@@ -1,10 +1,34 @@
-const loginEmailValidationRules = {
+export const loginEmailValidationRules = {
   email: {
-    validate: (value) => {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(value);
-    },
-    errorMessage: "Неверная почта:",
+    rules: [
+      {
+        validate: (value) => {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(value);
+        },
+        errorMessage: "Неверная почта.",
+      },
+      {
+        validate: (value) => value.length <= 100,
+        errorMessage: "Почта не может быть длиннее 100 символов.",
+      },
+    ],
+  },
+  password: {
+    rules: [
+      {
+        validate: (value) => value.length >= 8,
+        errorMessage: "Пароль должен быть не менее 8 символов.",
+      },
+      {
+        validate: (value) => /[A-Z]/.test(value),
+        errorMessage: "Пароль должен содержать хотя бы одну заглавную букву.",
+      },
+      {
+        validate: (value) => /[0-9]/.test(value),
+        errorMessage: "Пароль должен содержать хотя бы одну цифру.",
+      },
+    ],
   },
 };
 
@@ -61,13 +85,21 @@ export const registerFormValidationRules = {
     ],
   },
 };
-const recoveryPasswordFormValidationRules = {
+export const recoveryPasswordFormValidationRules = {
   email: {
-    validate: (value) => {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(value);
-    },
-    errorMessage: "Неверная почта:",
+    rules: [
+      {
+        validate: (value) => {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return emailRegex.test(value);
+        },
+        errorMessage: "Неверная почта.",
+      },
+      {
+        validate: (value) => value.length <= 100,
+        errorMessage: "Почта не может быть длиннее 100 символов.",
+      },
+    ],
   },
 };
 
