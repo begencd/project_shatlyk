@@ -93,6 +93,7 @@ class FormValidator {
 
   // Handle server errors
   showServerErrors(errorData) {
+    const error = JSON.parse(errorData);
     if (this.form.id === "loginForm") {
       const loginErrorDiv = this.form
         .closest(".bg-white")
@@ -101,15 +102,15 @@ class FormValidator {
         loginErrorDiv.classList.remove("hidden");
       }
     }
-
-    if (typeof errorData === "string") {
+    if (typeof error.message) {
+      // if (typeof error === "string") {
       const serverMessage = this.form.querySelector(".server-message");
       if (serverMessage) {
         serverMessage.classList.remove("hidden");
-        serverMessage.querySelector("span").textContent = errorData;
+        serverMessage.querySelector("span").textContent = error.message;
       }
-    } else if (errorData.errors) {
-      Object.keys(errorData.errors).forEach((fieldName) => {
+    } else if (error.errors) {
+      Object.keys(error.errors).forEach((fieldName) => {
         const input = this.form.querySelector(`[name="${fieldName}"]`);
         if (input) {
           const serverMessage = input
@@ -118,7 +119,7 @@ class FormValidator {
           if (serverMessage) {
             serverMessage.classList.remove("hidden");
             serverMessage.querySelector("span").textContent =
-              errorData.errors[fieldName];
+              error.errors[fieldName][0];
           }
         }
       });
@@ -195,7 +196,10 @@ class FormValidator {
         },
       });
 
-      if (response.ok) {
+      // if (response.ok) {
+      //   window.location.replace(endpointConfig.redirectPath);
+      // }
+      if (response.status === 200 || response.status === 201) {
         window.location.replace(endpointConfig.redirectPath);
       } else {
         const errorMessage = await response.text();
