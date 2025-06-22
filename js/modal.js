@@ -2,27 +2,32 @@ const searchInput = document.querySelector('#modalBody input[type="text"]');
 const cityListContainer = document.getElementById("cityListContainer");
 const selectedCityDisplay = document.getElementById("selectedCityDisplay");
 
-const allCities = [
-  { name: "Краснодар", region: "Краснодарский край" },
-  { name: "Анапа", region: "Краснодарский край" },
-  { name: "Сочи", region: "Краснодарский край" },
-  { name: "Москва", region: "Московская область" },
-  { name: "Санкт-Петербург", region: "Ленинградская область" },
-  { name: "Новороссийск", region: "Краснодарский край" },
-  { name: "Ростов-на-Дону", region: "Ростовская область" },
-  { name: "Екатеринбург", region: "Свердловская область" },
-];
+async function fetchCities() {
+  try {
+    const response = await fetch("https://your-api-endpoint/cities"); // Replace with your actual endpoint
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const cities = await response.json();
+    return cities; // Expecting array of { name, region } objects
+  } catch (error) {
+    console.error("Error fetching cities:", error);
+    cityListContainer.innerHTML =
+      '<p class="text-text2 p-2">Ошибка загрузки городов.</p>';
+    return [];
+  }
+}
 
-function renderCities(filteredCities) {
+async function renderCities(cities) {
   cityListContainer.innerHTML = "";
 
-  if (filteredCities.length === 0 && searchInput.value.trim() !== "") {
+  if (cities.length === 0 && searchInput.value.trim() !== "") {
     cityListContainer.innerHTML =
       '<p class="text-text2 p-2">Город не найден.</p>';
     return;
   }
 
-  filteredCities.forEach((city) => {
+  cities.forEach((city) => {
     const cityElement = document.createElement("div");
     cityElement.className =
       "flex items-center gap-x-2 cursor-pointer city-item hover:bg-gray-100 p-2 rounded transition-colors duration-150";
@@ -46,8 +51,10 @@ function selectCity(city) {
   closeModal("reusableModal");
 }
 
-function filterAndRenderCities() {
+async function filterAndRenderCities() {
   const searchTerm = searchInput.value.toLowerCase().trim();
+  const allCities = await fetchCities();
+
   const filteredCities =
     searchTerm === ""
       ? allCities
@@ -56,17 +63,18 @@ function filterAndRenderCities() {
             cityData.name.toLowerCase().includes(searchTerm) ||
             cityData.region.toLowerCase().includes(searchTerm)
         );
-  renderCities(filteredCities);
+  await renderCities(filteredCities);
 }
 
 if (searchInput) {
   searchInput.addEventListener("input", filterAndRenderCities);
+  // Initial render
+  filterAndRenderCities();
 } else {
   console.error(
     "Arama input elementi bulunamadı. Seçiciyi kontrol edin: '#modalBody input[type=\"text\"]'"
   );
 }
-
 const MODAL_TRANSITION_DURATION = 300;
 
 const openModal = (modalId) => {
