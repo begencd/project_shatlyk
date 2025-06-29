@@ -7,29 +7,32 @@
     <link href="../styles/output.css" rel="stylesheet" />
     <link rel="stylesheet" href="../styles//form.css" />
     <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../styles/menu.css" />
+
     <link
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
     />
-    <script src="../js/component.js" defer></script>
-    <script src="../js/formValidation.js"></script>
-    <script src="../js/formRules.js"></script>
+    <script src="../js/component.js"></script>
+    <!-- <script src="../js/formValidation.js"></script> -->
+    <!-- <script src="../js/formRules.js"></script> -->
     <script src="../js/downloadFile.js"></script>
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", () => {
         new FormValidator("editUserForm", editUserFormValidationRules);
       });
-    </script>
+    </script> -->
   </head>
   <body class="size-full relative">
     <header class="h-[4.375rem] bg-primary w-full md:hidden block">
       <div
         class="xl:container px-8 xs:px-12 xl:px-4 mx-0 xl:mx-auto h-full relative"
       >
-        <div class="flex h-full w-fit items-center">
+        <div class="flex h-full w-fit items-center z-10 relative">
           <div
             class="cursor-pointer flex items-center justify-center pt-4 leading-10"
-            id="menu-toggle"
+            id="adminToggle"
+            onclick="toggleSidebar('adminToggle', 'adminSidebar', 'adminOverlay', 'closeAdminSidebar')"
             aria-label="Toggle menu"
           >
             <img src="../public/icons/menu.svg" alt="" />
@@ -252,17 +255,18 @@
 
     <!-- Sidebar -->
     <div
-      id="sidebar-overlay"
+      id="adminOverlay"
       class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-20"
     ></div>
     <div
-      id="sidebar"
+      id="adminSidebar"
       class="admin-sidebar fixed top-0 h-full w-full bg-primary text-white transition-all duration-300 ease-in-out z-30 rounded-r-lg shadow-lg block md:hidden"
       role="navigation"
     >
       <div class="flex justify-end p-4 relative">
         <button
-          id="close-sidebar"
+          id="closeAdminSidebar"
+          onclick="toggleSidebar('adminToggle', 'adminSidebar', 'adminOverlay', 'closeAdminSidebar')"
           class="text-white text-2xl hover:rotate-90 hover:bg-white/10 px-1 rounded-full transition-all duration-200 border border-white"
           aria-label="Close menu"
         >

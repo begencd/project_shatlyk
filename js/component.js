@@ -1,33 +1,39 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // sidebar
-  const menuToggle = document.getElementById("menu-toggle");
-  const sidebar = document.getElementById("sidebar");
-  const sidebarOverlay = document.getElementById("sidebar-overlay");
-  const closeSidebar = document.getElementById("close-sidebar");
+const toggleSidebar = (toggleId, sidebarId, overlayId, closeId = null) => {
+  const toggle = document.getElementById(toggleId);
+  const sidebar = document.getElementById(sidebarId);
+  const overlay = document.getElementById(overlayId);
+  const closeButton = closeId ? document.getElementById(closeId) : null;
+  console.log("click", "begin");
+  if (toggle && sidebar && overlay) {
 
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("active");
+    // Toggle sidebar on toggle button click
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("active");
       sidebar.classList.toggle("active");
-      sidebarOverlay.classList.toggle("active");
+      overlay.classList.toggle("active");
     });
-  }
-  if (closeSidebar) {
-    closeSidebar.addEventListener("click", () => {
-      menuToggle.classList.remove("active");
-      sidebar.classList.remove("active");
-      sidebarOverlay.classList.remove("active");
-    });
-  }
 
-  if (sidebarOverlay) {
-    sidebarOverlay.addEventListener("click", () => {
-      menuToggle.classList.remove("active");
+    // Close sidebar on overlay click
+    overlay.addEventListener("click", () => {
+      toggle.classList.remove("active");
       sidebar.classList.remove("active");
-      sidebarOverlay.classList.remove("active");
+      overlay.classList.remove("active");
     });
+
+    // Close sidebar on close button click (if provided)
+    if (closeButton) {
+      closeButton.addEventListener("click", () => {
+        toggle.classList.remove("active");
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+    }
+  } else {
+    console.warn(
+      `Sidebar toggle initialization failed: Missing elements for toggleId: ${toggleId}, sidebarId: ${sidebarId}, or overlayId: ${overlayId}`
+    );
   }
-});
+};
 
 const toggleCollapse = (contentSelector, buttonSelector) => {
   const content = document.querySelector(contentSelector);
