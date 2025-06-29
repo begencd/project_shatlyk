@@ -40,15 +40,44 @@ async function renderCities(cities) {
   });
 }
 
-function selectCity(city) {
-  if (selectedCityDisplay) {
-    selectedCityDisplay.textContent = city.name;
-  } else {
-    console.warn(
-      "ID'si 'selectedCityDisplay' olan şehir gösterme elementi bulunamadı."
-    );
+async function selectCity(city) {
+  try {
+    // Send POST request to your endpoint
+    const response = await fetch("https://your-api-endpoint/select-city", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: city.name,
+        region: city.region,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    console.log("City selection response:", result);
+
+    // Update the selected city display
+    if (selectedCityDisplay) {
+      selectedCityDisplay.textContent = city.name;
+    } else {
+      console.warn(
+        "ID'si 'selectedCityDisplay' olan şehir gösterme elementi bulunamadı."
+      );
+    }
+
+    // Close the modal
+    closeModal("reusableModal");
+  } catch (error) {
+    console.error("Error sending city selection:", error);
+    // Optionally, show an error message in the UI
+    cityListContainer.innerHTML =
+      '<p class="text-text2 p-2">Ошибка при выборе города.</p>';
   }
-  closeModal("reusableModal");
 }
 
 async function filterAndRenderCities() {
@@ -75,6 +104,7 @@ if (searchInput) {
     "Arama input elementi bulunamadı. Seçiciyi kontrol edin: '#modalBody input[type=\"text\"]'"
   );
 }
+
 const MODAL_TRANSITION_DURATION = 300;
 
 const openModal = (modalId) => {
