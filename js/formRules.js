@@ -103,7 +103,7 @@ export const recoveryPasswordFormValidationRules = {
   },
 };
 
-const editUserFormValidationRules = {
+export const editUserFormValidationRules = {
   email: {
     validate: (value) => {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

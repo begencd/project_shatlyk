@@ -2,6 +2,7 @@ let swiperInstances = {};
 
 function initializeSwiper(containerSelector) {
   const container = document.querySelector(containerSelector);
+  if (!container) return;
   if (window.innerWidth < 768 && !swiperInstances[containerSelector]) {
     swiperInstances[containerSelector] = new Swiper(containerSelector, {
       slidesPerView: 4,
@@ -36,25 +37,25 @@ function handleFileUpload({
   inputSelector,
   targetContainerSelector = "",
   targetImageSelector = "",
+  containerSelector = "",
   templateCallback,
   maxFiles = 5,
   allowedTypes = ["image/jpeg", "image/png", "application/pdf"],
   onError = (message) => alert(message),
   onSuccess = (file) => console.log(`Dosya yüklendi: ${file.name}`),
 }) {
-  console.log("handleFileUpload");
-
   const fileInput = document.querySelector(inputSelector);
-  const targetContainer =
-    targetContainerSelector.length > 0
-      ? document.querySelector(targetContainerSelector)
-      : "";
-
+  const targetContainer = targetContainerSelector
+    ? document.querySelector(targetContainerSelector)
+    : null;
   const targetImage = targetImageSelector
     ? document.querySelector(targetImageSelector)
-    : "";
+    : null;
+  const container = containerSelector
+    ? document.querySelector(containerSelector)
+    : null;
 
-  if (!fileInput || !targetContainer) {
+  if (!fileInput || (!targetContainer && !targetImage)) {
     onError("Gerekli elemanlar bulunamadı!");
     return;
   }
@@ -80,60 +81,68 @@ function handleFileUpload({
         onError(`İzin verilmeyen dosya türü: ${file.name}`);
         return;
       }
+
       if (targetImage && file.type.startsWith("image/")) {
         const reader = new FileReader();
         reader.onload = (e) => {
           targetImage.src = e.target.result;
+          if (container) {
+            container.setAttribute("data-image-uploaded", "true");
+          }
           onSuccess(file);
         };
         reader.readAsDataURL(file);
-      } else {
+      } else if (targetContainer && templateCallback) {
         const reader = new FileReader();
         reader.onload = (e) => {
           const fileUrl = file.type.startsWith("image/")
             ? e.target.result
             : null;
-          const template = templateCallback(file, fileUrl);
+          const template = templateCallback(
+            file,
+            fileUrl,
+            targetContainerSelector
+          );
           targetContainer.insertAdjacentHTML("beforeend", template);
           onSuccess(file);
           if (window.innerWidth < 768) {
-            if (
-              swiperInstances[
-                targetContainerSelector.replace(" .swiper-wrapper", "")
-              ]
-            ) {
-              swiperInstances[
-                targetContainerSelector.replace(" .swiper-wrapper", "")
-              ].update();
+            const swiperSelector = targetContainerSelector.replace(
+              " .swiper-wrapper",
+              ""
+            );
+            if (swiperInstances[swiperSelector]) {
+              swiperInstances[swiperSelector].update();
             } else {
-              initializeSwiper(
-                targetContainerSelector.replace(" .swiper-wrapper", "")
-              );
+              initializeSwiper(swiperSelector);
             }
           }
         };
         if (file.type.startsWith("image/")) {
           reader.readAsDataURL(file);
         } else {
-          const template = templateCallback(file, null);
+          const template = templateCallback(
+            file,
+            null,
+            targetContainerSelector
+          );
           targetContainer.insertAdjacentHTML("beforeend", template);
           onSuccess(file);
           if (window.innerWidth < 768) {
-            if (
-              swiperInstances[
-                targetContainerSelector.replace(" .swiper-wrapper", "")
-              ]
-            ) {
-              swiperInstances[
-                targetContainerSelector.replace(" .swiper-wrapper", "")
-              ].update();
+            const swiperSelector = targetContainerSelector.replace(
+              " .swiper-wrapper",
+              ""
+            );
+            if (swiperInstances[swiperSelector]) {
+              swiperInstances[swiperSelector].update();
             } else {
-              initializeSwiper(
-                targetContainerSelector.replace(" .swiper-wrapper", "")
-              );
+              initializeSwiper(swiperSelector);
             }
           }
         }
+      } else {
+        onError(
+          "Geçersiz yapılandırma: Hedef konteyner veya resim seçici belirtilmeli!"
+        );
       }
     });
 
@@ -141,24 +150,32 @@ function handleFileUpload({
   };
 }
 
-const downloadFileTemplate = (file, fileUrl = null) => {
+function handleImageDelete(imageSelector, defaultImage, containerSelector) {
+  const image = document.querySelector(imageSelector);
+  const container = document.querySelector(containerSelector);
+  if (image) {
+    image.src = defaultImage;
+  }
+  if (container) {
+    container.removeAttribute("data-image-uploaded");
+  }
+}
+
+const downloadFileTemplate = (file, fileUrl = null, swiperSelector = "") => {
   const fileElementId = `file-${Date.now()}-${Math.random()
     .toString(36)
     .substr(2, 9)}`;
   const slideClass = window.innerWidth < 768 ? "swiper-slide" : "";
+  const swiperId = swiperSelector
+    .replace(" .swiper-wrapper", "")
+    .replace("#", "");
 
   if (file.type.startsWith("image/") && fileUrl) {
     return `
       <div id="${fileElementId}" class="h-30 md:w-30 w-full rounded-xl shadow-md relative group ${slideClass} gap-4">
-        <img src="${fileUrl}" alt="${
-      file.name
-    }" class="h-30 md:w-30 w-full object-cover rounded-xl" />
+        <img src="${fileUrl}" alt="${file.name}" class="h-30 md:w-30 w-full object-cover rounded-xl" />
         <div class="h-30 md:w-30 w-full absolute left-0 top-0 flex items-center justify-center bg-black/10 md:bg-black/20 rounded-xl z-10 md:opacity-0 md:group-hover:opacity-100 transition-opacity md:group-hover:pointer-events-auto md:pointer-events-none">
-          <button class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${
-      document.querySelector(".swiper").id
-    }']) { swiperInstances['${
-      document.querySelector(".swiper").id
-    }'].update(); }">
+          <button class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${swiperId}']) { swiperInstances['${swiperId}'].update(); }">
             <i class="mdi mdi-delete"></i>
           </button>
         </div>
@@ -168,11 +185,7 @@ const downloadFileTemplate = (file, fileUrl = null) => {
       <div id="${fileElementId}" class="size-22.5 rounded-xl flex flex-col items-center justify-center bg-gray-100 shadow-md p-2 text-center relative group ${slideClass}">
         <span class="text-4xl text-red-500 mdi mdi-file-pdf-box"></span>
         <span class="text-xs text-gray-700 break-words mt-1">${file.name}</span>
-        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${
-      document.querySelector(".swiper").id
-    }']) { swiperInstances['${
-      document.querySelector(".swiper").id
-    }'].update(); }">
+        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${swiperId}']) { swiperInstances['${swiperId}'].update(); }">
           <i class="mdi mdi-delete"></i>
         </button>
       </div>`;
@@ -181,11 +194,7 @@ const downloadFileTemplate = (file, fileUrl = null) => {
       <div id="${fileElementId}" class="size-22.5 rounded-xl flex flex-col items-center justify-center bg-gray-100 shadow-md p-2 text-center relative group ${slideClass}">
         <span class="text-4xl text-gray-500 mdi mdi-file"></span>
         <span class="text-xs text-gray-700 break-words mt-1">${file.name}</span>
-        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${
-      document.querySelector(".swiper").id
-    }']) { swiperInstances['${
-      document.querySelector(".swiper").id
-    }'].update(); }">
+        <button class="absolute -top-4 -right-4 bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" onclick="document.getElementById('${fileElementId}').remove(); if (window.innerWidth < 768 && swiperInstances['${swiperId}']) { swiperInstances['${swiperId}'].update(); }">
           <i class="mdi mdi-close"></i>
         </button>
       </div>`;
@@ -217,5 +226,4 @@ function manageSwiperContainers() {
 }
 
 window.addEventListener("resize", manageSwiperContainers);
-
 document.addEventListener("DOMContentLoaded", manageSwiperContainers);

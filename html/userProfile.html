@@ -2,26 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
     <link href="../styles/output.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../styles//form.css" />
+    <link rel="stylesheet" href="../styles/form.css" />
     <link rel="stylesheet" href="../styles/sidebar.css" />
     <link rel="stylesheet" href="../styles/menu.css" />
-
     <link
       rel="stylesheet"
       href="../node_modules/@mdi/font/css/materialdesignicons.min.css"
     />
     <script src="../js/component.js"></script>
-    <!-- <script src="../js/formValidation.js"></script> -->
-    <!-- <script src="../js/formRules.js"></script> -->
     <script src="../js/downloadFile.js"></script>
-    <!-- <script>
+    <script type="module" src="../js/formValidation.js"></script>
+    <script type="module" src="../js/formRules.js"></script>
+    <script type="module" src="../js/swiper.js"></script>
+    <script type="module">
+      import FormValidator from "../js/formValidation.js";
+      import { editUserFormValidationRules } from "../js/formRules.js";
+
       document.addEventListener("DOMContentLoaded", () => {
         new FormValidator("editUserForm", editUserFormValidationRules);
       });
-    </script> -->
+    </script>
+    <style>
+      #deleteProfileImage {
+        display: none;
+      }
+      [data-image-uploaded="true"] #deleteProfileImage {
+        display: flex;
+      }
+    </style>
   </head>
   <body class="size-full relative">
     <header class="h-[4.375rem] bg-primary w-full md:hidden block">
@@ -98,7 +110,6 @@
                 <span>О компании</span>
               </div>
             </a>
-
             <a
               href="#"
               class="border-b border-b-transparent text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
@@ -131,13 +142,24 @@
           >
             Мой профиль
           </h1>
-          <div class="flex items-center gap-x-6">
+          <div
+            class="flex items-center gap-x-6 relative"
+            id="profileImageContainer"
+          >
             <img
               id="userProfileImage"
               src="../public/user2.png"
               alt="Profil Resmi"
               class="w-24 h-24 object-cover rounded-full"
             />
+            <button
+              id="deleteProfileImage"
+              class="absolute -top-[5px] left-[4.375rem] bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center cursor-pointer"
+              onclick="handleImageDelete('#userProfileImage', '../public/user2.png', '#profileImageContainer')"
+              aria-label="Profil resmini sil"
+            >
+              <i class="mdi mdi-delete"></i>
+            </button>
             <div class="flex flex-col gap-1">
               <span class="text-base font-bold text-text2 tracking-wide"
                 >User001</span
@@ -147,18 +169,21 @@
                 class="text-input-divider text-xs tracking-wide cursor-pointer hover:underline"
                 onclick="handleFileUpload({
                   inputSelector: '#redaktFileInput',
-                  targetContainerSelector:'',
+                  targetContainerSelector: '',
                   targetImageSelector: '#userProfileImage',
-                  maxFiles: 1, 
-                  allowedTypes: ['image/jpeg', 'image/png'], 
-                  onError: (message) => {},
-                  onSuccess: (file) => console.log(`Profil resmi yüklendi: ${file.name}`)
+                  containerSelector: '#profileImageContainer',
+                  maxFiles: 1,
+                  allowedTypes: ['image/jpeg', 'image/png'],
+                  onError: (message) => alert(message),
+                  onSuccess: (file) => {
+                    console.log(`Profil resmi yüklendi: ${file.name}`);
+                    document.querySelector('#profileImageContainer').setAttribute('data-image-uploaded', 'true');
+                  }
                 });"
                 >Загрузить фото</span
               >
             </div>
           </div>
-
           <input type="file" class="hidden" id="redaktFileInput" />
           <div class="w-full xl:w-[80%] mt-6 sm:mt-12">
             <form
@@ -215,12 +240,11 @@
                   ></i>
                 </div>
               </div>
-
               <div class="form-item w-full lg:w-[calc(50%-1.5rem)]">
                 <label
                   for="editUser"
                   class="text-input-divider text-xs font-medium tracking-wide pl-2"
-                  >Имя пользователя::</label
+                  >Имя пользователя:</label
                 >
                 <div
                   class="rounded-3xl border-auth-input-border-color border px-4 h-12.5 flex items-center mt-1 input-container"
@@ -252,7 +276,6 @@
         </div>
       </div>
     </div>
-
     <!-- Sidebar -->
     <div
       id="adminOverlay"
@@ -322,7 +345,6 @@
               <span>О компании</span>
             </div>
           </a>
-
           <a
             href="#"
             class="border-b border-b-transparent text-white font-semibold text-base inline-block w-full py-3 xl:py-4 px-6"
