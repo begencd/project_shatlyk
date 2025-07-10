@@ -592,6 +592,27 @@
   .max-h-\[9\.375rem\] {
     max-height: 9.375rem;
   }
+  .max-h-\[10\.625rem\] {
+    max-height: 10.625rem;
+  }
+  .max-h-\[11\.875rem\] {
+    max-height: 11.875rem;
+  }
+  .max-h-\[12\.8125rem\] {
+    max-height: 12.8125rem;
+  }
+  .max-h-\[13\.75rem\] {
+    max-height: 13.75rem;
+  }
+  .max-h-\[13\.625rem\] {
+    max-height: 13.625rem;
+  }
+  .max-h-\[13\.6875rem\] {
+    max-height: 13.6875rem;
+  }
+  .max-h-\[15\.625rem\] {
+    max-height: 15.625rem;
+  }
   .max-h-\[18\.75rem\] {
     max-height: 18.75rem;
   }
@@ -630,6 +651,21 @@
   }
   .min-h-\[10\.625rem\] {
     min-height: 10.625rem;
+  }
+  .min-h-\[12\.8125rem\] {
+    min-height: 12.8125rem;
+  }
+  .min-h-\[13\.75rem\] {
+    min-height: 13.75rem;
+  }
+  .min-h-\[13\.625rem\] {
+    min-height: 13.625rem;
+  }
+  .min-h-\[13\.6875rem\] {
+    min-height: 13.6875rem;
+  }
+  .min-h-\[15\.625rem\] {
+    min-height: 15.625rem;
   }
   .min-h-\[21\.875rem\] {
     min-height: 21.875rem;
@@ -721,14 +757,26 @@
   .max-w-\[26\.25rem\] {
     max-width: 26.25rem;
   }
+  .max-w-\[30rem\] {
+    max-width: 30rem;
+  }
   .max-w-\[calc\(100\%-15\.625rem\)\] {
     max-width: calc(100% - 15.625rem);
   }
   .max-w-full {
     max-width: 100%;
   }
+  .min-w-\[25rem\] {
+    min-width: 25rem;
+  }
+  .min-w-\[30rem\] {
+    min-width: 30rem;
+  }
   .min-w-\[200px\] {
     min-width: 200px;
+  }
+  .min-w-full {
+    min-width: 100%;
   }
   .basis-\[calc\(\(100\%-32px\)\/2\)\] {
     flex-basis: calc((100% - 32px) / 2);
@@ -2588,6 +2636,16 @@
       height: auto;
     }
   }
+  .xl\:max-h-\[12\.8125rem\] {
+    @media (width >= 80rem) {
+      max-height: 12.8125rem;
+    }
+  }
+  .xl\:min-h-\[12\.8125rem\] {
+    @media (width >= 80rem) {
+      min-height: 12.8125rem;
+    }
+  }
   .xl\:min-h-\[27\.75rem\] {
     @media (width >= 80rem) {
       min-height: 27.75rem;
@@ -2739,6 +2797,26 @@
     @media (width >= 80rem) {
       font-size: var(--text-xs);
       line-height: var(--tw-leading, var(--text-xs--line-height));
+    }
+  }
+  .\32 xl\:max-h-\[15\.625rem\] {
+    @media (width >= 96rem) {
+      max-height: 15.625rem;
+    }
+  }
+  .\32 xl\:min-h-\[15\.625rem\] {
+    @media (width >= 96rem) {
+      min-height: 15.625rem;
+    }
+  }
+  .\32 xl\:max-w-\[30rem\] {
+    @media (width >= 96rem) {
+      max-width: 30rem;
+    }
+  }
+  .\32 xl\:min-w-\[30rem\] {
+    @media (width >= 96rem) {
+      min-width: 30rem;
     }
   }
   .\32 xl\:text-sm {
