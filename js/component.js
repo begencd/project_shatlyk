@@ -3,11 +3,11 @@ const toggleSidebar = (toggleId, sidebarId, overlayId, closeId = null) => {
   const sidebar = document.getElementById(sidebarId);
   const overlay = document.getElementById(overlayId);
   const closeButton = closeId ? document.getElementById(closeId) : null;
-  console.log("click", "begin");
+  const html = document.documentElement;
   if (toggle && sidebar && overlay) {
-
     // Toggle sidebar on toggle button click
     toggle.addEventListener("click", () => {
+      html.style.overflow = "hidden";
       toggle.classList.toggle("active");
       sidebar.classList.toggle("active");
       overlay.classList.toggle("active");
@@ -22,6 +22,7 @@ const toggleSidebar = (toggleId, sidebarId, overlayId, closeId = null) => {
 
     // Close sidebar on close button click (if provided)
     if (closeButton) {
+      html.style.overflow = "auto";
       closeButton.addEventListener("click", () => {
         toggle.classList.remove("active");
         sidebar.classList.remove("active");
